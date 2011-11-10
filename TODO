@@ -5,10 +5,13 @@ In order to advance to version 0.0.0b of the software the following must be done
 
 1) Rewrite the Menu custom class in order to:
     - suport subdirectories (xml file definition must be modified also)
-    - have a clear syntax
+    - hopefully have a clear syntax
     - have __doc__ attributes
     - support icons
-    - support default grayed conditions (or to be read from somewhere else)
+    - support accelerators
+    - support separators
+    - support default disableed items (or this option to be read from somewhere else)
+    - add appropriate try ... except blocks
 
 2) Modify the callbacks from GUI.callbacks.geometry (newCSys & newPoint) to
    draw those entities on the DrawingArea - this is some work to be done and extra
@@ -24,4 +27,8 @@ In order to advance to version 0.0.0b of the software the following must be done
 
 5) Add the left toolbox - it should offer means to create coordinate systems 
    and points by now
+
+The TODOs required to advance to 0.0.0c will be written above these ones. The 
+version 0.0.1 is intended to have features like displaying points, lines and 
+detect surfaces, translating and zooming the whole thing   
 ================================================================================
