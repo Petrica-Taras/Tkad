@@ -1,0 +1,21 @@
+TODOs
+
+================================================================================
+In order to advance to version 0.0.0b of the software the following must be done:
+
+1) Rewrite the Menu custom class in order to:
+    - suport subdirectories (xml file definition must be modified also)
+    - have a clear syntax
+    - have __doc__ attributes
+
+2) Modify the callbacks from GUI.callbacks.geometry (newCSys & newPoint) to
+   draw those entities on the DrawingArea
+
+3) Modify the appropriate callbacks and xml definition in order to include csys
+   definition in the xml files
+
+4) Revisit all the xml definitions and write their DTD's
+
+5) Add the left toolbox - it should offer means to create coordinate systems 
+   and points by now
+================================================================================

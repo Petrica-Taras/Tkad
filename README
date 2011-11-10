@@ -1,5 +1,7 @@
 Tkad 
 
+Please note that for now the software is a mess and - it hasn't the slightest functionality added. 
+
 Overview
 =======================
 
@@ -10,7 +12,7 @@ Note that some of the parts (solvers, mesh generators) I don't intend to write m
 Dependencies
 =======================
 
-Python 2.7 - the software is a bunch of Python scripts running on top of Python 2.7. It doesn't need compilation nor installation and will not run without preinstalled Python (2.7)
+Python 2.7 - Tkad is a bunch of Python scripts running on top of Python 2.7. Tkad doesn't need compilation nor installation and will not run without preinstalled Python (2.7)
 
 Tkinter - this, as far as I know is delivered with Python for major OSes. Tkinter is not the proper tool for this job since it is lacking some common widgets suport (especially for Python 2.7) and I believe a 3D feature of the software won't be possible because of Tkinter. Nevertheless if the software reaches an advanced stage of development I am willing to either port the GUI part to pyGTK or something like that or to fully port the entire software in C using GTK 3 as a graphical toolkit.
 
