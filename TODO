@@ -7,12 +7,18 @@ In order to advance to version 0.0.0b of the software the following must be done
     - suport subdirectories (xml file definition must be modified also)
     - have a clear syntax
     - have __doc__ attributes
+    - support icons
+    - support default grayed conditions (or to be read from somewhere else)
 
 2) Modify the callbacks from GUI.callbacks.geometry (newCSys & newPoint) to
-   draw those entities on the DrawingArea
+   draw those entities on the DrawingArea - this is some work to be done and extra
+   details must be added.
 
 3) Modify the appropriate callbacks and xml definition in order to include csys
-   definition in the xml files
+   definition in the xml files. Appropriate callback - newProject (writes the 
+   global coordinate system definition in the newly created *geometry.xml file),
+   openProject (to load it in the data tree of the DrawingArea object), save and
+   saveAsProject, etc.
 
 4) Revisit all the xml definitions and write their DTD's
 
