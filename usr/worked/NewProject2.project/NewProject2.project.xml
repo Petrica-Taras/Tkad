@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="NewProject2">
+   <Geometry dim="2D" type="plane">
+      NewProject2.geometry.xml
+   </Geometry>
+   <Mesh status="nomesh">
+      NewProject2.mesh.xml
+   </Mesh>
+   <Physics status="nophysics">
+      NewProject2.physics.xml
+   </Physics>
+   <Postprocess status="noresults">
+      NewProject2.results.xml
+   </Postprocess>
+</Project>

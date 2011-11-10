@@ -1,0 +1,15 @@
+<!ELEMENT ComputationDomain (Points,Lines,Surfaces,Boundary)>
+<!ATTLIST ComputationDomain dimension CDATA "2D">
+<!ELEMENT Points (Point*)>
+<!ELEMENT Point (#PCDATA)>
+<!ATTLIST Point id CDATA "0">
+<!ELEMENT Lines (Line*)>
+<!ELEMENT Line (#PCDATA)>
+<!ATTLIST Line id CDATA "0">
+<!ATTLIST Line type CDATA "segment">
+<!ELEMENT Surfaces (Surface*)>
+<!ELEMENT Surface (#PCDATA)>
+<!ATTLIST Surface id CDATA "0">
+<!ATTLIST Surface points CDATA "0">
+<!ATTLIST Surface lines CDATA "0">
+<!ELEMENT Boundary (#PCDATA)>

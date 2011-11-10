@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<MenuBar>
+    <Menu name="Project">
+	    <MenuOption name="New Project" callback="newProject"/> 
+        <MenuOption name="Open Project" callback="openProject"/>
+        <MenuOption name="Save Project" callback="saveProject"/>
+        <MenuOption name="Save As Project" callback="saveAsProject"/>
+        <MenuOption name="Close Project" callback="closeProject"/>
+    </Menu>
+    <Menu name="Geometry">
+        <MenuOption name="New Coordonate System" callback="newCSys"/>
+        <MenuOption name="New Point" callback="newPoint"/>
+        <MenuOption name="New Segment" callback="newSegment"/>
+        <MenuOption name="New Arc" callback="newArc"/>
+        <MenuOption name="Detect Faces" callback="detectFaces"/>
+    </Menu>
+    <Menu name="Library">
+        <MenuOption name="Full Models" callback="fullModels"/>
+        <MenuOption name="Geometries" callback="geometries"/>
+        <MenuOption name="Shapes" callback="shapes"/>
+        <MenuOption name="Materials" callback="materials"/>
+        <MenuOption name="Circuits" callback="circuits"/>
+    </Menu>
+    <Menu name="Settings">
+        <MenuOption name="Canvas Settings" callback="canvasSettings"/>
+    </Menu>
+    <Menu name="Help">
+        <MenuOption name="About" callback="about"/>
+    </Menu>
+</MenuBar>

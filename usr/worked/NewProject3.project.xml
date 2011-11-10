@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="NewProject3">
+   <Geometry dim="2D" type="plane">
+      NewProject3.geometry.xml
+   </Geometry>
+   <Mesh status="nomesh">
+      NewProject3.mesh.xml
+   </Mesh>
+   <Physics status="nophysics">
+      NewProject3.physics.xml
+   </Physics>
+   <Assembler custom="no">
+      NewProject3.assembler.xml
+   </Assembler>
+   <Postprocess status="noresults">
+      NewProject3.results.xml
+   </Postprocess>
+</Project>

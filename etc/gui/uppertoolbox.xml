@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<uppertoolbox>
+    <!--specifies the buttons from the upper frame (toolbox)-->
+    <!--icons & associated callbacks -->
+    <button callback="project.newProject" icon="document-new.png"/>
+    <button callback="project.openProject" icon="document-open.png"/>
+    <button callback="project.saveProject" icon="document-save.png"/>
+    <button callback="project.saveAsProject" icon="document-save-as.png"/>   
+    <button callback="project.closeProject" icon="edit-delete.png"/>   
+</uppertoolbox>
