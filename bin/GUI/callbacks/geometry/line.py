@@ -14,4 +14,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-__all__ = ["project", "geometry", "settings", "help"]
+from ...widgets import csys, point
+from ...cad import fkernel, ikernel
+
+def newSegment(app):
+    print "New Segment: Not implemented yet!"
+    
+def newArc(app):
+    print "New Arc: Not implemented yet!"  
+
+def edit(app):
+    print "Edit Line: Not implemented yet!"
+
+def delete(app):
+    print "Delete Line: Not implemented yet!"   
+    
+# function to determine the length of the line ????
+    
+def lists(app):
+    print "Lists Line: Not implemented yet!"    

@@ -14,14 +14,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-from ..widgets import csys, point
-from ..cad import fkernel, ikernel
+from ...widgets import csys, point
+from ...cad import fkernel, ikernel
 
-def newCSys(app):
-    x=csys.csys(app)
-    data=x()
-
-def newPoint(app):
+def new(app):
     x=point.point(app)
     data=x() # a bunch of Tkinter.StringVars
     # register newly created point to DrawingArea
@@ -30,11 +26,11 @@ def newPoint(app):
     intRepr=ikernel.float2ints(self.floatRepr.coords, app.DrawingArea)
     app.DrawingArea.points[floatRepr.label]={"floatRepr":floatRepr, "intRepr":intRepr}	# to add color/shape representation later
 
-def newSegment():
-    print "New Segment: Not implemented yet!"
-    
-def newArc():
-    print "New Arc: Not implemented yet!"    
-    
-def detectFaces():
-    print "Detect Faces: Not implemented yet!"		
+def edit(app):
+    print "Edit Point: Not implemented yet!"
+
+def delete(app):
+    print "Delete Point: Not implemented yet!"
+
+def lists(app):
+    print "List Points: Not implemented yet!"

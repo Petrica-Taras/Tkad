@@ -24,6 +24,7 @@ class Application(Tkinter.Tk):
     def __init__(self):
         Tkinter.Tk.__init__(self)	
         self.basedir=(os.getcwd()).replace("bin", "")
+
         self.lwd=None # last working directory
         self.xmlPaths=None
         self.modulePaths=[] # other directories to import modules from
@@ -51,9 +52,9 @@ class Application(Tkinter.Tk):
         self.createApp()       
         
     def createApp(self):
-        self.menuBar=GUI.widgets.menu.MenuToolbar(self, os.path.join(self.basedir, "etc/gui/menus.xml"))   
+        self.menuBar=GUI.widgets.menu.MenuToolbar(self, os.path.join(self.basedir, "etc/gui/menus.xml"), os.path.join(self.basedir, "resources/icons16x16/menu"))  
         
-        self.upperFrame=GUI.widgets.uptoolbox.UpperToolbox(self, os.path.join(self.basedir, "etc/gui/uppertoolbox.xml")) 
+        self.upperFrame=GUI.widgets.uptoolbox.UpperToolbox(self, os.path.join(self.basedir, "etc/gui/uppertoolbox.xml"), os.path.join(self.basedir, "resources/icons22x22")) 
         self.upperFrame.pack(side="top", anchor="nw")        
         
         self.middleFrame=Tkinter.Frame(self)

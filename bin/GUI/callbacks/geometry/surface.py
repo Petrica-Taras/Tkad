@@ -14,13 +14,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-def fullModels():
-    print "Full Models: Not implemented yet!"
-def geometries():
-    print "Geometries: Not implemented yet!"
-def shapes():
-    print "Shapes: Not implemented yet!"
-def materials():
-    print "Materials: Not implemented yet!"
-def circuits():
-    print "Circuits: Not implemented yet!"        
+from ...widgets import csys, point
+from ...cad import fkernel, ikernel
+
+def detect(app):
+    print "Detect Faces: Not implemented yet!"
+
+def delete(app): 
+    print "Delete Face: Not implemented yet!"
+
+def lists(app):
+    print "List Faces: Not implemented yet!"

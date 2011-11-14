@@ -14,4 +14,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-__all__ = ["project", "geometry", "settings", "help"]
+__all__ = ["csys", "point", "line", "surface"]
+
+import csys, point, line, surface
+
+def hierarchy(app):
+    pass

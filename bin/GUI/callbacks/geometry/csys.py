@@ -14,4 +14,18 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-__all__ = ["project", "geometry", "settings", "help"]
+from ...widgets import csys, point
+from ...cad import fkernel, ikernel
+
+def new(app):
+    x=csys.csys(app)
+    data=x()
+
+def edit(app):
+    print "Edit Coordinate System: Not implemented yet!"
+   
+def delete(app):
+    print "Delete Coordinate System: Not implemented yet!"
+
+def lists(app):        
+    print "Lists Coordinate Systems: Not implemented yet!"
