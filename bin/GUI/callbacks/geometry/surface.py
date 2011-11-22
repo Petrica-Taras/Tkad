@@ -15,7 +15,7 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 from ...widgets import csys, point
-from ...cad import fkernel, ikernel
+from ...cad import fkernel
 
 def detect(app):
     print "Detect Faces: Not implemented yet!"

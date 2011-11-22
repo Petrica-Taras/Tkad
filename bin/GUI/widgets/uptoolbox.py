@@ -23,6 +23,8 @@ class UpperToolbox(Tkinter.Frame):
     def __init__(self, master, xmlfile, iconspath):
         Tkinter.Frame.__init__(self, master=master)
         
+        self["relief"]=Tkinter.RAISED
+        self["borderwidth"]=1
         self.master=master
         
         self.xmlfile=xmlfile

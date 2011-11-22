@@ -13,9 +13,10 @@ In order to advance to version 0.0.0b of the software the following must be done
     - support default disableed items (or this option to be read from somewhere else)
     - add appropriate try ... except blocks
 
-2) Modify the callbacks from GUI.callbacks.geometry (newCSys & newPoint) to
-   draw those entities on the DrawingArea - this is some work to be done and extra
-   details must be added.
+2) Modify the callbacks from GUI.callbacks.geometry (for now .csys and .point) to
+   draw those entities on the DrawingArea:
+   - start with the csys callback (maybe solve (3) here also)
+   - add the other fields to the windows
 
 3) Modify the appropriate callbacks and xml definition in order to include csys
    definition in the xml files. Appropriate callback - newProject (writes the 

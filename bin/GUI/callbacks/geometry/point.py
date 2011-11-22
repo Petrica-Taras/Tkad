@@ -15,7 +15,7 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 from ...widgets import csys, point
-from ...cad import fkernel, ikernel
+from ...cad import fkernel
 
 def new(app):
     x=point.point(app)
@@ -23,8 +23,10 @@ def new(app):
     # register newly created point to DrawingArea
     # at least label, float and int information so far:
     floatRepr=fkernel.point(label=data[0].get(), csys=data[3].get(), coords=[float(data[1].get()), float(data[2].get())])
-    intRepr=ikernel.float2ints(self.floatRepr.coords, app.DrawingArea)
-    app.DrawingArea.points[floatRepr.label]={"floatRepr":floatRepr, "intRepr":intRepr}	# to add color/shape representation later
+    # intRepr=ikernel.float2ints(self.floatRepr.coords, app.DrawingArea)
+    
+    # app.DrawingArea.points[floatRepr.label]={"floatRepr":floatRepr, "intRepr":intRepr}	# to add color/shape representation later
+    # to modify the commented line
 
 def edit(app):
     print "Edit Point: Not implemented yet!"
