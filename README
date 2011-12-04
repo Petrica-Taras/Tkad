@@ -1,26 +1,28 @@
 Tkad 
 
-Please note that for now the software is a mess and - it hasn't the slightest functionality added. 
+Content
+----------
+
+* State of development
+* Overview
+* Dependencies
+
+State of development
+=======================
+
+Please note that for now the software is a mess and - it hasn't the slightest functionality added. Right now, all it can do is to draw a canvas and the reference coordinate system centered in the canvas which is useless. Most of the menu items are in place (although callbacks are implemented only for some of them). The menu is configurable through a XML file, meaning that I can add some menus & menu items later very easy.
 
 Overview
 =======================
 
 This project is intended to be a 2D physical framework used to prototype ideas.
-More exact - it will contain meanings for drawing your computation domain, physical scenarios, symbolic calculations, solvers and to provide you with the appropriate tools to postprocess your results. For instance the first thing I want to do is to do some particle collision test.
-Note that some of the parts (solvers, mesh generators) I don't intend to write myself but to borrow from somewhere else if they are under the proper copyright licence.
 
 Dependencies
 =======================
 
 Python 2.7 - Tkad is a bunch of Python scripts running on top of Python 2.7. Tkad doesn't need compilation nor installation and will not run without preinstalled Python (2.7)
 
-Tkinter - this, as far as I know is delivered with Python for major OSes. Tkinter is not the proper tool for this job since it is lacking some common widgets suport (especially for Python 2.7) and I believe a 3D feature of the software won't be possible because of Tkinter. Nevertheless if the software reaches an advanced stage of development I am willing to either port the GUI part to pyGTK or something like that or to fully port the entire software in C using GTK 3 as a graphical toolkit.
+Tkinter + Tix - these, as far as I know is delivered with Python for major OSes. 
 
-NetworkX - this isn't included for now in the software but it will be used due to its graph algorithm and data structures
+NetworkX - this isn't included for now in the software but it will be added later when the surface support is added
 
-Various dependencies - to add as the development progres ...
-
-Software Structure
-=======================
-
-I intend to fully detail the software structure in the folder "management" using a chart (you'll have to have a software like freemind to be able to us it).  

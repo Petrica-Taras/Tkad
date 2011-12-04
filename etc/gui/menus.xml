@@ -11,19 +11,19 @@
         <MenuItem name="Close Project"       callback="project.closeProject" accelerator="Ctrl + X" icon="document-close.png"/>
     </Menu>
     <Menu name="Geometry">
-        <MenuSubDir name="Coordinate System" accelerator="" icon="generic.png">
-            <MenuItem name="New Coordinate System"    callback="geometry.csys.new" accelerator="" icon="generic.png"/>
-            <MenuItem name="Edit Coordinate System"   callback="geometry.csys.edit" accelerator="" icon="generic.png"/>    
-            <MenuItem name="Delete Coordinate System" callback="geometry.csys.delete" accelerator="" icon="generic.png"/> 
+        <MenuSubDir name="Coordinate System" accelerator="" icon="csys.png">
+            <MenuItem name="New Coordinate System"    callback="geometry.csys.new" accelerator="" icon="csys-new.png"/>
+            <MenuItem name="Edit Coordinate System"   callback="geometry.csys.edit" accelerator="" icon="csys-edit.png"/>    
+            <MenuItem name="Delete Coordinate System" callback="geometry.csys.delete" accelerator="" icon="csys-delete.png"/> 
             <MenuItem name="Separator"/>
-            <MenuItem name="List Coordinate Systems"  callback="geometry.csys.lists" accelerator="" icon="invisible.png"/> 
+            <MenuItem name="List Coordinate Systems"  callback="geometry.csys.lists" accelerator="" icon="csys-list.png"/> 
         </MenuSubDir>
-        <MenuSubDir name="Point" accelerator="" icon="generic.png">
-             <MenuItem name="New Point"    callback="geometry.point.new" accelerator="" icon="generic.png"/>
-             <MenuItem name="Edit Point"   callback="geometry.point.edit" accelerator="" icon="generic.png"/>
-             <MenuItem name="Delete Point" callback="geometry.point.delete" accelerator="" icon="generic.png"/>
+        <MenuSubDir name="Point" accelerator="" icon="point.png">
+             <MenuItem name="New Point"    callback="geometry.point.new" accelerator="" icon="point-new.png"/>
+             <MenuItem name="Edit Point"   callback="geometry.point.edit" accelerator="" icon="point-edit.png"/>
+             <MenuItem name="Delete Point" callback="geometry.point.delete" accelerator="" icon="point-delete.png"/>
              <MenuItem name="Separator"/>
-             <MenuItem name="List Points"  callback="geometry.point.lists" accelerator="" icon="invisible.png"/>
+             <MenuItem name="List Points"  callback="geometry.point.lists" accelerator="" icon="point-list.png"/>
         </MenuSubDir>   
         <MenuSubDir name="Line" accelerator="" icon="generic.png">          
              <MenuItem name="New Segment" callback="geometry.line.newSegment" accelerator="" icon="generic.png"/>
@@ -40,7 +40,7 @@
              <MenuItem name="List Surfaces" callback="geometry.surface.lists" accelerator="" icon="invisible.png"/>
         </MenuSubDir>
         <MenuItem name="Separator"/>
-        <MenuItem name="List Hierarchy" callback="geometry.hierarchy" accelerator="" icon="invisible.png"/>
+        <MenuItem name="List Hierarchy" callback="geometry.hierarchy" accelerator="" icon="hierarchy.png"/>
     </Menu>
 <!--    <Menu name="Library">
         <MenuItem name="Full Models" callback="fullModels"/>
