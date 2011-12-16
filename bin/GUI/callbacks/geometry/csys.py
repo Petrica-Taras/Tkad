@@ -20,13 +20,25 @@ from ...cad import fkernel
 def new(app):
     x=csys.csys(app)
     data=x() # label, x, y, rotation, type, parent, visible
-
+    
     # now register data within the canvas
-    if not ("" in data):
-        app.DrawingArea.csys[data[0]]={"floatinfo":fkernel.csys(parent=app.DrawingArea.csys[data[5]]["floatinfo"], origin=[float(data[1]), float(data[2])], rotation=float(data[3]), label=data[0], type_=data[4]), "intPosition":app.DrawingArea.float2int([float(data[1]), float(data[2])]), "graphRepr":{}}
+    app.DrawingArea.csys[data[0]]={"floatinfo":fkernel.csys(parent=app.DrawingArea.csys[data[5]]["floatinfo"], origin=[float(data[1]), float(data[2])], rotation=float(data[3]), label=data[0], type_=data[4]), 
+                                   "intPosition":app.DrawingArea.float2int(app.DrawingArea.csys[data[5]]["intPosition"], 
+                                                                            [float(data[1]), float(data[2])], type_=data[4]), 
+                                   "graphRepr":{"visible":int(data[6])}}    
+                                                             
+    app.DrawingArea.csys[data[0]]["graphRepr"]["entities"]=app.DrawingArea.dispCsys(app.DrawingArea.float2int(app.DrawingArea.csys[data[5]]["intPosition"], [float(data[1]), float(data[2])], type_=data[4]), rotation=float(data[3]), visible=data[6])
+        
+    # associate proper tags 
+    app.DrawingArea.csys[data[0]]["graphRepr"]["tags"]=["csys", "translate"]  # add zoom later !!!
+        
+    for i in app.DrawingArea.csys[data[0]]["graphRepr"]["tags"]: 
+        app.DrawingArea.addtag_withtag(i, app.DrawingArea.csys[data[0]]["graphRepr"]["entities"][0])
+        app.DrawingArea.addtag_withtag(i, app.DrawingArea.csys[data[0]]["graphRepr"]["entities"][1])    
 
-    # add code to register if the csys should be visible or not
-    # add code to draw the csys on canvas (if visible field is true)
+    # add code to fix now + polar options
+    # add code somewhere to check if the csys name is already taken
+    # add code to work in milimeters 
     # add code to save the csys on geometry file
 
 def edit(app):

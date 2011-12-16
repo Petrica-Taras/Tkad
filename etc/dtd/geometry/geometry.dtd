@@ -1,8 +1,13 @@
-<!ELEMENT ComputationDomain (Points,Lines,Surfaces,Boundary)>
+<!ELEMENT ComputationDomain (CoorSys, Points,Lines,Surfaces,Boundary)>
 <!ATTLIST ComputationDomain dimension CDATA "2D">
+<!ELEMENT CoorSys (CSys*)>
+<!ELEMENT CSys (#PCDATA)>
+<!ATTLIST CSys id CDATA "global">
+<!ATTLIST CSys type CDATA "cartesian">
 <!ELEMENT Points (Point*)>
 <!ELEMENT Point (#PCDATA)>
 <!ATTLIST Point id CDATA "0">
+<!ATTLIST Point csys CDATA "global">
 <!ELEMENT Lines (Line*)>
 <!ELEMENT Line (#PCDATA)>
 <!ATTLIST Line id CDATA "0">

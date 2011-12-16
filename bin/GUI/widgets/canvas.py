@@ -14,7 +14,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-import Tkinter
+import Tkinter, math
 from xml.dom import minidom
 from ..cad import fkernel
 
@@ -31,7 +31,7 @@ class DrawingArea(Tkinter.Canvas):
         
         self.xmlfile=xmlfile
         self.options=self.__parseXml()    # must be passed to the Canvas somehow	
-        self.psize=self.__pointSz() # compute once/stay the same for the whole session
+        self.psize=self.__pointSz()       # compute once/stay the same for the whole session
 
         self["background"]="black"
         
@@ -82,14 +82,25 @@ class DrawingArea(Tkinter.Canvas):
         for i in self.csys.keys():
             self.csys[i]["intPosition"][0]+=event.x-self.currentDir[0].get()
             self.csys[i]["intPosition"][1]+=event.y-self.currentDir[1].get()
-        # self.
+        # self.points ???
  
         print "Cannot update point representations on canvas" 
      
     def zoom(self, event): # scroll wheel zoom
-        print "Not implemented yet" 		    		    
+        print "Not implemented yet" 		    		
+    
+    def dispCsys(self, intPos, length=6, rotation=0, visible=1):  # length option [%] should be moved to xml canvas settings file
+        """Graphically creates and display a coordinate system"""   
+        
+        if visible == 1:
+            state=Tkinter.NORMAL
+        else:
+            state=Tkinter.HIDDEN
+            
+        return [self.create_line(intPos[0], intPos[1], intPos[0]+int(length*self.psize*math.cos(rotation/180.0*3.14159)), intPos[1]-int(length*self.psize*math.sin(rotation/180.0*3.14159)), arrow=Tkinter.LAST, fill="white", state=state), 
+                self.create_line(intPos[0], intPos[1], intPos[0]-int(length*self.psize*math.sin(rotation/180.0*3.14159)), intPos[1]-int(length*self.psize*math.cos(rotation/180.0*3.14159)), arrow=Tkinter.LAST, fill="white", state=state)] # 0x axis, Oy axis    
 
-    def setGlobalCsys(self, length=6): # length option [%] should be moved to xml canvas settings file
+    def setGlobalCsys(self): # length option [%] should be moved to xml canvas settings file
         """Creates the global coordinate system."""
           
         self.globalCsys["intPosition"]=[self.winfo_width()/2+self.translatedFactor[0].get(), self.winfo_height()/2+self.translatedFactor[1].get()]  
@@ -103,21 +114,27 @@ class DrawingArea(Tkinter.Canvas):
         # graphical stuff
         self.globalCsys["graphRepr"]={}
         self.globalCsys["graphRepr"]["visible"]=1 # to modify this setting in order to be loaded from canvas xml settings file
-        self.globalCsys["graphRepr"]["entities"]=[self.create_line(self.globalCsys["intPosition"][0], self.globalCsys["intPosition"][1], self.globalCsys["intPosition"][0]+length*self.psize, self.globalCsys["intPosition"][1], arrow=Tkinter.LAST, fill="white"), self.create_line(self.globalCsys["intPosition"][0], self.globalCsys["intPosition"][1], self.globalCsys["intPosition"][0], self.globalCsys["intPosition"][1]-length*self.psize, arrow=Tkinter.LAST, fill="white")] # 0x axis, Oy axis
+        self.globalCsys["graphRepr"]["entities"]=self.dispCsys([self.globalCsys["intPosition"][0], self.globalCsys["intPosition"][1]], rotation=0.0)
         
-        self.globalCsys["graphRepr"]["tags"]=["translate"] 
+        self.globalCsys["graphRepr"]["tags"]=["global", "csys", "translate"] 
         
-        if self.globalCsys["graphRepr"]["tags"] != []: 
-            for i in self.globalCsys["graphRepr"]["tags"]: 
-                self.addtag_withtag(i, self.globalCsys["graphRepr"]["entities"][0])
-                self.addtag_withtag(i, self.globalCsys["graphRepr"]["entities"][1])               
+        for i in self.globalCsys["graphRepr"]["tags"]: 
+            self.addtag_withtag(i, self.globalCsys["graphRepr"]["entities"][0])
+            self.addtag_withtag(i, self.globalCsys["graphRepr"]["entities"][1])               
         
         self.csys["global"]=self.globalCsys # the rest of the coordinate systems will always have at least self.csys["global"] as a parent
 
-    def float2int(self, floats):
+    def float2int(self, csys_ints, reals, type_):
         """Transforms float coordinates into canvas coordinates."""
-        return None
-        #return [int(floats[0]*self.scale_f2i[1]/self.scale_f2i[0]), int(floats[1]*self.scale_f2i[1]/self.scale_f2i[0])]	
+        # for now with no respect to the translation & zooming
+        # but it can deal with polar coordinate systems
+        
+        if type_ == "polar": # determine the canvas local (with respect to csys_ints) coordinates in cartesian
+            localv = reals[0]*math.cos(reals[1]/180.0*3.14159), reals[0]*math.sin(reals[1]/180.0*3.14159)
+        else:
+            localv = reals[0], reals[1]  
+        return [csys_ints[0]+int(localv[0]*self.scale_f2i[1]/self.scale_f2i[0]), 
+                csys_ints[1]-int(localv[1]*self.scale_f2i[1]/self.scale_f2i[0])]	
 
     def __updateCurrentPos(self, event):
         """updates the self.CurrentPos attribute with the current cursor position"""

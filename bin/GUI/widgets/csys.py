@@ -60,6 +60,12 @@ Output: \n\n \
             self.title("Add Coordinate System")
 
         self.resizable(height="false", width="false")
+        
+        self.firstCoord=Tkinter.StringVar()
+        self.secondCoord=Tkinter.StringVar()
+        
+        self.firstCoord.set("X origin")
+        self.secondCoord.set("Y origin")
 
         # create widgets here (but don't display them)
 
@@ -75,18 +81,18 @@ Output: \n\n \
         for i in self.master.DrawingArea.csys.keys():
             self.parentCombo.insert(Tix.END, i)        
                 
-        self.origXLabel=Tkinter.Label(self, text="X origin", anchor=Tkinter.W)  
+        self.origXLabel=Tkinter.Label(self, textvariable=self.firstCoord, anchor=Tkinter.W)  
         self.origXEntry=Tkinter.Entry(self, textvariable=self.originX)     
         
         self.typeLabel=Tkinter.Label(self, text="Coordinate System Type ", anchor=Tkinter.W)    
-        self.typeCombo=Tix.ComboBox(self, label=None, dropdown=1, editable=0, height=3, variable=self.typec)  
+        self.typeCombo=Tix.ComboBox(self, label=None, dropdown=1, editable=0, command=self.__setPolar, height=3, variable=self.typec)  
 
         self.typeCombo.set_silent('cartesian')
         
         self.typeCombo.insert(Tix.END, 'cartesian')
         self.typeCombo.insert(Tix.END, 'polar')        
         
-        self.origYLabel=Tkinter.Label(self, text="Y origin", anchor=Tkinter.W)            
+        self.origYLabel=Tkinter.Label(self, textvariable=self.secondCoord, anchor=Tkinter.W)            
         self.origYEntry=Tkinter.Entry(self, textvariable=self.originY)    
 
         self.rotLabel=Tkinter.Label(self, text="Rotation", anchor=Tkinter.W) 
@@ -98,7 +104,7 @@ Output: \n\n \
         self.okButton=Tkinter.Button(self, text="Ok", command=self.__cbOk, width=6)
         self.cancelButton=Tkinter.Button(self, text="Cancel", command=self.__cbCancel, width=6)                                            
         
-        self.showWidgets()
+        self.showWidgets() 
 
     def showWidgets(self):     
          
@@ -191,4 +197,17 @@ Output: \n\n \
         self.clabel.set("")
         self.typec.set("")		    		    
         self.quit()
-        self.destroy()        
+        self.destroy()      
+        
+    def __setPolar(self, event=0):
+        if self.typec.get()=="polar":
+            self.firstCoord.set("Polar axis")    
+            self.secondCoord.set("Polar angle")
+            self.typeCombo.set_silent('polar')                
+        
+        if self.typec.get()=="cartesian":
+            self.firstCoord.set("X origin")    
+            self.secondCoord.set("Y origin")
+            self.typeCombo.set_silent('cartesian') 
+            
+        self.update_idletasks()                          

@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE ComputationDomain SYSTEM "/home/pts/cns/projects/me/python/urbanmod/experimental/etc/dtd/geometry/geometry.dtd">
+<!DOCTYPE ComputationDomain SYSTEM "../../etc/dtd/geometry/geometry.dtd">
 <ComputationDomain dimension="2D">
+    <CoorSys>
+         <CSys id="global" type="cartesian">0.0 0.0</CSys>
+    </CoorSys>
 	<Points>
 		 <!-- id instead of label?-->
-	     <Point id="1">0.0 0.5</Point>
-         <Point id="2">0.5 0.0</Point>
-         <Point id="3">0.5 0.5</Point>
-         <Point id="4">0.0 0.0</Point>
-         <Point id="5">1.0 0.5</Point>
-         <Point id="6">1.5 0.5</Point>
-         <Point id="7">1.5 0.0</Point>
-         <Point id="8">1.0 1.0</Point>
-         <Point id="9">1.5 1.0</Point>
-         <Point id="10">0.0 1.0</Point>
-         <Point id="11">0.5 1.0</Point>
-         <Point id="12">0.0 2.0</Point>
-         <Point id="13">0.5 2.0</Point>
-         <Point id="14">0.5 1.5</Point>
-         <Point id="15">1.0 1.5</Point>
-         <Point id="16">1.0 2.0</Point>
+	     <Point id="1" csys="global">0.0 0.5</Point>
+         <Point id="2" csys="global">0.5 0.0</Point>
+         <Point id="3" csys="global">0.5 0.5</Point>
+         <Point id="4" csys="global">0.0 0.0</Point>
+         <Point id="5" csys="global">1.0 0.5</Point>
+         <Point id="6" csys="global">1.5 0.5</Point>
+         <Point id="7" csys="global">1.5 0.0</Point>
+         <Point id="8" csys="global">1.0 1.0</Point>
+         <Point id="9" csys="global">1.5 1.0</Point>
+         <Point id="10" csys="global">0.0 1.0</Point>
+         <Point id="11" csys="global">0.5 1.0</Point>
+         <Point id="12" csys="global">0.0 2.0</Point>
+         <Point id="13" csys="global">0.5 2.0</Point>
+         <Point id="14" csys="global">0.5 1.5</Point>
+         <Point id="15" csys="global">1.0 1.5</Point>
+         <Point id="16" csys="global">1.0 2.0</Point>
 	</Points>
 	<Lines>
 	     <Line id="1" type="segment">2 4</Line>
