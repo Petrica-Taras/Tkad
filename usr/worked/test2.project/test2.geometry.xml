@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComputationDomain dimension="2D">
+   <CoorSys>
+      <Csys id="global" parent="none" type="cartesian">
+         0.0 0.0 0.0
+      </Csys>
+   </CoorSys>
+   <Points>
+      
+   </Points>
+   <Lines>
+      
+   </Lines>
+   <Surfaces>
+      
+   </Surfaces>
+</ComputationDomain>

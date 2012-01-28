@@ -34,14 +34,15 @@ class DrawingArea(Tkinter.Canvas):
         self.psize=self.__pointSz()       # compute once/stay the same for the whole session
 
         self["background"]="black"
+        self.defaultFg="white"
         
         self.scale_f2i=[0.001, 10]    # 1 mm at 10 pixels - should be moved to xml configuration file
         self.translatedFactor = [Tkinter.IntVar(), Tkinter.IntVar()]  # only for integer representation of pixels; [h, w] 
-        self.zoomedFactor = Tkinter.IntVar()                          # only for integer representation of pixels
+        self.zoomedFactor = 1                          # only for integer representation of pixels
         
         self.translatedFactor[0].set(0)
         self.translatedFactor[1].set(0)
-        self.zoomedFactor.set(1)
+
         self.currentPos=[Tkinter.IntVar(), Tkinter.IntVar()]
         self.currentDir=[Tkinter.IntVar(), Tkinter.IntVar()]
 
@@ -63,11 +64,12 @@ class DrawingArea(Tkinter.Canvas):
         self.master.bind("<Button-4>", self.zoom, add="+")   # zoom Linux
         self.master.bind("<Button-5>", self.zoom, add="+")   # zoom Linux                  
 
-    def __pointSz(self, size=1.0):
+    def __pointSz(self, size=0.5):
         """Computes the size as being size % of the root window max(width, height)."""
         a = max(int(size/100.0*float(self.master.winfo_screenwidth())), int(size/100.0*float(self.master.winfo_screenheight()))) # always rounding towards zero
         if not a%2: a=a/2
         else: a=(a+1)/2
+
         return a
     
     def __parseXml(self):
@@ -87,9 +89,56 @@ class DrawingArea(Tkinter.Canvas):
         print "Cannot update point representations on canvas" 
      
     def zoom(self, event): # scroll wheel zoom
-        print "Not implemented yet" 		    		
+        if event.num == 4: # scrolled up
+            self.zoomedFactor*=1.1
+            lfactor = 0.1
+        if event.num == 5: # scrolled down
+            self.zoomedFactor/=1.1
+            lfactor = -0.1 
+        
+        # MSWindows
+        if event.delta == 120: # scrolled up
+            self.zoomedFactor+=0.1
+            print "windows - up"
+        if event.delta == -120: # scrolled down
+            self.zoomedFactor-=0.1 
+            print "windows - down"   
+
+        # zoom csys
+
+        for i in self.csys.keys():
+            # old
+            dx = self.csys[i]["intPosition"][0]-self.currentPos[0].get()
+            dy = self.csys[i]["intPosition"][1]-self.currentPos[1].get()
+                                                   
+            # new      
+               
+            self.move(i, int(round(self.zoomedFactor*lfactor*dx)), int(round(self.zoomedFactor*lfactor*dy)))   
+            newVal=self.coords(i) 
+            #print ("For %s csys we have: "%i) + newVal.__str__()
+            self.csys[i]["intPosition"][0]=int(round(newVal[0]))
+            self.csys[i]["intPosition"][1]=int(round(newVal[1]))
+        print self.scale_f2i[1]            
+        self.scale_f2i[1]=int(round((self.zoomedFactor*lfactor+1)*self.scale_f2i[1]))
+
+        #print "position of global csys is now: %d, %d" % (self.csys["global"]["intPosition"][0], self.csys["global"]["intPosition"][1])
+        
+        # zoom points
+        #for i in self.points.keys():
+        #    # old
+        #    dx = self.points[i]["intPosition"][0]-self.currentPos[0].get()
+        #    dy = self.points[i]["intPosition"][1]-self.currentPos[1].get()
+        #                                           
+        #    # new      
+        #       
+        #    self.move(i, int(round(self.zoomedFactor*lfactor*dx)), int(round(self.zoomedFactor*lfactor*dy)))   
+        #    newVal=self.coords(i) 
+        #    self.points[i]["intPosition"][0]=int(round(newVal[0]))
+        #    self.points[i]["intPosition"][1]=int(round(newVal[1]))
+        
+        # zoom lines		    		
     
-    def dispCsys(self, intPos, length=6, rotation=0, visible=1):  # length option [%] should be moved to xml canvas settings file
+    def dispCsys(self, intPos, length=12, rotation=0, visible=1):  # length option [%] should be moved to xml canvas settings file
         """Graphically creates and display a coordinate system"""   
         
         if visible == 1:
@@ -97,8 +146,40 @@ class DrawingArea(Tkinter.Canvas):
         else:
             state=Tkinter.HIDDEN
             
-        return [self.create_line(intPos[0], intPos[1], intPos[0]+int(length*self.psize*math.cos(rotation/180.0*3.14159)), intPos[1]-int(length*self.psize*math.sin(rotation/180.0*3.14159)), arrow=Tkinter.LAST, fill="white", state=state), 
-                self.create_line(intPos[0], intPos[1], intPos[0]-int(length*self.psize*math.sin(rotation/180.0*3.14159)), intPos[1]-int(length*self.psize*math.cos(rotation/180.0*3.14159)), arrow=Tkinter.LAST, fill="white", state=state)] # 0x axis, Oy axis    
+        return [self.create_line(intPos[0], intPos[1], intPos[0]+int(length*self.psize*math.cos(rotation/180.0*3.14159)), intPos[1]-int(length*self.psize*math.sin(rotation/180.0*3.14159)), arrow=Tkinter.LAST, fill=self.defaultFg, state=state), 
+                self.create_line(intPos[0], intPos[1], intPos[0]-int(length*self.psize*math.sin(rotation/180.0*3.14159)), intPos[1]-int(length*self.psize*math.cos(rotation/180.0*3.14159)), arrow=Tkinter.LAST, fill=self.defaultFg, state=state)] # 0x axis, Oy axis    
+
+    def dispPoint(self, intPos, representation, color, visible=1, filled=0):
+        """Graphically creates and display on canvas a point entity"""
+
+        if visible == 1:
+            state=Tkinter.NORMAL
+        else:
+            state=Tkinter.HIDDEN
+
+        if color == "default":
+            color=self.defaultFg
+        
+        if filled ==1:
+            fill=color
+        else:
+            fill=self["background"]
+
+        if representation == "square": # to add possibility for active fill
+            idPoint=self.create_rectangle(intPos[0]-self.psize, intPos[1]-self.psize, 
+                                          intPos[0]+self.psize, intPos[1]+self.psize, 
+                                          outline=color, fill=fill, state=state) 
+        if representation == "circle":    
+            idPoint=self.create_oval(intPos[0]-self.psize, intPos[1]-self.psize, 
+                                     intPos[0]+self.psize, intPos[1]+self.psize, 
+                                     outline=color, fill=fill, state=state) 
+        if representation == "triangle":
+            idPoint=self.create_polygon(intPos[0], intPos[1]-int(2*self.psize*1.73/3.0), 
+                                        intPos[0]-self.psize, intPos[1]+int(2*self.psize*1.73/6.0), 
+                                        intPos[0]+self.psize, intPos[1]+int(2*self.psize*1.73/6.0), 
+                                        outline=color, fill=fill, state=state)   
+        
+        return idPoint           
 
     def setGlobalCsys(self): # length option [%] should be moved to xml canvas settings file
         """Creates the global coordinate system."""
@@ -123,6 +204,15 @@ class DrawingArea(Tkinter.Canvas):
             self.addtag_withtag(i, self.globalCsys["graphRepr"]["entities"][1])               
         
         self.csys["global"]=self.globalCsys # the rest of the coordinate systems will always have at least self.csys["global"] as a parent
+        
+        # register the global coordinate system into the XML tree
+        # like so <CSys id="global" parent="none" type="cartesian">0.0 0.0 0.0</CSys>
+        g_csys=self.master.xmlprojfiles["geometry"][0].createElement("Csys")
+        g_csys.setAttribute('id', 'global')
+        g_csys.setAttribute('parent', 'none')
+        g_csys.setAttribute('type', 'cartesian')
+        g_csys.appendChild(self.master.xmlprojfiles["geometry"][0].createTextNode("0.0 0.0 0.0"))
+        self.master.xmlprojfiles["geometry"][2][0].appendChild(g_csys)
 
     def float2int(self, csys_ints, reals, type_):
         """Transforms float coordinates into canvas coordinates."""

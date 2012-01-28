@@ -2,7 +2,7 @@
 <!DOCTYPE ComputationDomain SYSTEM "../../etc/dtd/geometry/geometry.dtd">
 <ComputationDomain dimension="2D">
     <CoorSys>
-         <CSys id="global" type="cartesian">0.0 0.0</CSys>
+         <CSys id="global" parent="none" type="cartesian">0.0 0.0 0.0</CSys>
     </CoorSys>
 	<Points>
 		 <!-- id instead of label?-->

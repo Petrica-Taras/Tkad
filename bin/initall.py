@@ -85,7 +85,7 @@ class Application(Tix.Tk):
         self.update_idletasks()
         self.DrawingArea.setGlobalCsys()
 
-        self.DrawingArea.bind("<Motion>", self.__cb_lowerlabel) 
+        self.DrawingArea.bind("<Motion>", self.__cb_lowerlabel, add="+") 
                
     def readXML(self):
         self.xmlPaths=minidom.parse(os.path.join(self.basedir, "etc/paths.xml"))		    
