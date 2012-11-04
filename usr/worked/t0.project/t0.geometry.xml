@@ -4,12 +4,9 @@
       <Csys id="global" parent="none" type="cartesian">
          0.0 0.0 0.0
       </Csys>
-      <Csys id="xy1" parent="global" type="cartesian">
-         0.035 0.004 -60
-      </Csys>
    </CoorSys>
    <Points>
-      <Point id="1" csys="global">0.0 0.5</Point>
+      
    </Points>
    <Lines>
       

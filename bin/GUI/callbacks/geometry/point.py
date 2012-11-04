@@ -20,21 +20,37 @@ from ...cad import fkernel
 def new(app):
     x=point.point(app)
     data=x() # label, x, y, csys, color [r, g, b], representation, visible, filled
-    
-    # register point and associated data to DrawingArea
-    app.DrawingArea.points[data[0]]={"floatinfo":fkernel.point(parent=None, transformation=None, coords=[float(data[1]), float(data[2])], csys=app.DrawingArea.csys[data[3]]["floatinfo"], label=data[0]),
-                                     "intPosition":app.DrawingArea.float2int(app.DrawingArea.csys[data[3]]["intPosition"], 
-                                                                             [float(data[1]), float(data[2])], type_=app.DrawingArea.csys[data[3]]["floatinfo"].type_),
-                                     "graphRepr":{"visible":int(data[6])}} # data[6] is already an int?
-                                
-    app.DrawingArea.points[data[0]]["graphRepr"]["entities"]=app.DrawingArea.dispPoint(app.DrawingArea.float2int(app.DrawingArea.csys[data[3]]["intPosition"], [float(data[1]), float(data[2])], type_=app.DrawingArea.csys[data[3]]["floatinfo"].type_), data[5], data[4], visible=data[6], filled=int(data[7]))
 
-    # associate proper tags 
-    app.DrawingArea.points[data[0]]["graphRepr"]["tags"]=[data[0], "point", "translate"]
+    # register point and associated data to DrawingArea
+    app.DrawingArea.points[data[0]]={"floatinfo":fkernel.point(parent=None,
+                                                               transformation=None,
+                                                               coords=[float(data[1]), float(data[2])],
+                                                               csys=app.DrawingArea.csys[data[3]]["floatinfo"],
+                                                               label=data[0]),
+                                     "intPosition":app.DrawingArea.float2int(app.DrawingArea.csys[data[3]]["intPosition"],
+                                                                             [float(data[1]), float(data[2])],
+                                                                             type_=app.DrawingArea.csys[data[3]]["floatinfo"].type_),
+                                     "graphRepr":{"visible":int(data[6])}} # data[6] is already an int?
+
+    app.DrawingArea.points[data[0]]["graphRepr"]["entities"]=app.DrawingArea.dispPoint(app.DrawingArea.float2int(app.DrawingArea.csys[data[3]]["intPosition"],
+                                                                                                                 [float(data[1]), float(data[2])],
+                                                                                                                 type_=app.DrawingArea.csys[data[3]]["floatinfo"].type_),
+                                                                                       data[5],
+                                                                                       data[4],
+                                                                                       visible=data[6],
+                                                                                       filled=int(data[7]))
+
+    # associate proper tags
+    app.DrawingArea.points[data[0]]["graphRepr"]["tags"]=[data[0],
+                                                          "point",
+                                                          "translate"]
+
+    for i in app.DrawingArea.points[data[0]]["graphRepr"]["tags"]:
+        app.DrawingArea.addtag_withtag(i, app.DrawingArea.points[data[0]]["graphRepr"]["entities"])
 
     # add code somewhere to check if the point name (label) is already taken
-    # add code to work in milimeters 
-    
+    # add code to work in milimeters
+
     # register the point in the XML tree
     l_point=app.xmlprojfiles["geometry"][0].createElement("Point")
     l_point.setAttribute('id', data[0])
@@ -43,7 +59,7 @@ def new(app):
     l_point.setAttribute('representation', data[5])
     l_point.setAttribute('visible', data[6])
     l_point.setAttribute('filled', data[7])
-    l_point.appendChild(app.xmlprojfiles["geometry"][0].createTextNode("%s %s" % (data[1], data[2])))    
+    l_point.appendChild(app.xmlprojfiles["geometry"][0].createTextNode("%s %s" % (data[1], data[2])))
 
 def edit(app):
     print "Edit Point: Not implemented yet!"

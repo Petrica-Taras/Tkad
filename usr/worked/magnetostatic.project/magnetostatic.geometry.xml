@@ -2,10 +2,10 @@
 <!DOCTYPE ComputationDomain SYSTEM "../../etc/dtd/geometry/geometry.dtd">
 <ComputationDomain dimension="2D">
     <CoorSys>
-         <CSys id="global" parent="none" type="cartesian">0.0 0.0 0.0</CSys>
+         <Csys id="global" parent="none" type="cartesian">0.0 0.0 0.0</Csys>
+         <Csys id="xy1" parent="global" type="cartesian">3.0 1.0 45.0</Csys>
     </CoorSys>
 	<Points>
-		 <!-- id instead of label?-->
 	     <Point id="1" csys="global">0.0 0.5</Point>
          <Point id="2" csys="global">0.5 0.0</Point>
          <Point id="3" csys="global">0.5 0.5</Point>

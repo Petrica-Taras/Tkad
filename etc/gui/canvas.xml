@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <DrawingArea>
-	<!-- Colors -->
-	<UserDefinedColors name="UserColor1">33 22 11</UserDefinedColors>
-	<UserPredefinedColorSchemes name="UserColorScheme1" inuse="no"></UserPredefinedColorSchemes>
+         <!-- Colors -->
+         <UserDefinedColors name="UserColor1">33 22 11</UserDefinedColors>
+         <UserPredefinedColorSchemes name="UserColorScheme1" inuse="no"></UserPredefinedColorSchemes>
     <BGColor type="rgb">0 0 0</BGColor>
     <DefaultFGColor type="name">white</DefaultFGColor>
     <SLColor type="name">orange</SLColor>
-    
+
     <DefaultPointShape>square</DefaultPointShape>
 </DrawingArea>

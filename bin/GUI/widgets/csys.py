@@ -29,19 +29,19 @@ csys - the coordinate system to be edited.\n\n \
 \
 Output: \n\n \
 ..."""
-    def __init__(self, master, csys=None):	
+    def __init__(self, master, csys=None):
         Tix.Toplevel.__init__(self, master)
         self.master=master
-        self.csys=csys	
+        self.csys=csys
         self.clabel=Tkinter.StringVar()
         self.parent=Tkinter.StringVar()
         self.originX=Tkinter.StringVar()
         self.originY=Tkinter.StringVar()
         self.rotation=Tkinter.StringVar()
         self.typec=Tkinter.StringVar()
-        
+
         self.visible=Tkinter.IntVar()
-        
+
         if self.csys != None: # editing a csys entity
             self.originX.set(str(self.csys.origin[0]))
             self.originY.set(str(self.csys.origin[1]))
@@ -60,154 +60,154 @@ Output: \n\n \
             self.title("Add Coordinate System")
 
         self.resizable(height="false", width="false")
-        
+
         self.firstCoord=Tkinter.StringVar()
         self.secondCoord=Tkinter.StringVar()
-        
+
         self.firstCoord.set("X origin")
         self.secondCoord.set("Y origin")
 
         # create widgets here (but don't display them)
 
         self.csysLabel=Tkinter.Label(self, text="Coordinate System Label", anchor=Tkinter.W)
-               
+
         self.csysEntry=Tkinter.Entry(self, textvariable=self.clabel)
 
         self.parentLabel=Tkinter.Label(self, text="Coordinate System Parent")
         self.parentCombo=Tix.ComboBox(self, label=None, dropdown=1, editable=0, height=4, variable=self.parent)
-        
+
         self.parentCombo.set_silent('global')
-        
+
         for i in self.master.DrawingArea.csys.keys():
-            self.parentCombo.insert(Tix.END, i)        
-                
-        self.origXLabel=Tkinter.Label(self, textvariable=self.firstCoord, anchor=Tkinter.W)  
-        self.origXEntry=Tkinter.Entry(self, textvariable=self.originX)     
-        
-        self.typeLabel=Tkinter.Label(self, text="Coordinate System Type ", anchor=Tkinter.W)    
-        self.typeCombo=Tix.ComboBox(self, label=None, dropdown=1, editable=0, command=self.__setPolar, height=3, variable=self.typec)  
+            self.parentCombo.insert(Tix.END, i)
+
+        self.origXLabel=Tkinter.Label(self, textvariable=self.firstCoord, anchor=Tkinter.W)
+        self.origXEntry=Tkinter.Entry(self, textvariable=self.originX)
+
+        self.typeLabel=Tkinter.Label(self, text="Coordinate System Type ", anchor=Tkinter.W)
+        self.typeCombo=Tix.ComboBox(self, label=None, dropdown=1, editable=0, command=self.__setPolar, height=3, variable=self.typec)
 
         self.typeCombo.set_silent('cartesian')
-        
-        self.typeCombo.insert(Tix.END, 'cartesian')
-        self.typeCombo.insert(Tix.END, 'polar')        
-        
-        self.origYLabel=Tkinter.Label(self, textvariable=self.secondCoord, anchor=Tkinter.W)            
-        self.origYEntry=Tkinter.Entry(self, textvariable=self.originY)    
 
-        self.rotLabel=Tkinter.Label(self, text="Rotation", anchor=Tkinter.W) 
-        self.rotEntry=Tkinter.Entry(self, textvariable=self.rotation)          
-        
+        self.typeCombo.insert(Tix.END, 'cartesian')
+        self.typeCombo.insert(Tix.END, 'polar')
+
+        self.origYLabel=Tkinter.Label(self, textvariable=self.secondCoord, anchor=Tkinter.W)
+        self.origYEntry=Tkinter.Entry(self, textvariable=self.originY)
+
+        self.rotLabel=Tkinter.Label(self, text="Rotation", anchor=Tkinter.W)
+        self.rotEntry=Tkinter.Entry(self, textvariable=self.rotation)
+
         self.ckButton=Tkinter.Checkbutton(self, anchor=Tkinter.W, indicatoron=1, offvalue=0, onvalue=1, text="Visible", variable=self.visible)
         self.ckButton.select()
-        
-        self.okButton=Tkinter.Button(self, text="Ok", command=self.__cbOk, width=6)
-        self.cancelButton=Tkinter.Button(self, text="Cancel", command=self.__cbCancel, width=6)                                            
-        
-        self.showWidgets() 
 
-    def showWidgets(self):     
-         
-        # upper row		
+        self.okButton=Tkinter.Button(self, text="Ok", command=self.__cbOk, width=6)
+        self.cancelButton=Tkinter.Button(self, text="Cancel", command=self.__cbCancel, width=6)
+
+        self.showWidgets()
+
+    def showWidgets(self):
+
+        # upper row
 
         self.csysLabel.grid(row=0, column=0, padx=(10, 5), pady=(12, 0), sticky=Tkinter.W+Tkinter.E)
         self.csysEntry.grid(row=0, column=1, columnspan=2, pady=(12, 0), padx=(0, 5))
-        
+
         self.parentLabel.grid(row=0, column=3, pady=(12, 0), sticky=Tkinter.W)
         self.parentCombo.grid(row=0, column=4, padx=(0, 10), pady=(12, 0), columnspan=2)
-        
-        # next row         
 
-        self.origXLabel.grid(row=1, column=0, sticky=Tkinter.W+Tkinter.E, padx=(10, 0))  
+        # next row
+
+        self.origXLabel.grid(row=1, column=0, sticky=Tkinter.W+Tkinter.E, padx=(10, 0))
         self.origXEntry.grid(row=1, column=1, columnspan=2, padx=(0, 5))
-        
-        self.typeLabel.grid(row=1, column=3, sticky=Tkinter.W)
-        self.typeCombo.grid(row=1, column=4, columnspan=2, padx=(0, 10))  
 
-        # next row 
-         
-        self.origYLabel.grid(row=2, column=0, sticky=Tkinter.W+Tkinter.E, padx=(10, 0))  
-        self.origYEntry.grid(row=2, column=1, columnspan=2, padx=(0, 5)) 
-        
+        self.typeLabel.grid(row=1, column=3, sticky=Tkinter.W)
+        self.typeCombo.grid(row=1, column=4, columnspan=2, padx=(0, 10))
+
+        # next row
+
+        self.origYLabel.grid(row=2, column=0, sticky=Tkinter.W+Tkinter.E, padx=(10, 0))
+        self.origYEntry.grid(row=2, column=1, columnspan=2, padx=(0, 5))
+
         self.rotLabel.grid(row=2, column=3, sticky=Tkinter.W+Tkinter.E)
         self.rotEntry.grid(row=2, column=4, padx=(5, 10), sticky=Tkinter.W+Tkinter.E, columnspan=2)
-        
+
         # next row
-        
+
         self.ckButton.grid(row=3, column=0, sticky=Tkinter.W, padx=(10, 0))
-  
+
         self.okButton.grid(row=3, column=4, sticky=Tkinter.E, padx=(0, 5), pady=(10, 12))
-        self.cancelButton.grid(row=3, column=5, sticky=Tkinter.W, pady=(10, 12), padx=(5, 10))     
-        self.mainloop() 
-        
-    def __call__(self):        
-        return [self.clabel.get(), self.originX.get(), self.originY.get(), self.rotation.get(), self.typec.get(), self.parent.get(), self.visible.get()]    
+        self.cancelButton.grid(row=3, column=5, sticky=Tkinter.W, pady=(10, 12), padx=(5, 10))
+        self.mainloop()
+
+    def __call__(self):
+        return [self.clabel.get(), self.originX.get(), self.originY.get(), self.rotation.get(), self.typec.get(), self.parent.get(), self.visible.get()]
 
     def __cbOk(self):
-        if self.clabel.get() == "" or self.originX.get() == "" or self.originY.get() == "" or self.rotation.get() == "":         
+        if self.clabel.get() == "" or self.originX.get() == "" or self.originY.get() == "" or self.rotation.get() == "":
             if self.clabel.get() == "":
                 self.csysEntry["bg"]="red"
             else:
-                self.csysEntry["bg"]="white"    
+                self.csysEntry["bg"]="white"
             if self.originX.get() == "":
                 self.origXEntry["bg"]="red"
             else:
-                self.origXEntry["bg"]="white"    
+                self.origXEntry["bg"]="white"
             if self.originY.get() == "":
-                self.origYEntry["bg"]="red" 
+                self.origYEntry["bg"]="red"
             else:
-                self.origYEntry["bg"]="white"                    
-            if self.rotation.get() == "":   
+                self.origYEntry["bg"]="white"
+            if self.rotation.get() == "":
                 self.rotEntry["bg"]="red"
             else:
-                self.rotEntry["bg"]="white"    
+                self.rotEntry["bg"]="white"
         else:
             tester=0 # dummy var - 0 means Ok, 1 means it is not ok
             try: # test x coordinate
                 x=float(self.originX.get())
-            except ValueError: 
+            except ValueError:
                 self.origXEntry["bg"]="red"
                 tester=1
-            else:    
-                self.origXEntry["bg"]="white"  
-                                 
+            else:
+                self.origXEntry["bg"]="white"
+
             try: # test y coordinate
                 y=float(self.originY.get())
-            except ValueError: 
+            except ValueError:
                 tester=1
-                self.origYEntry["bg"]="red"  
-            else:    
-                self.origYEntry["bg"]="white" 
-                                
+                self.origYEntry["bg"]="red"
+            else:
+                self.origYEntry["bg"]="white"
+
             try: # test rotation parameter
                 r=float(self.rotation.get())
-            except ValueError: 
-                self.rotEntry["bg"]="red"   
-                tester=1                            
+            except ValueError:
+                self.rotEntry["bg"]="red"
+                tester=1
             else:
-                self.rotEntry["bg"]="white" 
-                
-            if tester == 0:    
+                self.rotEntry["bg"]="white"
+
+            if tester == 0:
                 self.quit()
                 self.destroy()
-        
+
     def __cbCancel(self):
         self.originX.set("")
         self.originY.set("")
         self.clabel.set("")
-        self.typec.set("")		    		    
+        self.typec.set("")
         self.quit()
-        self.destroy()      
-        
+        self.destroy()
+
     def __setPolar(self, event=0):
         if self.typec.get()=="polar":
-            self.firstCoord.set("Polar axis")    
+            self.firstCoord.set("Polar axis")
             self.secondCoord.set("Polar angle")
-            self.typeCombo.set_silent('polar')                
-        
+            self.typeCombo.set_silent('polar')
+
         if self.typec.get()=="cartesian":
-            self.firstCoord.set("X origin")    
+            self.firstCoord.set("X origin")
             self.secondCoord.set("Y origin")
-            self.typeCombo.set_silent('cartesian') 
-            
-        self.update_idletasks()                          
+            self.typeCombo.set_silent('cartesian')
+
+        self.update_idletasks()

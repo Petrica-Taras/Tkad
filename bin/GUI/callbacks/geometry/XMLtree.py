@@ -14,9 +14,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-__all__ = ["csys", "point", "line", "surface", "XMLtree"]
-
-import csys, point, line, surface, XMLtree
-
-def hierarchy(app):
-    pass
+class XMLtree():
+    """Move all XML operations here. """
+    def __init__(self):
+        pass

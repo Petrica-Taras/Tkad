@@ -1,4 +1,4 @@
-# Copyright (C) 2011 Petrica Taras
+# Copyright (C) 2011 - 2012 Petrica Taras
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@ from ..callbacks import project
 from xml.dom import minidom
 from PIL import Image, ImageTk
 
-class UpperToolbox(Tkinter.Frame):
+class LeftToolbox(Tkinter.Frame):
     def __init__(self, master, xmlfile, iconspath):
         Tkinter.Frame.__init__(self, master=master)
 
@@ -36,17 +36,19 @@ class UpperToolbox(Tkinter.Frame):
         self.ToolboxWidgets=[]
         self.createToolboxTree()
         self.createToolbox()
-        self.pack(side="top", anchor="nw", fill=Tkinter.X)
 
     def createToolboxTree(self):
         xmltoolbox=minidom.parse(self.xmlfile)
         xmltoolboxRoot=xmltoolbox.firstChild
         for i in xmltoolboxRoot.childNodes:
             if (i.nodeName != "#text") and (i.nodeName !='#comment'):
-                self.ToolboxTree.append((i.attributes["icon"].value, i.attributes["callback"].value))
+                self.ToolboxTree.append((i.attributes["icon"].value,
+                                         i.attributes["callback"].value))
 
     def createToolbox(self):
         for i in self.ToolboxTree:
-            self.img.append(ImageTk.PhotoImage(Image.open(os.path.join(self.iconspath, i[0]))))		
-            self.ToolboxWidgets.append(Tkinter.Button(self, command=functools.partial(eval(i[1]), self.master), image=self.img[-1]))	
-            self.ToolboxWidgets[-1].pack(side="left")				    		
+            self.img.append(ImageTk.PhotoImage(Image.open(os.path.join(self.iconspath, i[0]))))
+            self.ToolboxWidgets.append(Tkinter.Button(self,
+                                                      command=functools.partial(eval(i[1]), self.master),
+                                                      image=self.img[-1]))
+            self.ToolboxWidgets[-1].pack(side="left")	

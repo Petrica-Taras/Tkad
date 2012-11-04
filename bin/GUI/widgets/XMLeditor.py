@@ -1,4 +1,4 @@
-# Copyright (C) 2011 Petrica Taras
+# Copyright (C) 2011 - 2012 Petrica Taras
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,9 +14,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-__all__ = ["csys", "point", "line", "surface", "XMLtree"]
+import Tkinter
+from xml.dom import minidom
 
-import csys, point, line, surface, XMLtree
-
-def hierarchy(app):
-    pass
+class XMLeditor(Tkinter.Text):
+    """Widget for XML editor. Basically, nothing more than an enhanced Tkinter.Text 
+    widget with suport for syntax highlighting, right click pop menu, find/replace, etc."""
+    def __init__(self, master, xmlfile):
+        Tkinter.Text.__init__(self, master)
+        self.master = master
+        #self.editor = Tkinter.Text(self, wrap=Tkinter.NONE, undo = True)
