@@ -62,10 +62,10 @@ def new(app):
     l_point.appendChild(app.xmlprojfiles["geometry"][0].createTextNode("%s %s" % (data[1], data[2])))
 
 def edit(app):
-    print("Edit Point: Not implemented yet!")
+    print "Edit Point: Not implemented yet!"
 
 def delete(app):
-    print("Delete Point: Not implemented yet!")
+    print "Delete Point: Not implemented yet!"
 
 def lists(app):
-    print("List Points: Not implemented yet!")
+    print "List Points: Not implemented yet!"

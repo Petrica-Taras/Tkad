@@ -16,7 +16,7 @@
 
 __all__ = ["csys", "point", "line", "surface", "XMLtree"]
 
-import csys, point, line, surface, XMLtree
+from . import csys, point, line, surface, XMLtree
 
 def hierarchy(app):
     pass

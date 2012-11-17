@@ -22,7 +22,6 @@ import tkinter.tix
 
 import GUI.common.settings
 import GUI.common.model
-import GUI.common.state
 
 import GUI.widgets.menu
 import GUI.widgets.uptoolbox
@@ -48,7 +47,8 @@ class Application(tkinter.tix.Tk):
 
         self.xmlprojfiles={"trunk":    None,
                            "geometry": None,
-                           "mesh":     None} # ???? maybe I should move this 
+                           "mesh":     None} # ???? maybe I should move this to
+                                             # commonObj instance?
 
         self.projState = None # if the app starts with a new project, no project, a previously opened one, etc ... TODO
                               # with influence on self.settings (some menu entries have to be disabled with respect to

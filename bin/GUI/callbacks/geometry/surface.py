@@ -18,10 +18,10 @@ from ...widgets import csys, point
 from ...cad import fkernel
 
 def detect(app):
-    print "Detect Faces: Not implemented yet!"
+    print("Detect Faces: Not implemented yet!")
 
 def delete(app): 
-    print "Delete Face: Not implemented yet!"
+    print("Delete Face: Not implemented yet!")
 
 def lists(app):
-    print "List Faces: Not implemented yet!"
+    print("List Faces: Not implemented yet!")

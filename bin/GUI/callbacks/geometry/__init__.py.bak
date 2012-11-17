@@ -14,5 +14,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-def canvasSettings(app):
-    print("Canvas Settings: not implemented yet!")
+__all__ = ["csys", "point", "line", "surface", "XMLtree"]
+
+import csys, point, line, surface, XMLtree
+
+def hierarchy(app):
+    pass

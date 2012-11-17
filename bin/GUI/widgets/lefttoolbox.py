@@ -14,16 +14,16 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-import Tkinter, collections, functools, os
+import tkinter, collections, functools, os
 from ..callbacks import project
 from xml.dom import minidom
 from PIL import Image, ImageTk
 
-class LeftToolbox(Tkinter.Frame):
+class LeftToolbox(tkinter.Frame):
     def __init__(self, master, xmlfile, iconspath):
-        Tkinter.Frame.__init__(self, master=master)
+        tkinter.Frame.__init__(self, master=master)
 
-        self["relief"]=Tkinter.RAISED
+        self["relief"]=tkinter.RAISED
         self["borderwidth"]=1
         self.master=master
 
@@ -48,7 +48,7 @@ class LeftToolbox(Tkinter.Frame):
     def createToolbox(self):
         for i in self.ToolboxTree:
             self.img.append(ImageTk.PhotoImage(Image.open(os.path.join(self.iconspath, i[0]))))
-            self.ToolboxWidgets.append(Tkinter.Button(self,
+            self.ToolboxWidgets.append(tkinter.Button(self,
                                                       command=functools.partial(eval(i[1]), self.master),
                                                       image=self.img[-1]))
             self.ToolboxWidgets[-1].pack(side="left")	

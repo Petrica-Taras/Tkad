@@ -1,0 +1,67 @@
+import xml.etree.ElementTree as ET
+
+import os
+
+class settings(dict):  # hold and centralize the main settings in a dict like class (with additional methods to load the settings)
+                       # what settings do I need? 
+                       # also holds states
+                       # the main idea is to hold stuff commonly required by several objects
+    """Just a container for most settings shared between several objects."""
+    def __init__(self):
+        """TODO:: define actions ..."""
+        dict.__init__(self)
+		
+		# settings to be loaded from files (or determined)
+        self["basedir"] = os.getcwd().replace("bin", "") # assumes that the main script starts from the
+                                                         # bin directory
+        self["lwd"] = os.getcwd().replace("bin", "")     # last working directory - priority:
+                                                         # 1. load from project (trunk) settings file and only if it is present. 
+                                                         # 2. use etc/paths.xml "LastWorkingDir" element
+                                                         # 3. use self["basedir"] which assumes the same location as initall.py script
+
+        # widgets settings
+        self["menuIconsPath"] = os.path.join(self["basedir"], "resources/icons16x16/menu") # add possibilities for multiple resolutions        
+        self["menuXMLPath"]   = os.path.join(self["basedir"], "etc/gui/menus.xml") 
+        
+        self["upperToolBoxIconsPath"] = os.path.join(self["basedir"], "resources/icons22x22/uptoolbox")
+        self["upperToolBoxXMLPath"]   = os.path.join(self["basedir"], "etc/gui/uppertoolbox.xml")
+                             
+        # other usefull paths
+        self["extraModulesPath"] = {} # add possibility in settings to add/remove values
+        self["XMLPath"] = os.path.join(self["basedir"], "etc/paths.xml") # canvas.xml and others ???
+        
+        self.__parseXMLData()
+
+    def __parseXMLData(self): # canvas.xml and others ???
+        """Parses the default paths.xml file"""
+
+        tree = ET.parse(self["XMLPath"])
+        root = tree.getroot()
+        
+        for i in ET.iter(tag='module'):
+            print(i.tag)
+            #self["extraModulesPath"][module[0].text] = module[1].text 
+        
+        #parsed  = minidom.parse(self["XMLPath"])
+        #nodesList   = parsed.getElementsByTagName('paths')
+        #modulesList = nodesList[0].getElementsByTagName('module')
+        
+        #for i in modulesList:
+        #    for j in i.childNodes:
+        #        print(j.firstChild.data)
+        #for i in nodes.getElementsByTagName('module'):
+            #self["extraModulesPath"][i.getElementsByTagName("name").firstChild] = i.getElementsByTagName("path") #(i.firstChild.data)
+
+        # self.lwd=os.path.join(self.basedir, 
+                              # self.xmlPaths.getElementsByTagName("LastWorkingDir")[0].firstChild.data)
+
+    def __call__(self, xmlSettingsFilePath): # call the instance with various settings????
+        # call the object with the new settings imposed by the project.xml file???
+        pass
+
+
+if __name__ == "__main__":
+    # ad-hoc unit testing
+    
+    obj = settings()
+    #print(obj["extraModulesPath"])

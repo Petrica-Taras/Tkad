@@ -15,4 +15,4 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 def canvasSettings(app):
-    print("Canvas Settings: not implemented yet!")
+    print "Canvas Settings: not implemented yet!"

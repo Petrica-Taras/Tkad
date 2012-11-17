@@ -14,38 +14,38 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-import tkinter, math
-from xml.dom import minidom # functionality that should be moved to other objects
-from ..cad import fkernel   # functionality that should be moved to other objects
+import Tkinter, math
+from xml.dom import minidom
+from ..cad import fkernel
 
 # should be associated with some options (callbacks) from Settings menu
 
-class DrawingArea(tkinter.Canvas):
+class DrawingArea(Tkinter.Canvas):
     """Enhanced Canvas widget for CAD drawings. For now with limited options: \
     no user predefined colors, colors schemes, etc."""
     def __init__(self, master, xmlfile):
         """options={"bgcolor":"black", "def_fgcolor":"white", "slcolor":"orange", "pointshape":"square", "predef_colorsch":"User", "userdef_colors":"Values"}"""
-        tkinter.Canvas.__init__(self, master)
+        Tkinter.Canvas.__init__(self, master)
 
         self.master=master
         self.focus_force()
 
         self.xmlfile=xmlfile
-        self.options=self.__parseXml()    # must be passed to the Canvas somehow - must be moved from here ;)
+        self.options=self.__parseXml()    # must be passed to the Canvas somehow
         self.psize=self.__pointSz()       # compute once/stay the same for the whole session
 
         self["background"] = "black"
         self.defaultFg = "white"
 
         self.scale_f2i=[0.1, 10]                                      # 100 mm at 10 pixels - should be moved to xml configuration file
-        self.translatedFactor = [tkinter.IntVar(), tkinter.IntVar()]  # only for integer representation of pixels; [h, w]
+        self.translatedFactor = [Tkinter.IntVar(), Tkinter.IntVar()]  # only for integer representation of pixels; [h, w]
         self.zoomedFactor = 1.1                                       # zoom 10 %
 
         self.translatedFactor[0].set(0)
         self.translatedFactor[1].set(0)
 
-        self.currentPos=[tkinter.IntVar(), tkinter.IntVar()]
-        self.currentDir=[tkinter.IntVar(), tkinter.IntVar()]
+        self.currentPos=[Tkinter.IntVar(), Tkinter.IntVar()]
+        self.currentDir=[Tkinter.IntVar(), Tkinter.IntVar()]
 
         self.csys={}
 
@@ -84,11 +84,11 @@ class DrawingArea(tkinter.Canvas):
         # update the canvas integer coordinates of all the involved entities:
 
         # self.csys
-        for i in list(self.csys.keys()):
+        for i in self.csys.keys():
             self.csys[i]["intPosition"][0]+=event.x-self.currentDir[0].get()
             self.csys[i]["intPosition"][1]+=event.y-self.currentDir[1].get()
         # self.points
-        for i in list(self.points.keys()):
+        for i in self.points.keys():
             self.points[i]["intPosition"][0]+=event.x-self.currentDir[0].get()
             self.points[i]["intPosition"][1]+=event.y-self.currentDir[1].get()
 
@@ -108,7 +108,7 @@ class DrawingArea(tkinter.Canvas):
 
         # zoom csys
 
-        for i in list(self.csys.keys()):
+        for i in self.csys.keys():
             # new
 
             xNew = lfactor*self.csys[i]["intPosition"][0]+self.currentPos[0].get()*(1-lfactor)
@@ -120,7 +120,7 @@ class DrawingArea(tkinter.Canvas):
             self.csys[i]["intPosition"][1]=yNew
 
         # zoom points
-        for i in list(self.points.keys()):
+        for i in self.points.keys():
             # new
 
             xNew = lfactor*self.points[i]["intPosition"][0]+self.currentPos[0].get()*(1-lfactor)
@@ -137,20 +137,20 @@ class DrawingArea(tkinter.Canvas):
         """Graphically creates and display a coordinate system"""
 
         if visible == 1:
-            state=tkinter.NORMAL
+            state=Tkinter.NORMAL
         else:
-            state=tkinter.HIDDEN
+            state=Tkinter.HIDDEN
 
-        return [self.create_line(intPos[0], intPos[1], intPos[0]+int(length*self.psize*math.cos(rotation/180.0*3.14159)), intPos[1]-int(length*self.psize*math.sin(rotation/180.0*3.14159)), arrow=tkinter.LAST, fill=self.defaultFg, state=state),
-                self.create_line(intPos[0], intPos[1], intPos[0]-int(length*self.psize*math.sin(rotation/180.0*3.14159)), intPos[1]-int(length*self.psize*math.cos(rotation/180.0*3.14159)), arrow=tkinter.LAST, fill=self.defaultFg, state=state)] # 0x axis, Oy axis
+        return [self.create_line(intPos[0], intPos[1], intPos[0]+int(length*self.psize*math.cos(rotation/180.0*3.14159)), intPos[1]-int(length*self.psize*math.sin(rotation/180.0*3.14159)), arrow=Tkinter.LAST, fill=self.defaultFg, state=state),
+                self.create_line(intPos[0], intPos[1], intPos[0]-int(length*self.psize*math.sin(rotation/180.0*3.14159)), intPos[1]-int(length*self.psize*math.cos(rotation/180.0*3.14159)), arrow=Tkinter.LAST, fill=self.defaultFg, state=state)] # 0x axis, Oy axis
 
     def dispPoint(self, intPos, representation, color, visible=1, filled=0):
         """Graphically creates and display on canvas a point entity"""
 
         if visible == 1:
-            state=tkinter.NORMAL
+            state=Tkinter.NORMAL
         else:
-            state=tkinter.HIDDEN
+            state=Tkinter.HIDDEN
 
         if color == "default":
             color=self.defaultFg
@@ -179,7 +179,7 @@ class DrawingArea(tkinter.Canvas):
     def setGlobalCsys(self): # length option [%] should be moved to xml canvas settings file
         """Creates the global coordinate system. """
 
-        if "global" not in list(self.csys.keys()):
+        if "global" not in self.csys.keys():
             self.csys["global"]={}
             self.csys["global"]["intPosition"]=[self.winfo_width()/2+self.translatedFactor[0].get(),
                                                 self.winfo_height()/2+self.translatedFactor[1].get()]

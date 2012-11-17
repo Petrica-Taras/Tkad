@@ -54,10 +54,10 @@ def new(app):
     app.xmlprojfiles["geometry"][2][0].appendChild(l_csys)
 
 def edit(app):
-    print("Edit Coordinate System: Not implemented yet!")
+    print "Edit Coordinate System: Not implemented yet!"
 
 def delete(app):
-    print("Delete Coordinate System: Not implemented yet!")
+    print "Delete Coordinate System: Not implemented yet!"
 
 def lists(app):
-    print("Lists Coordinate Systems: Not implemented yet!")
+    print "Lists Coordinate Systems: Not implemented yet!"

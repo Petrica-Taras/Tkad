@@ -10,7 +10,7 @@ Content
 State of development
 =======================
 
-Please note that for now the software is a mess and - it hasn't the slightest functionality added. Right now, all it can do is to draw a canvas and the reference coordinate system centered in the canvas which is useless. Most of the menu items are in place (although callbacks are implemented only for some of them). The menu is configurable through a XML file, meaning that I can add some menus & menu items later very easy.
+Please note that for now the software is a mess and - it hasn't the slightest functionality added. 
 
 Overview
 =======================
@@ -19,8 +19,6 @@ This project is intended to be a 2D physical framework used to prototype ideas.
 
 Dependencies
 =======================
-
-Python 2.7 - Tkad is a bunch of Python scripts running on top of Python 2.7. Tkad doesn't need compilation nor installation and will not run without preinstalled Python (2.7)
 
 Tkinter + Tix - these, as far as I know is delivered with Python for major OSes. 
 

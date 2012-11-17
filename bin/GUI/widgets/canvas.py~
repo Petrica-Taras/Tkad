@@ -15,8 +15,8 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 import tkinter, math
-from xml.dom import minidom # functionality that should be moved to other objects
-from ..cad import fkernel   # functionality that should be moved to other objects
+from xml.dom import minidom
+from ..cad import fkernel
 
 # should be associated with some options (callbacks) from Settings menu
 
@@ -31,7 +31,7 @@ class DrawingArea(tkinter.Canvas):
         self.focus_force()
 
         self.xmlfile=xmlfile
-        self.options=self.__parseXml()    # must be passed to the Canvas somehow - must be moved from here ;)
+        self.options=self.__parseXml()    # must be passed to the Canvas somehow
         self.psize=self.__pointSz()       # compute once/stay the same for the whole session
 
         self["background"] = "black"

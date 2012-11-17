@@ -11,29 +11,13 @@
     
     <settings>
         <canvas>
-            <globalsettings>
-                <colors>
-                
-                </colors>
-            </globalsettings>
-            <customsettings>
-                <points>
-                    
-                </points>
-                <lines>
-                
-                </lines>
-            </customsettings>
+        
         </canvas>
         <XMLeditor>
-            <colors>
-            
-            </colors>        
+        
         </XMLeditor>
         <console>
-            <colors>
-            
-            </colors>        
+        
         </console>
     </settings>
 </Project>

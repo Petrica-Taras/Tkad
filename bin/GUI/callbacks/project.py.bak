@@ -15,7 +15,7 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 from xml.dom import minidom
-import os, re, tkinter.filedialog
+import os, re, tkFileDialog
 from ..cad import fkernel
 
 class projectIO():
@@ -176,7 +176,7 @@ def newProject(app):
 def openProject(app):
     os.chdir(app.lwd)
     filetypes=[("Project files", "*project.xml")]
-    openedProject=tkinter.filedialog.askopenfilename(filetypes=filetypes, title="Open an existing project")
+    openedProject=tkFileDialog.askopenfilename(filetypes=filetypes, title="Open an existing project")
     localdir, localfile = os.path.split(openedProject)
     app.lwd=localdir # to change in the appropriate xml settings file !!!!!!
     os.chdir(app.lwd)
@@ -302,7 +302,7 @@ def saveProject(app):
     os.chdir(app.lwd)
         	
 def saveAsProject(app):
-    ProjFolder=os.path.split(tkinter.filedialog.asksaveasfilename(initialdir=app.lwd, parent=app)) # full path
+    ProjFolder=os.path.split(tkFileDialog.asksaveasfilename(initialdir=app.lwd, parent=app)) # full path
 
     if ProjFolder is not "":
         app.title(ProjFolder[1]+".project")

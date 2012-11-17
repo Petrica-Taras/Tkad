@@ -14,13 +14,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-import Tkinter
+import tkinter
 from xml.dom import minidom
 
-class XMLeditor(Tkinter.Text):
+class XMLeditor(tkinter.Text):
     """Widget for XML editor. Basically, nothing more than an enhanced Tkinter.Text 
     widget with suport for syntax highlighting, right click pop menu, find/replace, etc."""
     def __init__(self, master, xmlfile):
-        Tkinter.Text.__init__(self, master)
+        tkinter.Text.__init__(self, master)
         self.master = master
         #self.editor = Tkinter.Text(self, wrap=Tkinter.NONE, undo = True)

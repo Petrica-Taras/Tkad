@@ -42,13 +42,13 @@ class MenuToolbar(tkinter.Menu):
         
         self.menus=None # in order to have access to the widgets later  
         
-        self.__createMenuDataStructure() 
+        self.createMenuTree() 
         
-        self.__createMenuDisplay()
+        self.createMenu()
         
         self.master.update_idletasks()
         
-    def __createMenuDataStructure(self):
+    def createMenuTree(self):
         """Extracts the layout information from the XML configuration file."""		
         xmlmenu=minidom.parse(self.xmlfile)
         MenuXMLRoot=[i for i in xmlmenu.childNodes if (i.nodeName != "#text" and i.nodeName != "#comment")]  # correct approach     
@@ -83,7 +83,7 @@ class MenuToolbar(tkinter.Menu):
         for i in self.menus: # weird solution but self.menus=copy.copy(self.MenuTree) doesn't work as I expect
             i[1]=recursMenuTree(i[1])
                 
-    def createMenuDisplay(self):
+    def createMenu(self):
         """It actually creates the Menu widgets"""
         # first create the menu:
         for i in self.MenuTree: 

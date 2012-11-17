@@ -14,23 +14,23 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-import tkinter, tkinter.tix
+import Tkinter, Tix
 
-class point(tkinter.tix.Toplevel):
+class point(Tix.Toplevel):
     def __init__(self, master, point=None):	
-        tkinter.tix.Toplevel.__init__(self, master)
+        Tix.Toplevel.__init__(self, master)
         self.master=master
         self.point=point	
         
-        self.plabel = tkinter.StringVar()        
-        self.csys   = tkinter.StringVar()
-        self.xcoord = tkinter.StringVar()
-        self.ycoord = tkinter.StringVar()
-        self.color  = tkinter.StringVar() #??? [r, g, b] or "r g b"
-        self.representation = tkinter.StringVar()  
+        self.plabel = Tkinter.StringVar()        
+        self.csys   = Tkinter.StringVar()
+        self.xcoord = Tkinter.StringVar()
+        self.ycoord = Tkinter.StringVar()
+        self.color  = Tkinter.StringVar() #??? [r, g, b] or "r g b"
+        self.representation = Tkinter.StringVar()  
         
-        self.visible=tkinter.IntVar()
-        self.filled=tkinter.IntVar()
+        self.visible=Tkinter.IntVar()
+        self.filled=Tkinter.IntVar()
  
         if self.point != None:  # so this is edit point command
             self.xcoord.set(str(self.point.xcoord[0]))
@@ -51,85 +51,85 @@ class point(tkinter.tix.Toplevel):
 
         self.resizable(height="false", width="false")
 
-        self.firstCoord=tkinter.StringVar()
-        self.secondCoord=tkinter.StringVar()
+        self.firstCoord=Tkinter.StringVar()
+        self.secondCoord=Tkinter.StringVar()
         
         self.firstCoord.set("X coordinate")
         self.secondCoord.set("Y coordinate")
 
         # create widgets here (but don't display them)
-        self.pointLabel=tkinter.Label(self, text="Point Label", anchor=tkinter.W)
-        self.pointEntry=tkinter.Entry(self, textvariable=self.plabel)
+        self.pointLabel=Tkinter.Label(self, text="Point Label", anchor=Tkinter.W)
+        self.pointEntry=Tkinter.Entry(self, textvariable=self.plabel)
 
-        self.csysLabel=tkinter.Label(self, text="Coordinate System")            
-        self.csysCombo=tkinter.tix.ComboBox(self, label=None, dropdown=1, editable=0, height=4, variable=self.csys)
+        self.csysLabel=Tkinter.Label(self, text="Coordinate System")            
+        self.csysCombo=Tix.ComboBox(self, label=None, dropdown=1, editable=0, height=4, variable=self.csys)
         self.csysCombo.set_silent('global') #??? if edit???
 
-        for i in list(self.master.DrawingArea.csys.keys()):
-            self.csysCombo.insert(tkinter.tix.END, i)  
+        for i in self.master.DrawingArea.csys.keys():
+            self.csysCombo.insert(Tix.END, i)  
 
-        self.coord1Label=tkinter.Label(self, textvariable=self.firstCoord, anchor=tkinter.W)    
-        self.coord1Entry=tkinter.Entry(self, textvariable=self.xcoord)
+        self.coord1Label=Tkinter.Label(self, textvariable=self.firstCoord, anchor=Tkinter.W)    
+        self.coord1Entry=Tkinter.Entry(self, textvariable=self.xcoord)
 
-        self.colorLabel=tkinter.Label(self, text="Color", anchor=tkinter.W)
-        self.colorCombo=tkinter.tix.ComboBox(self, label=None, dropdown=1, editable=0, command=None, height=3, variable=self.color)  
+        self.colorLabel=Tkinter.Label(self, text="Color", anchor=Tkinter.W)
+        self.colorCombo=Tix.ComboBox(self, label=None, dropdown=1, editable=0, command=None, height=3, variable=self.color)  
         self.colorCombo.set_silent('default')
  
-        self.colorCombo.insert(tkinter.tix.END, 'yellow')
-        self.colorCombo.insert(tkinter.tix.END, 'red')        
+        self.colorCombo.insert(Tix.END, 'yellow')
+        self.colorCombo.insert(Tix.END, 'red')        
 
-        self.coord2Label=tkinter.Label(self, textvariable=self.secondCoord, anchor=tkinter.W)    
-        self.coord2Entry=tkinter.Entry(self, textvariable=self.ycoord)        
+        self.coord2Label=Tkinter.Label(self, textvariable=self.secondCoord, anchor=Tkinter.W)    
+        self.coord2Entry=Tkinter.Entry(self, textvariable=self.ycoord)        
         
-        self.represLabel=tkinter.Label(self, text="Representation", anchor=tkinter.W)
-        self.represCombo=tkinter.tix.ComboBox(self, label=None, dropdown=1, editable=0, command=None, height=3, variable=self.representation) 
+        self.represLabel=Tkinter.Label(self, text="Representation", anchor=Tkinter.W)
+        self.represCombo=Tix.ComboBox(self, label=None, dropdown=1, editable=0, command=None, height=3, variable=self.representation) 
         self.represCombo.set_silent('square')
         
-        self.represCombo.insert(tkinter.tix.END, 'circle')
-        self.represCombo.insert(tkinter.tix.END, 'triangle') # diamond, stars, other shapes?
+        self.represCombo.insert(Tix.END, 'circle')
+        self.represCombo.insert(Tix.END, 'triangle') # diamond, stars, other shapes?
 
-        self.ckButton=tkinter.Checkbutton(self, anchor=tkinter.W, indicatoron=1, offvalue=0, onvalue=1, text="Visible", variable=self.visible)
+        self.ckButton=Tkinter.Checkbutton(self, anchor=Tkinter.W, indicatoron=1, offvalue=0, onvalue=1, text="Visible", variable=self.visible)
         self.ckButton.select()
 
-        self.fillButton=tkinter.Checkbutton(self, anchor=tkinter.W, indicatoron=1, offvalue=0, onvalue=1, text="Filled", variable=self.filled)
+        self.fillButton=Tkinter.Checkbutton(self, anchor=Tkinter.W, indicatoron=1, offvalue=0, onvalue=1, text="Filled", variable=self.filled)
         self.fillButton.select()
         
-        self.okButton=tkinter.Button(self, text="Ok", command=self.__cbOk, width=6)
-        self.cancelButton=tkinter.Button(self, text="Cancel", command=self.__cbCancel, width=6)  
+        self.okButton=Tkinter.Button(self, text="Ok", command=self.__cbOk, width=6)
+        self.cancelButton=Tkinter.Button(self, text="Cancel", command=self.__cbCancel, width=6)  
         
         self.showWidgets()
    
     def showWidgets(self):
         # upper row		
 
-        self.pointLabel.grid(row=0, column=0, padx=(10, 5), pady=(12, 0), sticky=tkinter.W+tkinter.E)
+        self.pointLabel.grid(row=0, column=0, padx=(10, 5), pady=(12, 0), sticky=Tkinter.W+Tkinter.E)
         self.pointEntry.grid(row=0, column=1, columnspan=2, pady=(12, 0), padx=(0, 5))
         
-        self.csysLabel.grid(row=0, column=3, pady=(12, 0), sticky=tkinter.W)
+        self.csysLabel.grid(row=0, column=3, pady=(12, 0), sticky=Tkinter.W)
         self.csysCombo.grid(row=0, column=4, padx=(0, 10), pady=(12, 0), columnspan=2)
         
         # next row
-        self.coord1Label.grid(row=1, column=0, sticky=tkinter.W+tkinter.E, padx=(10, 0))
+        self.coord1Label.grid(row=1, column=0, sticky=Tkinter.W+Tkinter.E, padx=(10, 0))
         self.coord1Entry.grid(row=1, column=1, columnspan=2, padx=(0, 5))
         
-        self.colorLabel.grid(row=1, column=3, sticky=tkinter.W)
+        self.colorLabel.grid(row=1, column=3, sticky=Tkinter.W)
         self.colorCombo.grid(row=1, column=4, columnspan=2, padx=(0, 10))
         
         # next row
 
-        self.coord2Label.grid(row=2, column=0, sticky=tkinter.W+tkinter.E, padx=(10, 0))  
+        self.coord2Label.grid(row=2, column=0, sticky=Tkinter.W+Tkinter.E, padx=(10, 0))  
         self.coord2Entry.grid(row=2, column=1, columnspan=2, padx=(0, 5))
         
-        self.represLabel.grid(row=2, column=3, sticky=tkinter.W+tkinter.E)
-        self.represCombo.grid(row=2, column=4, padx=(0, 10), sticky=tkinter.W+tkinter.E, columnspan=2)
+        self.represLabel.grid(row=2, column=3, sticky=Tkinter.W+Tkinter.E)
+        self.represCombo.grid(row=2, column=4, padx=(0, 10), sticky=Tkinter.W+Tkinter.E, columnspan=2)
           
         # next row
         
-        self.ckButton.grid(row=3, column=0, sticky=tkinter.W, padx=(10, 0))
-        self.fillButton.grid(row=3, column=1, sticky=tkinter.W, padx=(0, 0))
+        self.ckButton.grid(row=3, column=0, sticky=Tkinter.W, padx=(10, 0))
+        self.fillButton.grid(row=3, column=1, sticky=Tkinter.W, padx=(0, 0))
   
-        self.okButton.grid(row=3, column=4, sticky=tkinter.E, padx=(0, 5), pady=(10, 12))
-        self.cancelButton.grid(row=3, column=5, sticky=tkinter.W, pady=(10, 12), padx=(5, 10))     
+        self.okButton.grid(row=3, column=4, sticky=Tkinter.E, padx=(0, 5), pady=(10, 12))
+        self.cancelButton.grid(row=3, column=5, sticky=Tkinter.W, pady=(10, 12), padx=(5, 10))     
         self.mainloop()   
         
     def __call__(self):  # label, x, y, csys, color [r, g, b], representation, visible

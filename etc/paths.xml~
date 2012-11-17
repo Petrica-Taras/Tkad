@@ -2,7 +2,5 @@
 
 <Paths>
      <ModPath>.</ModPath>
-     <ModPath>..</ModPath>
-     <SettingsPath>../etc</SettingsPath>
-     <LastWorkingDir>../usr/worked</LastWorkingDir> 
+     <LastWorkingDir>usr/worked</LastWorkingDir> 
 </Paths>

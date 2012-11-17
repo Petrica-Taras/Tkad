@@ -43,18 +43,18 @@ def libraries():
 if __name__ == "__main__":
     import sys
     if len(sys.argv)==1:
-        exec(compile(open("./initall.py").read(), "./initall.py", 'exec'))
+        execfile("./initall.py")
     else: # ufff - better check if these strings are in the sys.argv string list then print them properly. Move the message errors to xml files.
         if len(sys.argv)==2:
             if sys.argv[1]=="-h" or sys.argv[1]=="--help":
-                print(help())
+                print help()
             elif sys.argv[1]=="--version":
-                print(version())
+                print version()
             elif sys.argv[1]=="--authors":
-                print(authors())
+                print authors()
             elif sys.argv[1]=="--dependencies":
-                print(libraries())
+                print libraries()
             else:
-                print("Unrecognized parameter: Please refer to the available help:\n\n"+help())
+                print "Unrecognized parameter: Please refer to the available help:\n\n"+help()
 else:
     pass
