@@ -29,12 +29,18 @@ Parameters:
     * origin: a tuple containing the origin (with respect to the parent if it exists - if not to the global)
     * rotation: a float representing the angle of the Ox axis (with respect to the parent if it exists - if not to the global)
     """
-    def __init__(self, origin, parent=None, rotation=None, label="global", type_="cartesian"):
-        self.origin=origin
-        self.parent=parent	
-        self.rotation=rotation
-        self.type_=type_
-        self.label=label
+    def __init__(self, 
+                 origin, 
+                 parent=None, 
+                 rotation=None, 
+                 label="global", 
+                 type_="cartesian"):
+    
+        self.origin   = origin
+        self.parent   = parent	
+        self.rotation = rotation
+        self.type_    = type_
+        self.label    = label
 
         self.metadata={}
         # metadata: color, layer, visibility, integer coordinates on canvas, associated xml id/name/label?
@@ -54,12 +60,18 @@ Parameters:
     * coords: the coordinates of the point with respect to the coordinate system
     * csys: the coordinate system in which xy values are defined (if csys == None then it is considerate to be global)
     """
-    def __init__(self, coords, parent=None, csys=None, transformation=None, label=None):
-        self.coords=coords
-        self.parent=parent	
-        self.csys=csys
-        self.transformation=transformation
-        self.label=label
+    def __init__(self, 
+                 coords, 
+                 parent = None, 
+                 csys=None, 
+                 transformation=None, 
+                 label=None):
+    
+        self.coords         = coords
+        self.parent         = parent	
+        self.csys           = csys
+        self.transformation = transformation
+        self.label          = label
 
         self.metadata={}
 

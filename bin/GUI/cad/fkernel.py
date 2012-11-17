@@ -16,7 +16,7 @@
 
 
 # provides functions to deal with floating numbers on a drawing area
-#(transformations, scale, distances, length, symbolic representations, etc)
+#(transformations, scale, distances, length, symbolic representations, etc)???
 
 # geometric precision
 
@@ -104,3 +104,7 @@ class surface():
 
 class transformation():
     pass	
+
+class geometry():
+    """Holder for the geometry internal representation"""
+    pass
