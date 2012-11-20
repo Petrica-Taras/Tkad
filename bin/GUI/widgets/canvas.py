@@ -1,4 +1,4 @@
-# Copyright (C) 2011 Petrica Taras
+# Copyright (C) 2012 Petrica Taras
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,10 +21,8 @@ from ..cad import fkernel   # functionality that should be moved to other object
 # should be associated with some options (callbacks) from Settings menu
 
 class DrawingArea(tkinter.Canvas):
-    """Enhanced Canvas widget for CAD drawings. For now with limited options: \
-    no user predefined colors, colors schemes, etc."""
+    """Enhanced Canvas widget for CAD drawings."""
     def __init__(self, master, xmlfile):
-        """options={"bgcolor":"black", "def_fgcolor":"white", "slcolor":"orange", "pointshape":"square", "predef_colorsch":"User", "userdef_colors":"Values"}"""
         tkinter.Canvas.__init__(self, master)
 
         self.master=master

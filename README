@@ -24,3 +24,8 @@ Tkinter + Tix - these, as far as I know is delivered with Python for major OSes.
 
 NetworkX - this isn't included for now in the software but it will be added later when the surface support is added
 
+Usage
+=======================
+
+Fire tkad.py from the Tkad directory
+

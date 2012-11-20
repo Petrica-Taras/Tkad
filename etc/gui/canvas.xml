@@ -1,12 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<DrawingArea>
-         <!-- Colors -->
-         <UserDefinedColors name="UserColor1">33 22 11</UserDefinedColors>
-         <UserPredefinedColorSchemes name="UserColorScheme1" inuse="no"></UserPredefinedColorSchemes>
-    <BGColor type="rgb">0 0 0</BGColor>
-    <DefaultFGColor type="name">white</DefaultFGColor>
-    <SLColor type="name">orange</SLColor>
-
-    <DefaultPointShape>square</DefaultPointShape>
-</DrawingArea>
+<canvas>
+    <defaults>
+        <inuse>yes</inuse>
+        <defaultColorScheme>
+            <name>default</name>
+            <backgroundColor>
+                <type>name</type>
+                <value>black</value>
+            </backgroundColor>
+            <foregroundColor>
+                <type>name</type>
+                <value>white</value>
+            </foregroundColor>
+            <selectionColor>
+                <type>name</type>
+                <value>white</value>        
+            </selectionColor>
+        </defaultColorScheme>    
+        <point>
+            <shape>square</shape>
+            <size>0.5</size>
+        </point>
+        <cursor>
+            <normal>normal</normal>
+            <selection>cross</selection>
+        </cursor>
+    </defaults>
+    
+    <userSchemes>
+        <inuse>no</inuse>
+        <userColorsScheme>
+            <name>UserColorScheme 1</name>
+            <backgroundColor>
+                <type>name</type>
+                <value>black</value>
+            </backgroundColor>
+            <foregroundColor>
+                <type>name</type>
+                <value>white</value>
+            </foregroundColor>
+            <selectionColor>
+                <type>name</type>
+                <value>white</value>        
+            </selectionColor>
+        </userColorsScheme>
+        <point>
+            <shape>square</shape>
+            <size>0.5</size>
+        </point>
+        <cursor>
+            <normal>normal</normal>
+            <selection>cross</selection>
+        </cursor>        
+    </userSchemes>
+</canvas>

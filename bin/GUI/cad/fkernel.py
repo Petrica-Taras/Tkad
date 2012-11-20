@@ -106,5 +106,5 @@ class transformation():
     pass	
 
 class geometry():
-    """Holder for the geometry internal representation"""
+    """Holder for the geometry internal representation and associated methods"""
     pass
