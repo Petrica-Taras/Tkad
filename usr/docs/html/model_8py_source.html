@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Tkad: bin/GUI/common/model.py Source File</title>
+<title>Tkad: bin/common/model.py Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -24,89 +24,111 @@
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>bin/GUI/common/model.py</h1>  </div>
+<h1>bin/common/model.py</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001    c   l   a   s   s       m   o   d   e   l   (   d   i   c   t   )   :   
-<a name="l00002"></a>00002                    <span class="stringliteral">&quot;   &quot;</span>   <span class="stringliteral">&quot;   A       d   a   t   a       s   t   r   u   c   t   u   r   e       w   h   i   c   h       p   r   o   v   i   d   e   s       a   n       i   n   t   e   r   n   a   l       r   e   p   r   e   s   e   n   t   a   t   i   o   n       o   f       t   h   e       d   a   t   a       </span>
-<a name="l00003"></a>00003 <span class="stringliteral">                   r   e   a   d       f   r   o   m       t   h   e       f   i   l   e   s   .       P   r   o   b   a   b   l   y       w   i   l   l       h   a   v   e       t   o       b   e       s   p   e   c   i   a   l   i   s   e   d       t   o       g   e   o   m   e   t   r   i   c   </span>
-<a name="l00004"></a>00004 <span class="stringliteral">                   o   n   l   y       d   a   t   a   .   </span><span class="stringliteral">&quot;   &quot;</span>   <span class="stringliteral">&quot;   </span>
-<a name="l00005"></a>00005 <span class="stringliteral">                   </span>
-<a name="l00006"></a>00006 <span class="stringliteral">                   d   e   f       _   _   i   n   i   t   _   _   (   s   e   l   f   ,       m   o   d   e   l   P   a   t   h       =       N   o   n   e   )   :   </span>
-<a name="l00007"></a>00007 <span class="stringliteral">                                   d   i   c   t   .   _   _   i   n   i   t   _   _   (   s   e   l   f   )   </span>
-<a name="l00008"></a>00008 <span class="stringliteral">                                   </span>
-<a name="l00009"></a>00009 <span class="stringliteral">                                   </span><span class="comment">#       f   i   l   e   s   </span>
-<a name="l00010"></a>00010                                    s   e   l   f   [   <span class="stringliteral">&quot;   p   r   o   j   e   c   t   &quot;</span>   ]                   =       {   }               <span class="comment">#       p   r   o   j   e   c   t       f   i   l   e       -       h   o   l   d   s       t   h   e       c   u   s   t   o   m       s   e   t   t   i   n   g   s   </span>
-<a name="l00011"></a>00011                                                                                                                                            <span class="comment">#       f   o   r       t   h   e       m   o   d   e   l   </span>
-<a name="l00012"></a>00012                                    s   e   l   f   [   <span class="stringliteral">&quot;   g   e   o   m   e   t   r   y   &quot;</span>   ]               =       N   o   n   e       <span class="comment">#       g   e   o   m   e   t   r   y       f   i   l   e   </span>
-<a name="l00013"></a>00013                                    
-<a name="l00014"></a>00014                                    <span class="comment">#       c   o   n   t   a   i   n   e   r   s       f   o   r       g   e   o   m   e   t   r   i   c   a   l       i   n   s   t   a   n   c   e   s   :   </span>
-<a name="l00015"></a>00015                                    s   e   l   f   [   <span class="stringliteral">&quot;   c   s   y   s   e   s   &quot;</span>   ]                       =       {   }   
-<a name="l00016"></a>00016                                    s   e   l   f   [   <span class="stringliteral">&quot;   p   o   i   n   t   s   &quot;</span>   ]                       =       {   }   
-<a name="l00017"></a>00017                                    s   e   l   f   [   <span class="stringliteral">&quot;   l   i   n   e   s   &quot;</span>   ]                           =       {   }   
-<a name="l00018"></a>00018                                    s   e   l   f   [   <span class="stringliteral">&quot;   f   a   c   e   s   &quot;</span>   ]                           =       {   }   
-<a name="l00019"></a>00019                                    
-<a name="l00020"></a>00020                                    s   e   l   f   .   _   _   a   d   d   G   l   o   b   a   l   C   s   y   s   (   )   
-<a name="l00021"></a>00021                    
-<a name="l00022"></a>00022                    d   e   f       _   _   a   d   d   G   l   o   b   a   l   C   s   y   s   (   s   e   l   f   )   :   
-<a name="l00023"></a>00023                                    <span class="stringliteral">&quot;   &quot;</span>   <span class="stringliteral">&quot;   T   h   e       d   e   f   a   u   l   t       c   o   o   r   d   i   n   a   t   e       s   y   s   t   e   m   &quot;</span>   <span class="stringliteral">&quot;   &quot;</span>   
-<a name="l00024"></a>00024                                    p   a   s   s   
-<a name="l00025"></a>00025                    
-<a name="l00026"></a>00026                    d   e   f       l   o   a   d   M   o   d   e   l   (   s   e   l   f   ,       m   o   d   e   l   D   i   r   )   :   
-<a name="l00027"></a>00027                                    <span class="stringliteral">&quot;   &quot;</span>   <span class="stringliteral">&quot;   (   f   i   l   e   )       -   &gt;       m   o   d   e   l       o   b   j   e   c   t   &quot;</span>   <span class="stringliteral">&quot;   &quot;</span>   
-<a name="l00028"></a>00028                                    p   a   s   s   
-<a name="l00029"></a>00029    
-<a name="l00030"></a>00030                    d   e   f       _   _   p   a   r   s   e   P   r   o   j   e   c   t   (   s   e   l   f   )   :   
-<a name="l00031"></a>00031                                    p   a   s   s   
-<a name="l00032"></a>00032                    
-<a name="l00033"></a>00033                    d   e   f       _   _   p   a   r   s   e   G   e   o   m   e   t   r   y   (   s   e   l   f   )   :   
-<a name="l00034"></a>00034                                    p   a   s   s   
-<a name="l00035"></a>00035    
-<a name="l00036"></a>00036                    <span class="comment">#       g   e   o   m   e   t   r   i   c       e   n   t   i   t   i   e   s       s   t   u   f   f   :   </span>
-<a name="l00037"></a>00037                    <span class="comment">#       c   o   o   r   d   i   n   a   t   e       s   y   s   t   e   m   s   :   </span>
-<a name="l00038"></a>00038                    
-<a name="l00039"></a>00039                    d   e   f       a   d   d   C   s   y   s   (   s   e   l   f   ,       c   s   y   s   )   :   
-<a name="l00040"></a>00040                                    p   a   s   s   
-<a name="l00041"></a>00041                    
-<a name="l00042"></a>00042                    d   e   f       m   o   d   i   f   y   C   s   y   s   (   s   e   l   f   ,       c   s   y   s   )   :   
-<a name="l00043"></a>00043                                    p   a   s   s   
-<a name="l00044"></a>00044                    
-<a name="l00045"></a>00045                    d   e   f       d   e   l   e   t   e   C   s   y   s   (   s   e   l   f   ,       c   s   y   s   )   :   
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001    <span class="comment">#       C   o   p   y   r   i   g   h   t       (   C   )       2   0   1   2       P   e   t   r   i   c   a       T   a   r   a   s   </span>
+<a name="l00002"></a>00002    <span class="comment">#   </span>
+<a name="l00003"></a>00003    <span class="comment">#       T   h   i   s       p   r   o   g   r   a   m       i   s       f   r   e   e       s   o   f   t   w   a   r   e   ;       y   o   u       c   a   n       r   e   d   i   s   t   r   i   b   u   t   e       i   t       a   n   d   /   o   r       m   o   d   i   f   y   </span>
+<a name="l00004"></a>00004    <span class="comment">#       i   t       u   n   d   e   r       t   h   e       t   e   r   m   s       o   f       t   h   e       G   N   U       G   e   n   e   r   a   l       P   u   b   l   i   c       L   i   c   e   n   s   e       a   s       p   u   b   l   i   s   h   e   d       b   y   </span>
+<a name="l00005"></a>00005    <span class="comment">#       t   h   e       F   r   e   e       S   o   f   t   w   a   r   e       F   o   u   n   d   a   t   i   o   n   ;       e   i   t   h   e   r       v   e   r   s   i   o   n       2   ,       o   r       (   a   t       y   o   u   r       o   p   t   i   o   n   )   </span>
+<a name="l00006"></a>00006    <span class="comment">#       a   n   y       l   a   t   e   r       v   e   r   s   i   o   n   .   </span>
+<a name="l00007"></a>00007    <span class="comment">#   </span>
+<a name="l00008"></a>00008    <span class="comment">#       T   h   i   s       p   r   o   g   r   a   m       i   s       d   i   s   t   r   i   b   u   t   e   d       i   n       t   h   e       h   o   p   e       t   h   a   t       i   t       w   i   l   l       b   e       u   s   e   f   u   l   ,   </span>
+<a name="l00009"></a>00009    <span class="comment">#       b   u   t       W   I   T   H   O   U   T       A   N   Y       W   A   R   R   A   N   T   Y   ;       w   i   t   h   o   u   t       e   v   e   n       t   h   e       i   m   p   l   i   e   d       w   a   r   r   a   n   t   y       o   f   </span>
+<a name="l00010"></a>00010    <span class="comment">#       M   E   R   C   H   A   N   T   A   B   I   L   I   T   Y       o   r       F   I   T   N   E   S   S       F   O   R       A       P   A   R   T   I   C   U   L   A   R       P   U   R   P   O   S   E   .           S   e   e       t   h   e   </span>
+<a name="l00011"></a>00011    <span class="comment">#       G   N   U       G   e   n   e   r   a   l       P   u   b   l   i   c       L   i   c   e   n   s   e       f   o   r       m   o   r   e       d   e   t   a   i   l   s   .   </span>
+<a name="l00012"></a>00012    <span class="comment">#   </span>
+<a name="l00013"></a>00013    <span class="comment">#       Y   o   u       s   h   o   u   l   d       h   a   v   e       r   e   c   e   i   v   e   d       a       c   o   p   y       o   f       t   h   e       G   N   U       G   e   n   e   r   a   l       P   u   b   l   i   c       L   i   c   e   n   s   e   </span>
+<a name="l00014"></a>00014    <span class="comment">#       a   l   o   n   g       w   i   t   h       t   h   i   s       p   r   o   g   r   a   m   ;       i   f       n   o   t   ,       w   r   i   t   e       t   o       t   h   e       F   r   e   e       S   o   f   t   w   a   r   e   </span>
+<a name="l00015"></a>00015    <span class="comment">#       F   o   u   n   d   a   t   i   o   n   ,       I   n   c   .   ,       6   7   5       M   a   s   s       A   v   e   ,       C   a   m   b   r   i   d   g   e   ,       M   A       0   2   1   3   9   ,       U   S   A   .   </span>
+<a name="l00016"></a>00016    
+<a name="l00017"></a>00017    i   m   p   o   r   t       o   s   
+<a name="l00018"></a>00018    
+<a name="l00019"></a>00019    <span class="comment">#   #       m   o   d   e   l   (   )       c   l   a   s   s   </span>
+<a name="l00020"></a>00020    <span class="comment">#           </span>
+<a name="l00021"></a>00021    <span class="comment">#           U   s   e   f   u   l       t   o       h   o   l   d       a   n       i   n   t   e   r   n   a   l       r   e   p   r   e   s   e   n   t   a   t   i   o   n       o   f       t   h   e       m   o   d   e   l   </span>
+<a name="l00022"></a>00022    c   l   a   s   s       m   o   d   e   l   (   d   i   c   t   )   :   
+<a name="l00023"></a>00023                    <span class="stringliteral">&quot;   &quot;</span>   <span class="stringliteral">&quot;   A       d   a   t   a       s   t   r   u   c   t   u   r   e       f   o   r       l   o   a   d   i   n   g       t   h   e       m   o   d   e   l   </span>
+<a name="l00024"></a>00024 <span class="stringliteral">                   </span>
+<a name="l00025"></a>00025 <span class="stringliteral">                               T   h   e       m   o   d   e   l       o   b   j   e   c   t       p   r   o   v   i   d   e   s       a   n       i   n   t   e   r   n   a   l       r   e   p   r   e   s   e   n   t   a   t   i   o   n       o   f       t   h   e       d   a   t   a       </span>
+<a name="l00026"></a>00026 <span class="stringliteral">                               r   e   a   d       f   r   o   m       t   h   e       f   i   l   e   s   .   </span><span class="stringliteral">&quot;   &quot;</span>   <span class="stringliteral">&quot;   </span>
+<a name="l00027"></a>00027 <span class="stringliteral">                   </span>
+<a name="l00028"></a>00028 <span class="stringliteral">                   d   e   f       _   _   i   n   i   t   _   _   (   s   e   l   f   ,       m   o   d   e   l   P   a   t   h       =       N   o   n   e   )   :   </span>
+<a name="l00029"></a>00029 <span class="stringliteral">                                   d   i   c   t   .   _   _   i   n   i   t   _   _   (   s   e   l   f   )   </span>
+<a name="l00030"></a>00030 <span class="stringliteral">                                   </span>
+<a name="l00031"></a>00031 <span class="stringliteral">                                   </span><span class="comment">#       f   i   l   e   s   </span>
+<a name="l00032"></a>00032                                    s   e   l   f   [   <span class="stringliteral">&quot;   p   r   o   j   e   c   t   &quot;</span>   ]                   =       {   }               <span class="comment">#       p   r   o   j   e   c   t       f   i   l   e       -       h   o   l   d   s       t   h   e       c   u   s   t   o   m       s   e   t   t   i   n   g   s   </span>
+<a name="l00033"></a>00033                                                                                                                                            <span class="comment">#       f   o   r       t   h   e       m   o   d   e   l   </span>
+<a name="l00034"></a>00034                                    s   e   l   f   [   <span class="stringliteral">&quot;   g   e   o   m   e   t   r   y   &quot;</span>   ]               =       N   o   n   e       <span class="comment">#       g   e   o   m   e   t   r   y       f   i   l   e   </span>
+<a name="l00035"></a>00035                                    
+<a name="l00036"></a>00036                                    <span class="comment">#       c   o   n   t   a   i   n   e   r   s       f   o   r       g   e   o   m   e   t   r   i   c   a   l       i   n   s   t   a   n   c   e   s   :   </span>
+<a name="l00037"></a>00037                                    s   e   l   f   [   <span class="stringliteral">&quot;   c   s   y   s   e   s   &quot;</span>   ]                       =       {   }   
+<a name="l00038"></a>00038                                    s   e   l   f   [   <span class="stringliteral">&quot;   p   o   i   n   t   s   &quot;</span>   ]                       =       {   }   
+<a name="l00039"></a>00039                                    s   e   l   f   [   <span class="stringliteral">&quot;   l   i   n   e   s   &quot;</span>   ]                           =       {   }   
+<a name="l00040"></a>00040                                    s   e   l   f   [   <span class="stringliteral">&quot;   f   a   c   e   s   &quot;</span>   ]                           =       {   }   
+<a name="l00041"></a>00041                                    
+<a name="l00042"></a>00042                                    s   e   l   f   .   _   _   a   d   d   G   l   o   b   a   l   C   s   y   s   (   )   
+<a name="l00043"></a>00043                    
+<a name="l00044"></a>00044                    d   e   f       _   _   a   d   d   G   l   o   b   a   l   C   s   y   s   (   s   e   l   f   )   :   
+<a name="l00045"></a>00045                                    <span class="stringliteral">&quot;   &quot;</span>   <span class="stringliteral">&quot;   T   h   e       d   e   f   a   u   l   t       c   o   o   r   d   i   n   a   t   e       s   y   s   t   e   m   &quot;</span>   <span class="stringliteral">&quot;   &quot;</span>   
 <a name="l00046"></a>00046                                    p   a   s   s   
-<a name="l00047"></a>00047    
-<a name="l00048"></a>00048                    d   e   f       c   o   u   n   t   C   s   y   s   (   s   e   l   f   )   :       <span class="comment">#       ?   ?   ?   ?       r   e   a   l   l   y       n   e   c   e   s   s   a   r   y       ?   ?   ?   ?   </span>
-<a name="l00049"></a>00049                                    r   e   t   u   r   n       l   e   n   (   s   e   l   f   [   <span class="stringliteral">&quot;   c   s   y   s   e   s   &quot;</span>   ]   )   
-<a name="l00050"></a>00050    
-<a name="l00051"></a>00051                    <span class="comment">#       p   o   i   n   t   s   </span>
-<a name="l00052"></a>00052                    d   e   f       a   d   d   P   o   i   n   t   (   s   e   l   f   ,       p   o   i   n   t   I   n   s   t   a   n   c   e   )   :   
+<a name="l00047"></a>00047                    
+<a name="l00048"></a>00048                    d   e   f       l   o   a   d   M   o   d   e   l   (   s   e   l   f   ,       m   o   d   e   l   D   i   r   )   :   
+<a name="l00049"></a>00049                                    <span class="stringliteral">&quot;   &quot;</span>   <span class="stringliteral">&quot;   (   f   i   l   e   )       -   &gt;       m   o   d   e   l       o   b   j   e   c   t   &quot;</span>   <span class="stringliteral">&quot;   &quot;</span>   
+<a name="l00050"></a>00050                                    p   a   s   s   
+<a name="l00051"></a>00051    
+<a name="l00052"></a>00052                    d   e   f       _   _   p   a   r   s   e   P   r   o   j   e   c   t   (   s   e   l   f   )   :   
 <a name="l00053"></a>00053                                    p   a   s   s   
 <a name="l00054"></a>00054                    
-<a name="l00055"></a>00055                    d   e   f       m   o   d   i   f   y   P   o   i   n   t   (   s   e   l   f   ,       p   o   i   n   t   L   a   b   e   l   )   :   
+<a name="l00055"></a>00055                    d   e   f       _   _   p   a   r   s   e   G   e   o   m   e   t   r   y   (   s   e   l   f   )   :   
 <a name="l00056"></a>00056                                    p   a   s   s   
-<a name="l00057"></a>00057                    
-<a name="l00058"></a>00058                    d   e   f       d   e   l   e   t   e   P   o   i   n   t   (   s   e   l   f   ,       p   o   i   n   t   L   a   b   e   l   )   :   
-<a name="l00059"></a>00059                                    p   a   s   s   
+<a name="l00057"></a>00057    
+<a name="l00058"></a>00058                    <span class="comment">#       g   e   o   m   e   t   r   i   c       e   n   t   i   t   i   e   s       s   t   u   f   f   :   </span>
+<a name="l00059"></a>00059                    <span class="comment">#       c   o   o   r   d   i   n   a   t   e       s   y   s   t   e   m   s   :   </span>
 <a name="l00060"></a>00060                    
-<a name="l00061"></a>00061                    d   e   f       c   o   u   n   t   P   o   i   n   t   s   (   s   e   l   f   )   :   
-<a name="l00062"></a>00062                                    r   e   t   u   r   n       l   e   n   (   s   e   l   f   [   <span class="stringliteral">&quot;   p   o   i   n   t   s   &quot;</span>   ]   )   
-<a name="l00063"></a>00063    
-<a name="l00064"></a>00064                    <span class="comment">#       l   i   n   e   s   </span>
-<a name="l00065"></a>00065                    d   e   f       a   d   d   L   i   n   e   (   s   e   l   f   ,       l   i   n   e   I   n   s   t   a   n   c   e   )   :   
-<a name="l00066"></a>00066                                    p   a   s   s   
-<a name="l00067"></a>00067                    
-<a name="l00068"></a>00068                    d   e   f       m   o   d   i   f   y   L   i   n   e   (   s   e   l   f   ,       l   i   n   e   I   n   s   t   a   n   c   e   )   :   
-<a name="l00069"></a>00069                                    p   a   s   s   
-<a name="l00070"></a>00070                    
-<a name="l00071"></a>00071                    d   e   f       d   e   l   e   t   e   L   i   n   e   (   s   e   l   f   ,       l   i   n   e   I   n   s   t   a   n   c   e   )   :   
-<a name="l00072"></a>00072                                    p   a   s   s   
-<a name="l00073"></a>00073                    
-<a name="l00074"></a>00074                    d   e   f       c   o   u   n   t   L   i   n   e   s   (   s   e   l   f   )   :   
-<a name="l00075"></a>00075                                    r   e   t   u   r   n       l   e   n   (   s   e   l   f   [   <span class="stringliteral">&quot;   l   i   n   e   s   &quot;</span>   ]   )   
+<a name="l00061"></a>00061                    d   e   f       a   d   d   C   s   y   s   (   s   e   l   f   ,       c   s   y   s   )   :   
+<a name="l00062"></a>00062                                    p   a   s   s   
+<a name="l00063"></a>00063                    
+<a name="l00064"></a>00064                    d   e   f       m   o   d   i   f   y   C   s   y   s   (   s   e   l   f   ,       c   s   y   s   )   :   
+<a name="l00065"></a>00065                                    p   a   s   s   
+<a name="l00066"></a>00066                    
+<a name="l00067"></a>00067                    d   e   f       d   e   l   e   t   e   C   s   y   s   (   s   e   l   f   ,       c   s   y   s   )   :   
+<a name="l00068"></a>00068                                    p   a   s   s   
+<a name="l00069"></a>00069    
+<a name="l00070"></a>00070                    d   e   f       c   o   u   n   t   C   s   y   s   (   s   e   l   f   )   :       <span class="comment">#       ?   ?   ?   ?       r   e   a   l   l   y       n   e   c   e   s   s   a   r   y       ?   ?   ?   ?   </span>
+<a name="l00071"></a>00071                                    r   e   t   u   r   n       l   e   n   (   s   e   l   f   [   <span class="stringliteral">&quot;   c   s   y   s   e   s   &quot;</span>   ]   )   
+<a name="l00072"></a>00072    
+<a name="l00073"></a>00073                    <span class="comment">#       p   o   i   n   t   s   </span>
+<a name="l00074"></a>00074                    d   e   f       a   d   d   P   o   i   n   t   (   s   e   l   f   ,       p   o   i   n   t   I   n   s   t   a   n   c   e   )   :   
+<a name="l00075"></a>00075                                    p   a   s   s   
 <a name="l00076"></a>00076                    
-<a name="l00077"></a>00077                    <span class="comment">#       a   d   d       c   o   d   e       f   o   r       s   u   r   f   a   c   e       (   2   D   )       m   a   n   a   g   e   m   e   n   t       l   a   t   e   r   </span>
+<a name="l00077"></a>00077                    d   e   f       m   o   d   i   f   y   P   o   i   n   t   (   s   e   l   f   ,       p   o   i   n   t   L   a   b   e   l   )   :   
+<a name="l00078"></a>00078                                    p   a   s   s   
+<a name="l00079"></a>00079                    
+<a name="l00080"></a>00080                    d   e   f       d   e   l   e   t   e   P   o   i   n   t   (   s   e   l   f   ,       p   o   i   n   t   L   a   b   e   l   )   :   
+<a name="l00081"></a>00081                                    p   a   s   s   
+<a name="l00082"></a>00082                    
+<a name="l00083"></a>00083                    d   e   f       c   o   u   n   t   P   o   i   n   t   s   (   s   e   l   f   )   :   
+<a name="l00084"></a>00084                                    r   e   t   u   r   n       l   e   n   (   s   e   l   f   [   <span class="stringliteral">&quot;   p   o   i   n   t   s   &quot;</span>   ]   )   
+<a name="l00085"></a>00085    
+<a name="l00086"></a>00086                    <span class="comment">#       l   i   n   e   s   </span>
+<a name="l00087"></a>00087                    d   e   f       a   d   d   L   i   n   e   (   s   e   l   f   ,       l   i   n   e   I   n   s   t   a   n   c   e   )   :   
+<a name="l00088"></a>00088                                    p   a   s   s   
+<a name="l00089"></a>00089                    
+<a name="l00090"></a>00090                    d   e   f       m   o   d   i   f   y   L   i   n   e   (   s   e   l   f   ,       l   i   n   e   I   n   s   t   a   n   c   e   )   :   
+<a name="l00091"></a>00091                                    p   a   s   s   
+<a name="l00092"></a>00092                    
+<a name="l00093"></a>00093                    d   e   f       d   e   l   e   t   e   L   i   n   e   (   s   e   l   f   ,       l   i   n   e   I   n   s   t   a   n   c   e   )   :   
+<a name="l00094"></a>00094                                    p   a   s   s   
+<a name="l00095"></a>00095                    
+<a name="l00096"></a>00096                    d   e   f       c   o   u   n   t   L   i   n   e   s   (   s   e   l   f   )   :   
+<a name="l00097"></a>00097                                    r   e   t   u   r   n       l   e   n   (   s   e   l   f   [   <span class="stringliteral">&quot;   l   i   n   e   s   &quot;</span>   ]   )   
+<a name="l00098"></a>00098                    
+<a name="l00099"></a>00099                    <span class="comment">#       a   d   d       c   o   d   e       f   o   r       s   u   r   f   a   c   e       (   2   D   )       m   a   n   a   g   e   m   e   n   t       l   a   t   e   r   </span>
 </pre></div></div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 20 2012 21:02:51 for Tkad by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Nov 21 2012 19:02:29 for Tkad by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

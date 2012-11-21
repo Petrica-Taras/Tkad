@@ -16,15 +16,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
+def main():
+    import os
+    import sys
+    # Find out the location of exaile's working directory, and insert it to sys.path
+    basedir = os.path.dirname(os.path.realpath(__file__))
+    if not os.path.exists(os.path.join(basedir, "tkad.py")):
+        cwd = os.getcwd()
+        if os.path.exists(os.path.join(cwd, "tkad.py")):
+            basedir = cwd
+    sys.path.insert(0, basedir)
+    
+    from bin.app import Application 
+    root = Application()
+
+
 if __name__ == "__main__":
-     from bin.app import Application
+    main()
 
-     from bin.GUI.common.settings import settings
-     from bin.GUI.common.model import model
-     from bin.GUI.common.state import state     
 
-     settingsObj = settings()
-     modelObj    = model() 
-     stateObj    = state()
-
-     root   = Application(settings, model, state)

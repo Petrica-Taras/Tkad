@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Tkad: bin/GUI/widgets/uptoolbox.py Source File</title>
+<title>Tkad: bin/widgets/uptoolbox.py Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -24,7 +24,7 @@
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>bin/GUI/widgets/uptoolbox.py</h1>  </div>
+<h1>bin/widgets/uptoolbox.py</h1>  </div>
 </div>
 <div class="contents">
 <div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment"># Copyright (C) 2011 Petrica Taras</span>
@@ -48,40 +48,40 @@
 <a name="l00019"></a>00019 <span class="keyword">from</span> xml.dom <span class="keyword">import</span> minidom
 <a name="l00020"></a>00020 <span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageTk
 <a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html">00022</a> <span class="keyword">class </span><a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html">UpperToolbox</a>(tkinter.Frame):
+<a name="l00022"></a><a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html">00022</a> <span class="keyword">class </span><a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html">uppertoolbox</a>(tkinter.Frame):
 <a name="l00023"></a>00023     <span class="keyword">def </span>__init__(self, master, xmlfile, iconspath):
 <a name="l00024"></a>00024         tkinter.Frame.__init__(self, master=master)
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026         self[<span class="stringliteral">&quot;relief&quot;</span>]=tkinter.RAISED
 <a name="l00027"></a>00027         self[<span class="stringliteral">&quot;borderwidth&quot;</span>]=1
-<a name="l00028"></a>00028         self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a6c2014ec5992d21769e9ee10a1120355">master</a>=master
+<a name="l00028"></a>00028         self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#aec04189d730b1ba670ad2f0c21ee88f1">master</a>=master
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030         self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a6b2c6c9bd88061b22f046ef6f0a86b0c">xmlfile</a>=xmlfile
-<a name="l00031"></a>00031         self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a06c85983be3e9021c72a61021f3bc4b0">iconspath</a>=iconspath
+<a name="l00030"></a>00030         self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#a7be7d97195e44db45ad79beb8299b7d2">xmlfile</a>=xmlfile
+<a name="l00031"></a>00031         self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#ad73438c9d093835b3daadb43e3b01024">iconspath</a>=iconspath
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033         self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a5351270d3aa96d11b073f1457a809d59">img</a>=[]
+<a name="l00033"></a>00033         self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#a59c3c408e0762f70bd40c40252ac5f0a">img</a>=[]
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035         self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a1f2ae5218091e7cf7c34eec9e6230a5c">ToolboxTree</a>=[]
-<a name="l00036"></a>00036         self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#af8782463fffa80d38b8a7a32d7654923">ToolboxWidgets</a>=[]
-<a name="l00037"></a>00037         self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#aaeea0f9a6afe7ccfb23a341b5862b6c0">createToolboxTree</a>()
-<a name="l00038"></a>00038         self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#aaec6d989a10b26fe4931e8edf60758b1">createToolbox</a>()
+<a name="l00035"></a>00035         self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#ac65a65982c0563f7efb3194348c45e96">ToolboxTree</a>=[]
+<a name="l00036"></a>00036         self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#a68a67a279d19de64b188a5f79a91a4de">ToolboxWidgets</a>=[]
+<a name="l00037"></a>00037         self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#aa1b1050da67fd0fc072bb4ace2e862c7">createToolboxTree</a>()
+<a name="l00038"></a>00038         self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#acfdd666c133622aae0b22677a3e387bb">createToolbox</a>()
 <a name="l00039"></a>00039         self.pack(side=<span class="stringliteral">&quot;top&quot;</span>, anchor=<span class="stringliteral">&quot;nw&quot;</span>, fill=tkinter.X)
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041     <span class="keyword">def </span>createToolboxTree(self):
-<a name="l00042"></a>00042         xmltoolbox=minidom.parse(self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a6b2c6c9bd88061b22f046ef6f0a86b0c">xmlfile</a>)
+<a name="l00042"></a>00042         xmltoolbox=minidom.parse(self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#a7be7d97195e44db45ad79beb8299b7d2">xmlfile</a>)
 <a name="l00043"></a>00043         xmltoolboxRoot=xmltoolbox.firstChild
 <a name="l00044"></a>00044         <span class="keywordflow">for</span> i <span class="keywordflow">in</span> xmltoolboxRoot.childNodes:
 <a name="l00045"></a>00045             <span class="keywordflow">if</span> (i.nodeName != <span class="stringliteral">&quot;#text&quot;</span>) <span class="keywordflow">and</span> (i.nodeName !=<span class="stringliteral">&#39;#comment&#39;</span>):
-<a name="l00046"></a>00046                 self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a1f2ae5218091e7cf7c34eec9e6230a5c">ToolboxTree</a>.append((i.attributes[<span class="stringliteral">&quot;icon&quot;</span>].value, i.attributes[<span class="stringliteral">&quot;callback&quot;</span>].value))
+<a name="l00046"></a>00046                 self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#ac65a65982c0563f7efb3194348c45e96">ToolboxTree</a>.append((i.attributes[<span class="stringliteral">&quot;icon&quot;</span>].value, i.attributes[<span class="stringliteral">&quot;callback&quot;</span>].value))
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048     <span class="keyword">def </span>createToolbox(self):
-<a name="l00049"></a>00049         <span class="keywordflow">for</span> i <span class="keywordflow">in</span> self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a1f2ae5218091e7cf7c34eec9e6230a5c">ToolboxTree</a>:
-<a name="l00050"></a>00050             self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a5351270d3aa96d11b073f1457a809d59">img</a>.append(ImageTk.PhotoImage(Image.open(os.path.join(self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a06c85983be3e9021c72a61021f3bc4b0">iconspath</a>, i[0]))))         
-<a name="l00051"></a>00051             self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#af8782463fffa80d38b8a7a32d7654923">ToolboxWidgets</a>.append(tkinter.Button(self, command=functools.partial(eval(i[1]), self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a6c2014ec5992d21769e9ee10a1120355">master</a>), image=self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#a5351270d3aa96d11b073f1457a809d59">img</a>[-1]))    
-<a name="l00052"></a>00052             self.<a class="code" href="classGUI_1_1widgets_1_1uptoolbox_1_1UpperToolbox.html#af8782463fffa80d38b8a7a32d7654923">ToolboxWidgets</a>[-1].pack(side=<span class="stringliteral">&quot;left&quot;</span>)                                           
+<a name="l00049"></a>00049         <span class="keywordflow">for</span> i <span class="keywordflow">in</span> self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#ac65a65982c0563f7efb3194348c45e96">ToolboxTree</a>:
+<a name="l00050"></a>00050             self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#a59c3c408e0762f70bd40c40252ac5f0a">img</a>.append(ImageTk.PhotoImage(Image.open(os.path.join(self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#ad73438c9d093835b3daadb43e3b01024">iconspath</a>, i[0]))))         
+<a name="l00051"></a>00051             self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#a68a67a279d19de64b188a5f79a91a4de">ToolboxWidgets</a>.append(tkinter.Button(self, command=functools.partial(eval(i[1]), self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#aec04189d730b1ba670ad2f0c21ee88f1">master</a>), image=self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#a59c3c408e0762f70bd40c40252ac5f0a">img</a>[-1]))    
+<a name="l00052"></a>00052             self.<a class="code" href="classbin_1_1widgets_1_1uptoolbox_1_1uppertoolbox.html#a68a67a279d19de64b188a5f79a91a4de">ToolboxWidgets</a>[-1].pack(side=<span class="stringliteral">&quot;left&quot;</span>)                                           
 </pre></div></div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 20 2012 21:02:51 for Tkad by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Nov 21 2012 19:02:29 for Tkad by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

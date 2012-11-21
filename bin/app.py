@@ -14,84 +14,118 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-## @package app
+## @namespace app
 #  Contains a class defining the main application window.
 #
 #  The main application instance require the settings, model and state objects.   
-
-from xml.dom import minidom
 
 import os 
 import tkinter
 import tkinter.tix
 
-import GUI.widgets.menu
-import GUI.widgets.uptoolbox
-import GUI.widgets.canvas
-import GUI.widgets.XMLeditor
+from bin.common import settings
+from bin.common import model
+from bin.common import state  
+     
+#from bin.widgets.menu import menu
+from bin.widgets.uptoolbox import uppertoolbox
+from bin.widgets.middleframe import middleframe
 
-# generate application window
+from bin.widgets.canvas import canvas
+from bin.widgets.XMLeditor import XMLeditor
 
+## Application() class
+#  
+#  Instances of this class generates the application window
 class Application(tkinter.tix.Tk):
     """Main app window. Everything starts here.
-       Keeps the main widgets (menu, upper and right toolbar, console, canvas, XML editor, etc.
+       Keeps the main widgets (menu, upper and left toolbar, console, canvas, XML editor, etc.
        Initialises or uses the (common) settings object, the state object and the model object."""
-    def __init__(self, settings, model, state):
+    ## The constructor. 
+    def __init__(self):
         tkinter.tix.Tk.__init__(self)
-        # load registered settings and default empty state (menu)
+        # load registered settings and default empty state (menu & co)
+
+        ## @var settings 
+        #  A dictionary which holds the settings/options for various widgets
+        self.settings = settings(self)
+
+        ## @var model 
+        #  A dictionary which holds the model tree structure and the associated files
+        self.model    = model()
         
-        self.settings = settings
-        self.model    = model
-        self.state    = state
+        ## @var state 
+        #  A dictionary which accounts for disabled         
+        self.state    = state()
+
+        ## @var menuBar 
+        #
+        #  A menu widget with resources specified in a XML file. The callbacks to 
+        #  various menu entries are added when the *Callbacks series of object are 
+        #  instantiated. 
+        self.menuBar      = None  # children - submenus
         
-        self.xmlPaths=None  # ????
-        self.modulePaths=[] # other directories to import modules from ????
+        ## @var upperToolbox 
+        #
+        #  A frame widget, grouping several buttons/widgets with resources specified in a XML file. The callbacks 
+        #  associated to various buttons are binded when the *Callbacks series of object are instantiated.         
+        self.upperToolbox = None  # children - its buttons
 
-        self.xmlprojfiles={"trunk":    None,
-                           "geometry": None,
-                           "mesh":     None} # ???? maybe I should move this 
+        ## @var middleFrame 
+        #
+        #  A frame widget, serving no other purposes than to group the left toolbox and notebook widgets conveniently     
+        self.middleFrame  = None  # children - leftToolbox, notebook
+        
+        ## @var leftToolbox 
+        #
+        #  A frame widget, grouping several buttons which are commonly used. The callbacks associated 
+        #  to various buttons are binded when the *Callbacks series of object are instantiated.            
+        self.leftToolbox  = None  # children - its buttons
+        
+        ## @var notebook 
+        #
+        #  A tkinter.tix widget which offers the possibility of tabbing several opened documents. Its children are 
+        #  the canvas and the XMLEditor widgets
+        self.notebook     = None  # children - canvas and XMLEditor
+        
+        ## @var canvas 
+        #
+        #  An enhanced canvas widget       
+        self.canvas       = None
+        
+        ## @var XMLEditor
+        #
+        #  An enhanced text widget with syntax highlighting, search/replace, etc.          
+        self.XMLEditor    = None
 
-        self.projState = None # if the app starts with a new project, no project, a previously opened one, etc ... TODO
-                              # with influence on self.settings (some menu entries have to be disabled with respect to
-                              # the settings
+        ## @var statusBar 
+        #
+        #  A frame widget, grouping several label widgets which show various information
+        # about the project and its current state        
+        self.statusBar    = None  # several label type widgets holding information
 
-        self.widgets = None # holds all widgets in an unified way - maybe in a clear to follow tree ????
+        self.__createApp()
 
-        self.menuBar=None
+    def __createApp(self):
+        """Creates the main application window populated with all the widgets."""
+        
+        self.menuBar = menu(self, self.settings("menu"))
 
-        self.upperFrame=None # general buttons like zoom, new, save, entity hierarchy, open editor (xml, python),
+        self.upperToolbox = uppertoolbox(self, self.settings("uppertoolbox"))
 
-        self.canvasFrame=None # left toolbox + cad widget
-        self.notebook=None
-        self.leftFrame=None
-        self.DrawingArea=None
-        self.XMLeditor=None
-
-        self.lowerConsole=None # with tabs possibility
-        self.lowerLabelFrame=None # has priority when determining the windows size
-        self.lowerLabel=None
-        self.lowerlabelstr=[]
-
-        self.AppTitle=tkinter.StringVar()
-        self.AppTitle.set("")
-
-        self.readXML() # ??? - settings ???
-        self.createApp()
-
-    def createApp(self):
-        self.menuBar=GUI.widgets.menu.MenuToolbar(self,
-                                                  self.settings["menuXMLPath"],
-                                                  self.settings["menuIconsPath"])
-
-        self.upperFrame=GUI.widgets.uptoolbox.UpperToolbox(self,
-                                                           self.settings["upperToolBoxXMLPath"],
-                                                           self["upperToolBoxIconsPath"])
+        self.middleFrame = None # TODO - start from here
 
         self.notebook=tkinter.tix.NoteBook(self)
         self.notebook.pack(side="top", fill="both", expand="yes")
-
+        
+        # create these, after the menu, and toolboxes where created (in order for the callbacks to be binded to the appropriate entries)
+        self.projectCallbacks     = projectCallbacks(self, master)
+        self.GeometryCallbacks    = geometryCallbacks(self, master)
+        self.SettingsCallbacks    = settingsCallbacks(self, master)
+        self.HelpCallbacks        = HelpCallbacks(self, master)
+        
         # more like testing purpose
-        self.lowerLabelFrame=tkinter.Frame(self, borderwidth=0)
+        self.statusBar=tkinter.Frame(self, borderwidth=0)
         self.lowerLabelFrame.pack(side="top", fill="x")
         self.lowerlabelstr.append(tkinter.StringVar())
         self.lowerLabel=tkinter.Label(self.lowerLabelFrame, textvariable=self.lowerlabelstr[0], relief="sunken")
@@ -101,7 +135,6 @@ class Application(tkinter.tix.Tk):
 
         self.geometry('%sx%s+0+0' % self.maxsize())
 
-        self.title(self.AppTitle.get())
         self.update_idletasks()
         self.mainloop()
 
@@ -121,15 +154,6 @@ class Application(tkinter.tix.Tk):
         self.XMLeditor.insert(tkinter.END, 
                               self.xmlprojfiles["geometry"][0].toprettyxml(indent = '   ', 
                                                                            encoding=self.xmlprojfiles["geometry"][0].encoding))
-
-
-    def readXML(self):
-        self.xmlPaths=minidom.parse(os.path.join(self.basedir, "etc/paths.xml"))
-
-        for i in self.xmlPaths.getElementsByTagName('ModPath'):
-            self.modulePaths.append(i.firstChild.data)
-
-        self.lwd=os.path.join(self.basedir, self.xmlPaths.getElementsByTagName("LastWorkingDir")[0].firstChild.data)
 
     def __cb_lowerlabel(self, event): # to be transformed in a full class widget
         self.lowerlabelstr[0].set("x_int = %d, y_int = %d" % (event.x, event.y))

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Tkad: bin/GUI/widgets/csys.py Source File</title>
+<title>Tkad: bin/widgets/csys.py Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -24,7 +24,7 @@
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>bin/GUI/widgets/csys.py</h1>  </div>
+<h1>bin/widgets/csys.py</h1>  </div>
 </div>
 <div class="contents">
 <div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment"># Copyright (C) 2011 Petrica Taras</span>
@@ -45,7 +45,7 @@
 <a name="l00016"></a>00016 
 <a name="l00017"></a>00017 <span class="keyword">import</span> tkinter, tkinter.tix <span class="comment"># Tix is for the combobox</span>
 <a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html">00019</a> <span class="keyword">class </span><a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html">csys</a>(tkinter.tix.Toplevel):
+<a name="l00019"></a><a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html">00019</a> <span class="keyword">class </span><a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html">csys</a>(tkinter.tix.Toplevel):
 <a name="l00020"></a>00020     <span class="stringliteral">&quot;&quot;&quot;GUI.widgets.csys.csys class(rootApp, csys=None)\n\n \</span>
 <a name="l00021"></a>00021 <span class="stringliteral"></span>
 <a name="l00022"></a>00022 <span class="stringliteral">Tkinter.Toplevel like widget to collect information for either constructing a \</span>
@@ -60,189 +60,189 @@
 <a name="l00031"></a>00031 <span class="stringliteral">...&quot;&quot;&quot;</span>
 <a name="l00032"></a>00032     <span class="keyword">def </span>__init__(self, master, csys=None):
 <a name="l00033"></a>00033         tkinter.tix.Toplevel.__init__(self, master)
-<a name="l00034"></a>00034         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a2f916ff2e481bfc5fdf57473602fe8a5">master</a>=master
-<a name="l00035"></a>00035         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abffdea4368bc06e72f5d6b278849619b">csys</a>=csys
-<a name="l00036"></a>00036         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ace8fd30ef6b8a10d336a45088da72a99">clabel</a>=tkinter.StringVar()
-<a name="l00037"></a>00037         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a28ac456ff4c2006a98d5ab1f4d2e17bd">parent</a>=tkinter.StringVar()
-<a name="l00038"></a>00038         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a1b9d7f809fc11737c84d835889caaf2b">originX</a>=tkinter.StringVar()
-<a name="l00039"></a>00039         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af873e3e2dc7e111343a297c70f47b152">originY</a>=tkinter.StringVar()
-<a name="l00040"></a>00040         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3914903e14314c744a44eff0a4d4cc2b">rotation</a>=tkinter.StringVar()
-<a name="l00041"></a>00041         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a24ba3975a1a6a9f5d501ff282e9a2362">typec</a>=tkinter.StringVar()
+<a name="l00034"></a>00034         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a13910627fa40268c801e150486e4e7e5">master</a>=master
+<a name="l00035"></a>00035         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aaed4f03864e11972e092841ef1ed313b">csys</a>=csys
+<a name="l00036"></a>00036         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a2073cf33c3dd56a315d92a54de0f7880">clabel</a>=tkinter.StringVar()
+<a name="l00037"></a>00037         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ac249230cc3ab01c06139b60b28053c71">parent</a>=tkinter.StringVar()
+<a name="l00038"></a>00038         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adb6d8d1f6b453e6d5043c5ae42ecb97c">originX</a>=tkinter.StringVar()
+<a name="l00039"></a>00039         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a11520ea73e411d21aa3c85b34e45beff">originY</a>=tkinter.StringVar()
+<a name="l00040"></a>00040         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3da605f199b15baa1e95e2c4e7982629">rotation</a>=tkinter.StringVar()
+<a name="l00041"></a>00041         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae7c2a3841754b04418581f8d2e331e2a">typec</a>=tkinter.StringVar()
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a21c7b9d533c1fba4733bf92ef1215276">visible</a>=tkinter.IntVar()
+<a name="l00043"></a>00043         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a8a7dd441fee7aeeb51eebc5624028cee">visible</a>=tkinter.IntVar()
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045         <span class="keywordflow">if</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abffdea4368bc06e72f5d6b278849619b">csys</a> != <span class="keywordtype">None</span>: <span class="comment"># editing a csys entity</span>
-<a name="l00046"></a>00046             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a1b9d7f809fc11737c84d835889caaf2b">originX</a>.set(str(self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abffdea4368bc06e72f5d6b278849619b">csys</a>.origin[0]))
-<a name="l00047"></a>00047             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af873e3e2dc7e111343a297c70f47b152">originY</a>.set(str(self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abffdea4368bc06e72f5d6b278849619b">csys</a>.origin[1]))
-<a name="l00048"></a>00048             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a28ac456ff4c2006a98d5ab1f4d2e17bd">parent</a>.set(self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abffdea4368bc06e72f5d6b278849619b">csys</a>.parent.label)
-<a name="l00049"></a>00049             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ace8fd30ef6b8a10d336a45088da72a99">clabel</a>.set(self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abffdea4368bc06e72f5d6b278849619b">csys</a>.label)
-<a name="l00050"></a>00050             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3914903e14314c744a44eff0a4d4cc2b">rotation</a>.set(str(self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abffdea4368bc06e72f5d6b278849619b">csys</a>.rotation))
-<a name="l00051"></a>00051             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a24ba3975a1a6a9f5d501ff282e9a2362">typec</a>.set(self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abffdea4368bc06e72f5d6b278849619b">csys</a>.type)
+<a name="l00045"></a>00045         <span class="keywordflow">if</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aaed4f03864e11972e092841ef1ed313b">csys</a> != <span class="keywordtype">None</span>: <span class="comment"># editing a csys entity</span>
+<a name="l00046"></a>00046             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adb6d8d1f6b453e6d5043c5ae42ecb97c">originX</a>.set(str(self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aaed4f03864e11972e092841ef1ed313b">csys</a>.origin[0]))
+<a name="l00047"></a>00047             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a11520ea73e411d21aa3c85b34e45beff">originY</a>.set(str(self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aaed4f03864e11972e092841ef1ed313b">csys</a>.origin[1]))
+<a name="l00048"></a>00048             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ac249230cc3ab01c06139b60b28053c71">parent</a>.set(self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aaed4f03864e11972e092841ef1ed313b">csys</a>.parent.label)
+<a name="l00049"></a>00049             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a2073cf33c3dd56a315d92a54de0f7880">clabel</a>.set(self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aaed4f03864e11972e092841ef1ed313b">csys</a>.label)
+<a name="l00050"></a>00050             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3da605f199b15baa1e95e2c4e7982629">rotation</a>.set(str(self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aaed4f03864e11972e092841ef1ed313b">csys</a>.rotation))
+<a name="l00051"></a>00051             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae7c2a3841754b04418581f8d2e331e2a">typec</a>.set(self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aaed4f03864e11972e092841ef1ed313b">csys</a>.type)
 <a name="l00052"></a>00052             self.title(<span class="stringliteral">&quot;Edit Coordinate System&quot;</span>)
 <a name="l00053"></a>00053         <span class="keywordflow">else</span>:
-<a name="l00054"></a>00054             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a1b9d7f809fc11737c84d835889caaf2b">originX</a>.set(<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00055"></a>00055             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af873e3e2dc7e111343a297c70f47b152">originY</a>.set(<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00056"></a>00056             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a28ac456ff4c2006a98d5ab1f4d2e17bd">parent</a>.set(<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00057"></a>00057             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ace8fd30ef6b8a10d336a45088da72a99">clabel</a>.set(<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00058"></a>00058             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3914903e14314c744a44eff0a4d4cc2b">rotation</a>.set(<span class="stringliteral">&quot;0&quot;</span>)
-<a name="l00059"></a>00059             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a24ba3975a1a6a9f5d501ff282e9a2362">typec</a>.set(<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00054"></a>00054             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adb6d8d1f6b453e6d5043c5ae42ecb97c">originX</a>.set(<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00055"></a>00055             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a11520ea73e411d21aa3c85b34e45beff">originY</a>.set(<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00056"></a>00056             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ac249230cc3ab01c06139b60b28053c71">parent</a>.set(<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00057"></a>00057             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a2073cf33c3dd56a315d92a54de0f7880">clabel</a>.set(<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00058"></a>00058             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3da605f199b15baa1e95e2c4e7982629">rotation</a>.set(<span class="stringliteral">&quot;0&quot;</span>)
+<a name="l00059"></a>00059             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae7c2a3841754b04418581f8d2e331e2a">typec</a>.set(<span class="stringliteral">&quot;&quot;</span>)
 <a name="l00060"></a>00060             self.title(<span class="stringliteral">&quot;Add Coordinate System&quot;</span>)
 <a name="l00061"></a>00061 
 <a name="l00062"></a>00062         self.resizable(height=<span class="stringliteral">&quot;false&quot;</span>, width=<span class="stringliteral">&quot;false&quot;</span>)
 <a name="l00063"></a>00063 
-<a name="l00064"></a>00064         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a372cc48be47504998365f7df2fbad986">firstCoord</a>=tkinter.StringVar()
-<a name="l00065"></a>00065         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a43b799ae123b43b6fd769c3a9447b074">secondCoord</a>=tkinter.StringVar()
+<a name="l00064"></a>00064         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ac6b5a41e595e219130f33d6aa5cf9713">firstCoord</a>=tkinter.StringVar()
+<a name="l00065"></a>00065         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adfde098241296615c0913badf9d1b30c">secondCoord</a>=tkinter.StringVar()
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a372cc48be47504998365f7df2fbad986">firstCoord</a>.set(<span class="stringliteral">&quot;X origin&quot;</span>)
-<a name="l00068"></a>00068         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a43b799ae123b43b6fd769c3a9447b074">secondCoord</a>.set(<span class="stringliteral">&quot;Y origin&quot;</span>)
+<a name="l00067"></a>00067         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ac6b5a41e595e219130f33d6aa5cf9713">firstCoord</a>.set(<span class="stringliteral">&quot;X origin&quot;</span>)
+<a name="l00068"></a>00068         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adfde098241296615c0913badf9d1b30c">secondCoord</a>.set(<span class="stringliteral">&quot;Y origin&quot;</span>)
 <a name="l00069"></a>00069 
 <a name="l00070"></a>00070         <span class="comment"># create widgets here (but don&#39;t display them)</span>
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3d8fb2284facfd09c90bbdb92c09c95f">csysLabel</a>=tkinter.Label(self, text=<span class="stringliteral">&quot;Coordinate System Label&quot;</span>, anchor=tkinter.W)
+<a name="l00072"></a>00072         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a31f6190f9d9637e19aa298fa2c5adacc">csysLabel</a>=tkinter.Label(self, text=<span class="stringliteral">&quot;Coordinate System Label&quot;</span>, anchor=tkinter.W)
 <a name="l00073"></a>00073 
-<a name="l00074"></a>00074         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af96d0d3121b5d03e449b3a00007407f3">csysEntry</a>=tkinter.Entry(self, textvariable=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ace8fd30ef6b8a10d336a45088da72a99">clabel</a>)
+<a name="l00074"></a>00074         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a987ca18eaaae6b2739af0f51fb63e82e">csysEntry</a>=tkinter.Entry(self, textvariable=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a2073cf33c3dd56a315d92a54de0f7880">clabel</a>)
 <a name="l00075"></a>00075 
-<a name="l00076"></a>00076         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a5c36e227d4a78a62ca13d0a10d3c3846">parentLabel</a>=tkinter.Label(self, text=<span class="stringliteral">&quot;Coordinate System Parent&quot;</span>)
-<a name="l00077"></a>00077         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ab515f5b8ddbdeb4777bd951d5b4846e4">parentCombo</a>=tkinter.tix.ComboBox(self, label=<span class="keywordtype">None</span>, dropdown=1, editable=0, height=4, variable=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a28ac456ff4c2006a98d5ab1f4d2e17bd">parent</a>)
+<a name="l00076"></a>00076         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a5168e8e92caad0f17fe2812160e8c85b">parentLabel</a>=tkinter.Label(self, text=<span class="stringliteral">&quot;Coordinate System Parent&quot;</span>)
+<a name="l00077"></a>00077         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae364baf88cc9ed7edbf73c23ebd638c4">parentCombo</a>=tkinter.tix.ComboBox(self, label=<span class="keywordtype">None</span>, dropdown=1, editable=0, height=4, variable=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ac249230cc3ab01c06139b60b28053c71">parent</a>)
 <a name="l00078"></a>00078 
-<a name="l00079"></a>00079         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ab515f5b8ddbdeb4777bd951d5b4846e4">parentCombo</a>.set_silent(<span class="stringliteral">&#39;global&#39;</span>)
+<a name="l00079"></a>00079         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae364baf88cc9ed7edbf73c23ebd638c4">parentCombo</a>.set_silent(<span class="stringliteral">&#39;global&#39;</span>)
 <a name="l00080"></a>00080 
-<a name="l00081"></a>00081         <span class="keywordflow">for</span> i <span class="keywordflow">in</span> list(self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a2f916ff2e481bfc5fdf57473602fe8a5">master</a>.DrawingArea.csys.keys()):
-<a name="l00082"></a>00082             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ab515f5b8ddbdeb4777bd951d5b4846e4">parentCombo</a>.insert(tkinter.tix.END, i)
+<a name="l00081"></a>00081         <span class="keywordflow">for</span> i <span class="keywordflow">in</span> list(self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a13910627fa40268c801e150486e4e7e5">master</a>.DrawingArea.csys.keys()):
+<a name="l00082"></a>00082             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae364baf88cc9ed7edbf73c23ebd638c4">parentCombo</a>.insert(tkinter.tix.END, i)
 <a name="l00083"></a>00083 
-<a name="l00084"></a>00084         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a93b01babe75f2dce628a2acc4fbd2abb">origXLabel</a>=tkinter.Label(self, textvariable=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a372cc48be47504998365f7df2fbad986">firstCoord</a>, anchor=tkinter.W)
-<a name="l00085"></a>00085         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a9a91493d098fbfbd61d15f19aab74a14">origXEntry</a>=tkinter.Entry(self, textvariable=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a1b9d7f809fc11737c84d835889caaf2b">originX</a>)
+<a name="l00084"></a>00084         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aa7cde048acf1769045dd216f0734aa84">origXLabel</a>=tkinter.Label(self, textvariable=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ac6b5a41e595e219130f33d6aa5cf9713">firstCoord</a>, anchor=tkinter.W)
+<a name="l00085"></a>00085         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ab5afece1bad8f4e751a99af80a00de2b">origXEntry</a>=tkinter.Entry(self, textvariable=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adb6d8d1f6b453e6d5043c5ae42ecb97c">originX</a>)
 <a name="l00086"></a>00086 
-<a name="l00087"></a>00087         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a426d7ccdfbfc0e7ae55fe1b5b4097ce0">typeLabel</a>=tkinter.Label(self, text=<span class="stringliteral">&quot;Coordinate System Type &quot;</span>, anchor=tkinter.W)
-<a name="l00088"></a>00088         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a64fa18fd85fbd49d06dc748428ca638c">typeCombo</a>=tkinter.tix.ComboBox(self, label=<span class="keywordtype">None</span>, dropdown=1, editable=0, command=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a16bb0d2c68dad5dbb30090572e714a3d">__setPolar</a>, height=3, variable=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a24ba3975a1a6a9f5d501ff282e9a2362">typec</a>)
+<a name="l00087"></a>00087         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a24ecea467e0ca1c3bfb73067a5c8830f">typeLabel</a>=tkinter.Label(self, text=<span class="stringliteral">&quot;Coordinate System Type &quot;</span>, anchor=tkinter.W)
+<a name="l00088"></a>00088         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a64edc143cac1850e80c5459369066ef1">typeCombo</a>=tkinter.tix.ComboBox(self, label=<span class="keywordtype">None</span>, dropdown=1, editable=0, command=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aa44e074a1f91de6bed23c1944c28821d">__setPolar</a>, height=3, variable=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae7c2a3841754b04418581f8d2e331e2a">typec</a>)
 <a name="l00089"></a>00089 
-<a name="l00090"></a>00090         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a64fa18fd85fbd49d06dc748428ca638c">typeCombo</a>.set_silent(<span class="stringliteral">&#39;cartesian&#39;</span>)
+<a name="l00090"></a>00090         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a64edc143cac1850e80c5459369066ef1">typeCombo</a>.set_silent(<span class="stringliteral">&#39;cartesian&#39;</span>)
 <a name="l00091"></a>00091 
-<a name="l00092"></a>00092         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a64fa18fd85fbd49d06dc748428ca638c">typeCombo</a>.insert(tkinter.tix.END, <span class="stringliteral">&#39;cartesian&#39;</span>)
-<a name="l00093"></a>00093         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a64fa18fd85fbd49d06dc748428ca638c">typeCombo</a>.insert(tkinter.tix.END, <span class="stringliteral">&#39;polar&#39;</span>)
+<a name="l00092"></a>00092         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a64edc143cac1850e80c5459369066ef1">typeCombo</a>.insert(tkinter.tix.END, <span class="stringliteral">&#39;cartesian&#39;</span>)
+<a name="l00093"></a>00093         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a64edc143cac1850e80c5459369066ef1">typeCombo</a>.insert(tkinter.tix.END, <span class="stringliteral">&#39;polar&#39;</span>)
 <a name="l00094"></a>00094 
-<a name="l00095"></a>00095         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3bb7b0e49e1d700cc281700d2f12a3dc">origYLabel</a>=tkinter.Label(self, textvariable=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a43b799ae123b43b6fd769c3a9447b074">secondCoord</a>, anchor=tkinter.W)
-<a name="l00096"></a>00096         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#afb4c7a0e47ec4cd22e0aeaf25134f6eb">origYEntry</a>=tkinter.Entry(self, textvariable=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af873e3e2dc7e111343a297c70f47b152">originY</a>)
+<a name="l00095"></a>00095         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a26153c1552fb5beb18ab0b0bf7e1af20">origYLabel</a>=tkinter.Label(self, textvariable=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adfde098241296615c0913badf9d1b30c">secondCoord</a>, anchor=tkinter.W)
+<a name="l00096"></a>00096         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aa674aca8de54b1b9cefcb2a8483d2150">origYEntry</a>=tkinter.Entry(self, textvariable=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a11520ea73e411d21aa3c85b34e45beff">originY</a>)
 <a name="l00097"></a>00097 
-<a name="l00098"></a>00098         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ad5d31e6ba3a3f1aab062d2315bba1302">rotLabel</a>=tkinter.Label(self, text=<span class="stringliteral">&quot;Rotation&quot;</span>, anchor=tkinter.W)
-<a name="l00099"></a>00099         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#aeb913481c4e9608526fb5b7dadda9487">rotEntry</a>=tkinter.Entry(self, textvariable=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3914903e14314c744a44eff0a4d4cc2b">rotation</a>)
+<a name="l00098"></a>00098         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ab76f354784b135439e57068da34c13b1">rotLabel</a>=tkinter.Label(self, text=<span class="stringliteral">&quot;Rotation&quot;</span>, anchor=tkinter.W)
+<a name="l00099"></a>00099         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#acfcdd9790d1631860d1f69d9b60bdc4a">rotEntry</a>=tkinter.Entry(self, textvariable=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3da605f199b15baa1e95e2c4e7982629">rotation</a>)
 <a name="l00100"></a>00100 
-<a name="l00101"></a>00101         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abeb1a76ef8b7e5543041689064ca8ec6">ckButton</a>=tkinter.Checkbutton(self, anchor=tkinter.W, indicatoron=1, offvalue=0, onvalue=1, text=<span class="stringliteral">&quot;Visible&quot;</span>, variable=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a21c7b9d533c1fba4733bf92ef1215276">visible</a>)
-<a name="l00102"></a>00102         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abeb1a76ef8b7e5543041689064ca8ec6">ckButton</a>.select()
+<a name="l00101"></a>00101         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ad958775fcd3dbe36f7f9eb777533ddcd">ckButton</a>=tkinter.Checkbutton(self, anchor=tkinter.W, indicatoron=1, offvalue=0, onvalue=1, text=<span class="stringliteral">&quot;Visible&quot;</span>, variable=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a8a7dd441fee7aeeb51eebc5624028cee">visible</a>)
+<a name="l00102"></a>00102         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ad958775fcd3dbe36f7f9eb777533ddcd">ckButton</a>.select()
 <a name="l00103"></a>00103 
-<a name="l00104"></a>00104         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a99551f98c7fb0b970b972ca99431e94d">okButton</a>=tkinter.Button(self, text=<span class="stringliteral">&quot;Ok&quot;</span>, command=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ace7fb9e5e0c76cd0795a8b0303ffa2a9">__cbOk</a>, width=6)
-<a name="l00105"></a>00105         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a7b49eb616b0a4b3d92aa7c413ac033dc">cancelButton</a>=tkinter.Button(self, text=<span class="stringliteral">&quot;Cancel&quot;</span>, command=self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ab023bc92041bcefdd7bd7f92d441b609">__cbCancel</a>, width=6)
+<a name="l00104"></a>00104         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ab73f129ef3b94f70e55268de29475384">okButton</a>=tkinter.Button(self, text=<span class="stringliteral">&quot;Ok&quot;</span>, command=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3b6e6a4f06fde154f4328a03eb715e8a">__cbOk</a>, width=6)
+<a name="l00105"></a>00105         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3a0b68b56dd6556e1d2ea171cd7319bb">cancelButton</a>=tkinter.Button(self, text=<span class="stringliteral">&quot;Cancel&quot;</span>, command=self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aaf88cbccf77f92db15b8fb2b172bc0ed">__cbCancel</a>, width=6)
 <a name="l00106"></a>00106 
-<a name="l00107"></a>00107         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a6b1c2530c58163531fe7ed44b05264c1">showWidgets</a>()
+<a name="l00107"></a>00107         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ad865b162775bcde2031d199ec94accd9">showWidgets</a>()
 <a name="l00108"></a>00108 
 <a name="l00109"></a>00109     <span class="keyword">def </span>showWidgets(self):
 <a name="l00110"></a>00110 
 <a name="l00111"></a>00111         <span class="comment"># upper row</span>
 <a name="l00112"></a>00112 
-<a name="l00113"></a>00113         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3d8fb2284facfd09c90bbdb92c09c95f">csysLabel</a>.grid(row=0, column=0, padx=(10, 5), pady=(12, 0), sticky=tkinter.W+tkinter.E)
-<a name="l00114"></a>00114         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af96d0d3121b5d03e449b3a00007407f3">csysEntry</a>.grid(row=0, column=1, columnspan=2, pady=(12, 0), padx=(0, 5))
+<a name="l00113"></a>00113         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a31f6190f9d9637e19aa298fa2c5adacc">csysLabel</a>.grid(row=0, column=0, padx=(10, 5), pady=(12, 0), sticky=tkinter.W+tkinter.E)
+<a name="l00114"></a>00114         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a987ca18eaaae6b2739af0f51fb63e82e">csysEntry</a>.grid(row=0, column=1, columnspan=2, pady=(12, 0), padx=(0, 5))
 <a name="l00115"></a>00115 
-<a name="l00116"></a>00116         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a5c36e227d4a78a62ca13d0a10d3c3846">parentLabel</a>.grid(row=0, column=3, pady=(12, 0), sticky=tkinter.W)
-<a name="l00117"></a>00117         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ab515f5b8ddbdeb4777bd951d5b4846e4">parentCombo</a>.grid(row=0, column=4, padx=(0, 10), pady=(12, 0), columnspan=2)
+<a name="l00116"></a>00116         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a5168e8e92caad0f17fe2812160e8c85b">parentLabel</a>.grid(row=0, column=3, pady=(12, 0), sticky=tkinter.W)
+<a name="l00117"></a>00117         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae364baf88cc9ed7edbf73c23ebd638c4">parentCombo</a>.grid(row=0, column=4, padx=(0, 10), pady=(12, 0), columnspan=2)
 <a name="l00118"></a>00118 
 <a name="l00119"></a>00119         <span class="comment"># next row</span>
 <a name="l00120"></a>00120 
-<a name="l00121"></a>00121         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a93b01babe75f2dce628a2acc4fbd2abb">origXLabel</a>.grid(row=1, column=0, sticky=tkinter.W+tkinter.E, padx=(10, 0))
-<a name="l00122"></a>00122         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a9a91493d098fbfbd61d15f19aab74a14">origXEntry</a>.grid(row=1, column=1, columnspan=2, padx=(0, 5))
+<a name="l00121"></a>00121         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aa7cde048acf1769045dd216f0734aa84">origXLabel</a>.grid(row=1, column=0, sticky=tkinter.W+tkinter.E, padx=(10, 0))
+<a name="l00122"></a>00122         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ab5afece1bad8f4e751a99af80a00de2b">origXEntry</a>.grid(row=1, column=1, columnspan=2, padx=(0, 5))
 <a name="l00123"></a>00123 
-<a name="l00124"></a>00124         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a426d7ccdfbfc0e7ae55fe1b5b4097ce0">typeLabel</a>.grid(row=1, column=3, sticky=tkinter.W)
-<a name="l00125"></a>00125         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a64fa18fd85fbd49d06dc748428ca638c">typeCombo</a>.grid(row=1, column=4, columnspan=2, padx=(0, 10))
+<a name="l00124"></a>00124         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a24ecea467e0ca1c3bfb73067a5c8830f">typeLabel</a>.grid(row=1, column=3, sticky=tkinter.W)
+<a name="l00125"></a>00125         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a64edc143cac1850e80c5459369066ef1">typeCombo</a>.grid(row=1, column=4, columnspan=2, padx=(0, 10))
 <a name="l00126"></a>00126 
 <a name="l00127"></a>00127         <span class="comment"># next row</span>
 <a name="l00128"></a>00128 
-<a name="l00129"></a>00129         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3bb7b0e49e1d700cc281700d2f12a3dc">origYLabel</a>.grid(row=2, column=0, sticky=tkinter.W+tkinter.E, padx=(10, 0))
-<a name="l00130"></a>00130         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#afb4c7a0e47ec4cd22e0aeaf25134f6eb">origYEntry</a>.grid(row=2, column=1, columnspan=2, padx=(0, 5))
+<a name="l00129"></a>00129         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a26153c1552fb5beb18ab0b0bf7e1af20">origYLabel</a>.grid(row=2, column=0, sticky=tkinter.W+tkinter.E, padx=(10, 0))
+<a name="l00130"></a>00130         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aa674aca8de54b1b9cefcb2a8483d2150">origYEntry</a>.grid(row=2, column=1, columnspan=2, padx=(0, 5))
 <a name="l00131"></a>00131 
-<a name="l00132"></a>00132         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ad5d31e6ba3a3f1aab062d2315bba1302">rotLabel</a>.grid(row=2, column=3, sticky=tkinter.W+tkinter.E)
-<a name="l00133"></a>00133         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#aeb913481c4e9608526fb5b7dadda9487">rotEntry</a>.grid(row=2, column=4, padx=(5, 10), sticky=tkinter.W+tkinter.E, columnspan=2)
+<a name="l00132"></a>00132         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ab76f354784b135439e57068da34c13b1">rotLabel</a>.grid(row=2, column=3, sticky=tkinter.W+tkinter.E)
+<a name="l00133"></a>00133         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#acfcdd9790d1631860d1f69d9b60bdc4a">rotEntry</a>.grid(row=2, column=4, padx=(5, 10), sticky=tkinter.W+tkinter.E, columnspan=2)
 <a name="l00134"></a>00134 
 <a name="l00135"></a>00135         <span class="comment"># next row</span>
 <a name="l00136"></a>00136 
-<a name="l00137"></a>00137         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#abeb1a76ef8b7e5543041689064ca8ec6">ckButton</a>.grid(row=3, column=0, sticky=tkinter.W, padx=(10, 0))
+<a name="l00137"></a>00137         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ad958775fcd3dbe36f7f9eb777533ddcd">ckButton</a>.grid(row=3, column=0, sticky=tkinter.W, padx=(10, 0))
 <a name="l00138"></a>00138 
-<a name="l00139"></a>00139         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a99551f98c7fb0b970b972ca99431e94d">okButton</a>.grid(row=3, column=4, sticky=tkinter.E, padx=(0, 5), pady=(10, 12))
-<a name="l00140"></a>00140         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a7b49eb616b0a4b3d92aa7c413ac033dc">cancelButton</a>.grid(row=3, column=5, sticky=tkinter.W, pady=(10, 12), padx=(5, 10))
+<a name="l00139"></a>00139         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ab73f129ef3b94f70e55268de29475384">okButton</a>.grid(row=3, column=4, sticky=tkinter.E, padx=(0, 5), pady=(10, 12))
+<a name="l00140"></a>00140         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3a0b68b56dd6556e1d2ea171cd7319bb">cancelButton</a>.grid(row=3, column=5, sticky=tkinter.W, pady=(10, 12), padx=(5, 10))
 <a name="l00141"></a>00141         self.mainloop()
 <a name="l00142"></a>00142 
 <a name="l00143"></a>00143     <span class="keyword">def </span>__call__(self):
-<a name="l00144"></a>00144         <span class="keywordflow">return</span> [self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ace8fd30ef6b8a10d336a45088da72a99">clabel</a>.get(), self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a1b9d7f809fc11737c84d835889caaf2b">originX</a>.get(), self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af873e3e2dc7e111343a297c70f47b152">originY</a>.get(), self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3914903e14314c744a44eff0a4d4cc2b">rotation</a>.get(), self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a24ba3975a1a6a9f5d501ff282e9a2362">typec</a>.get(), self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a28ac456ff4c2006a98d5ab1f4d2e17bd">parent</a>.get(), self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a21c7b9d533c1fba4733bf92ef1215276">visible</a>.get()]
+<a name="l00144"></a>00144         <span class="keywordflow">return</span> [self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a2073cf33c3dd56a315d92a54de0f7880">clabel</a>.get(), self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adb6d8d1f6b453e6d5043c5ae42ecb97c">originX</a>.get(), self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a11520ea73e411d21aa3c85b34e45beff">originY</a>.get(), self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3da605f199b15baa1e95e2c4e7982629">rotation</a>.get(), self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae7c2a3841754b04418581f8d2e331e2a">typec</a>.get(), self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ac249230cc3ab01c06139b60b28053c71">parent</a>.get(), self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a8a7dd441fee7aeeb51eebc5624028cee">visible</a>.get()]
 <a name="l00145"></a>00145 
 <a name="l00146"></a>00146     <span class="keyword">def </span>__cbOk(self):
-<a name="l00147"></a>00147         <span class="keywordflow">if</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ace8fd30ef6b8a10d336a45088da72a99">clabel</a>.get() == <span class="stringliteral">&quot;&quot;</span> <span class="keywordflow">or</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a1b9d7f809fc11737c84d835889caaf2b">originX</a>.get() == <span class="stringliteral">&quot;&quot;</span> <span class="keywordflow">or</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af873e3e2dc7e111343a297c70f47b152">originY</a>.get() == <span class="stringliteral">&quot;&quot;</span> <span class="keywordflow">or</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3914903e14314c744a44eff0a4d4cc2b">rotation</a>.get() == <span class="stringliteral">&quot;&quot;</span>:
-<a name="l00148"></a>00148             <span class="keywordflow">if</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ace8fd30ef6b8a10d336a45088da72a99">clabel</a>.get() == <span class="stringliteral">&quot;&quot;</span>:
-<a name="l00149"></a>00149                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af96d0d3121b5d03e449b3a00007407f3">csysEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
+<a name="l00147"></a>00147         <span class="keywordflow">if</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a2073cf33c3dd56a315d92a54de0f7880">clabel</a>.get() == <span class="stringliteral">&quot;&quot;</span> <span class="keywordflow">or</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adb6d8d1f6b453e6d5043c5ae42ecb97c">originX</a>.get() == <span class="stringliteral">&quot;&quot;</span> <span class="keywordflow">or</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a11520ea73e411d21aa3c85b34e45beff">originY</a>.get() == <span class="stringliteral">&quot;&quot;</span> <span class="keywordflow">or</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3da605f199b15baa1e95e2c4e7982629">rotation</a>.get() == <span class="stringliteral">&quot;&quot;</span>:
+<a name="l00148"></a>00148             <span class="keywordflow">if</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a2073cf33c3dd56a315d92a54de0f7880">clabel</a>.get() == <span class="stringliteral">&quot;&quot;</span>:
+<a name="l00149"></a>00149                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a987ca18eaaae6b2739af0f51fb63e82e">csysEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
 <a name="l00150"></a>00150             <span class="keywordflow">else</span>:
-<a name="l00151"></a>00151                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af96d0d3121b5d03e449b3a00007407f3">csysEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
-<a name="l00152"></a>00152             <span class="keywordflow">if</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a1b9d7f809fc11737c84d835889caaf2b">originX</a>.get() == <span class="stringliteral">&quot;&quot;</span>:
-<a name="l00153"></a>00153                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a9a91493d098fbfbd61d15f19aab74a14">origXEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
+<a name="l00151"></a>00151                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a987ca18eaaae6b2739af0f51fb63e82e">csysEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
+<a name="l00152"></a>00152             <span class="keywordflow">if</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adb6d8d1f6b453e6d5043c5ae42ecb97c">originX</a>.get() == <span class="stringliteral">&quot;&quot;</span>:
+<a name="l00153"></a>00153                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ab5afece1bad8f4e751a99af80a00de2b">origXEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
 <a name="l00154"></a>00154             <span class="keywordflow">else</span>:
-<a name="l00155"></a>00155                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a9a91493d098fbfbd61d15f19aab74a14">origXEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
-<a name="l00156"></a>00156             <span class="keywordflow">if</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af873e3e2dc7e111343a297c70f47b152">originY</a>.get() == <span class="stringliteral">&quot;&quot;</span>:
-<a name="l00157"></a>00157                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#afb4c7a0e47ec4cd22e0aeaf25134f6eb">origYEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
+<a name="l00155"></a>00155                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ab5afece1bad8f4e751a99af80a00de2b">origXEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
+<a name="l00156"></a>00156             <span class="keywordflow">if</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a11520ea73e411d21aa3c85b34e45beff">originY</a>.get() == <span class="stringliteral">&quot;&quot;</span>:
+<a name="l00157"></a>00157                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aa674aca8de54b1b9cefcb2a8483d2150">origYEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
 <a name="l00158"></a>00158             <span class="keywordflow">else</span>:
-<a name="l00159"></a>00159                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#afb4c7a0e47ec4cd22e0aeaf25134f6eb">origYEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
-<a name="l00160"></a>00160             <span class="keywordflow">if</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3914903e14314c744a44eff0a4d4cc2b">rotation</a>.get() == <span class="stringliteral">&quot;&quot;</span>:
-<a name="l00161"></a>00161                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#aeb913481c4e9608526fb5b7dadda9487">rotEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
+<a name="l00159"></a>00159                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aa674aca8de54b1b9cefcb2a8483d2150">origYEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
+<a name="l00160"></a>00160             <span class="keywordflow">if</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3da605f199b15baa1e95e2c4e7982629">rotation</a>.get() == <span class="stringliteral">&quot;&quot;</span>:
+<a name="l00161"></a>00161                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#acfcdd9790d1631860d1f69d9b60bdc4a">rotEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
 <a name="l00162"></a>00162             <span class="keywordflow">else</span>:
-<a name="l00163"></a>00163                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#aeb913481c4e9608526fb5b7dadda9487">rotEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
+<a name="l00163"></a>00163                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#acfcdd9790d1631860d1f69d9b60bdc4a">rotEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
 <a name="l00164"></a>00164         <span class="keywordflow">else</span>:
 <a name="l00165"></a>00165             tester=0 <span class="comment"># dummy var - 0 means Ok, 1 means it is not ok</span>
 <a name="l00166"></a>00166             <span class="keywordflow">try</span>: <span class="comment"># test x coordinate</span>
-<a name="l00167"></a>00167                 x=float(self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a1b9d7f809fc11737c84d835889caaf2b">originX</a>.get())
+<a name="l00167"></a>00167                 x=float(self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adb6d8d1f6b453e6d5043c5ae42ecb97c">originX</a>.get())
 <a name="l00168"></a>00168             <span class="keywordflow">except</span> ValueError:
-<a name="l00169"></a>00169                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a9a91493d098fbfbd61d15f19aab74a14">origXEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
+<a name="l00169"></a>00169                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ab5afece1bad8f4e751a99af80a00de2b">origXEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
 <a name="l00170"></a>00170                 tester=1
 <a name="l00171"></a>00171             <span class="keywordflow">else</span>:
-<a name="l00172"></a>00172                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a9a91493d098fbfbd61d15f19aab74a14">origXEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
+<a name="l00172"></a>00172                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ab5afece1bad8f4e751a99af80a00de2b">origXEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
 <a name="l00173"></a>00173 
 <a name="l00174"></a>00174             <span class="keywordflow">try</span>: <span class="comment"># test y coordinate</span>
-<a name="l00175"></a>00175                 y=float(self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af873e3e2dc7e111343a297c70f47b152">originY</a>.get())
+<a name="l00175"></a>00175                 y=float(self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a11520ea73e411d21aa3c85b34e45beff">originY</a>.get())
 <a name="l00176"></a>00176             <span class="keywordflow">except</span> ValueError:
 <a name="l00177"></a>00177                 tester=1
-<a name="l00178"></a>00178                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#afb4c7a0e47ec4cd22e0aeaf25134f6eb">origYEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
+<a name="l00178"></a>00178                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aa674aca8de54b1b9cefcb2a8483d2150">origYEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
 <a name="l00179"></a>00179             <span class="keywordflow">else</span>:
-<a name="l00180"></a>00180                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#afb4c7a0e47ec4cd22e0aeaf25134f6eb">origYEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
+<a name="l00180"></a>00180                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#aa674aca8de54b1b9cefcb2a8483d2150">origYEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
 <a name="l00181"></a>00181 
 <a name="l00182"></a>00182             <span class="keywordflow">try</span>: <span class="comment"># test rotation parameter</span>
-<a name="l00183"></a>00183                 r=float(self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a3914903e14314c744a44eff0a4d4cc2b">rotation</a>.get())
+<a name="l00183"></a>00183                 r=float(self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a3da605f199b15baa1e95e2c4e7982629">rotation</a>.get())
 <a name="l00184"></a>00184             <span class="keywordflow">except</span> ValueError:
-<a name="l00185"></a>00185                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#aeb913481c4e9608526fb5b7dadda9487">rotEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
+<a name="l00185"></a>00185                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#acfcdd9790d1631860d1f69d9b60bdc4a">rotEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;red&quot;</span>
 <a name="l00186"></a>00186                 tester=1
 <a name="l00187"></a>00187             <span class="keywordflow">else</span>:
-<a name="l00188"></a>00188                 self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#aeb913481c4e9608526fb5b7dadda9487">rotEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
+<a name="l00188"></a>00188                 self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#acfcdd9790d1631860d1f69d9b60bdc4a">rotEntry</a>[<span class="stringliteral">&quot;bg&quot;</span>]=<span class="stringliteral">&quot;white&quot;</span>
 <a name="l00189"></a>00189 
 <a name="l00190"></a>00190             <span class="keywordflow">if</span> tester == 0:
 <a name="l00191"></a>00191                 self.quit()
 <a name="l00192"></a>00192                 self.destroy()
 <a name="l00193"></a>00193 
 <a name="l00194"></a>00194     <span class="keyword">def </span>__cbCancel(self):
-<a name="l00195"></a>00195         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a1b9d7f809fc11737c84d835889caaf2b">originX</a>.set(<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00196"></a>00196         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#af873e3e2dc7e111343a297c70f47b152">originY</a>.set(<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00197"></a>00197         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#ace8fd30ef6b8a10d336a45088da72a99">clabel</a>.set(<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00198"></a>00198         self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a24ba3975a1a6a9f5d501ff282e9a2362">typec</a>.set(<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00195"></a>00195         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adb6d8d1f6b453e6d5043c5ae42ecb97c">originX</a>.set(<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00196"></a>00196         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a11520ea73e411d21aa3c85b34e45beff">originY</a>.set(<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00197"></a>00197         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a2073cf33c3dd56a315d92a54de0f7880">clabel</a>.set(<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00198"></a>00198         self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae7c2a3841754b04418581f8d2e331e2a">typec</a>.set(<span class="stringliteral">&quot;&quot;</span>)
 <a name="l00199"></a>00199         self.quit()
 <a name="l00200"></a>00200         self.destroy()
 <a name="l00201"></a>00201 
 <a name="l00202"></a>00202     <span class="keyword">def </span>__setPolar(self, event=0):
-<a name="l00203"></a>00203         <span class="keywordflow">if</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a24ba3975a1a6a9f5d501ff282e9a2362">typec</a>.get()==<span class="stringliteral">&quot;polar&quot;</span>:
-<a name="l00204"></a>00204             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a372cc48be47504998365f7df2fbad986">firstCoord</a>.set(<span class="stringliteral">&quot;Polar axis&quot;</span>)
-<a name="l00205"></a>00205             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a43b799ae123b43b6fd769c3a9447b074">secondCoord</a>.set(<span class="stringliteral">&quot;Polar angle&quot;</span>)
-<a name="l00206"></a>00206             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a64fa18fd85fbd49d06dc748428ca638c">typeCombo</a>.set_silent(<span class="stringliteral">&#39;polar&#39;</span>)
+<a name="l00203"></a>00203         <span class="keywordflow">if</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae7c2a3841754b04418581f8d2e331e2a">typec</a>.get()==<span class="stringliteral">&quot;polar&quot;</span>:
+<a name="l00204"></a>00204             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ac6b5a41e595e219130f33d6aa5cf9713">firstCoord</a>.set(<span class="stringliteral">&quot;Polar axis&quot;</span>)
+<a name="l00205"></a>00205             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adfde098241296615c0913badf9d1b30c">secondCoord</a>.set(<span class="stringliteral">&quot;Polar angle&quot;</span>)
+<a name="l00206"></a>00206             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a64edc143cac1850e80c5459369066ef1">typeCombo</a>.set_silent(<span class="stringliteral">&#39;polar&#39;</span>)
 <a name="l00207"></a>00207 
-<a name="l00208"></a>00208         <span class="keywordflow">if</span> self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a24ba3975a1a6a9f5d501ff282e9a2362">typec</a>.get()==<span class="stringliteral">&quot;cartesian&quot;</span>:
-<a name="l00209"></a>00209             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a372cc48be47504998365f7df2fbad986">firstCoord</a>.set(<span class="stringliteral">&quot;X origin&quot;</span>)
-<a name="l00210"></a>00210             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a43b799ae123b43b6fd769c3a9447b074">secondCoord</a>.set(<span class="stringliteral">&quot;Y origin&quot;</span>)
-<a name="l00211"></a>00211             self.<a class="code" href="classGUI_1_1widgets_1_1csys_1_1csys.html#a64fa18fd85fbd49d06dc748428ca638c">typeCombo</a>.set_silent(<span class="stringliteral">&#39;cartesian&#39;</span>)
+<a name="l00208"></a>00208         <span class="keywordflow">if</span> self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ae7c2a3841754b04418581f8d2e331e2a">typec</a>.get()==<span class="stringliteral">&quot;cartesian&quot;</span>:
+<a name="l00209"></a>00209             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#ac6b5a41e595e219130f33d6aa5cf9713">firstCoord</a>.set(<span class="stringliteral">&quot;X origin&quot;</span>)
+<a name="l00210"></a>00210             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#adfde098241296615c0913badf9d1b30c">secondCoord</a>.set(<span class="stringliteral">&quot;Y origin&quot;</span>)
+<a name="l00211"></a>00211             self.<a class="code" href="classbin_1_1widgets_1_1csys_1_1csys.html#a64edc143cac1850e80c5459369066ef1">typeCombo</a>.set_silent(<span class="stringliteral">&#39;cartesian&#39;</span>)
 <a name="l00212"></a>00212 
 <a name="l00213"></a>00213         self.update_idletasks()
 </pre></div></div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 20 2012 21:02:51 for Tkad by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Nov 21 2012 19:02:29 for Tkad by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

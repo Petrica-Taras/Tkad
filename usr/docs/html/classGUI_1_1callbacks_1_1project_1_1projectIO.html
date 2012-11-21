@@ -50,7 +50,7 @@ Public Member Functions</h2></td></tr>
 def&nbsp;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac94f85bbbc56c43874e8625f664492a6"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::setdir" ref="ac94f85bbbc56c43874e8625f664492a6" args="" -->
 def&nbsp;</td><td class="memItemRight" valign="bottom"><b>setdir</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGUI_1_1callbacks_1_1project_1_1projectIO.html#a6fa9ca94b1d641816de77579cd21ad51">register</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGUI_1_1callbacks_1_1project_1_1projectIO.html#ad25b9d282b04f7e47fb34d5080e64ffb">setMenu</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f6e658f8e4a003449b73fa9daaa6472"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::new" ref="a2f6e658f8e4a003449b73fa9daaa6472" args="" -->
 def&nbsp;</td><td class="memItemRight" valign="bottom"><b>new</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06d576820270b8c44183a8cace67c366"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::open" ref="a06d576820270b8c44183a8cace67c366" args="" -->
@@ -65,8 +65,8 @@ def&nbsp;</td><td class="memItemRight" valign="bottom"><b>close</b></td></tr>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe638eabdf0ebca7de8fe2be645c1198"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::app" ref="abe638eabdf0ebca7de8fe2be645c1198" args="" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><b>app</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad45f6677aa77d648a324ecb492a49578"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::lwd" ref="ad45f6677aa77d648a324ecb492a49578" args="" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>lwd</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1775a3e78948e2aa096abafe6c7cdbb1"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::cwd" ref="a1775a3e78948e2aa096abafe6c7cdbb1" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>cwd</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d0979fa1d8bbaff188dde8598239090"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::status" ref="a7d0979fa1d8bbaff188dde8598239090" args="" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><b>status</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a832f53694fb408cd88d121ba3f759f3d"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::stats" ref="a832f53694fb408cd88d121ba3f759f3d" args="" -->
@@ -77,6 +77,8 @@ Public Attributes</h2></td></tr>
 &nbsp;</td><td class="memItemRight" valign="bottom"><b>csys</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93a1a7c1c2a6f47e0438277b45683541"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::points" ref="a93a1a7c1c2a6f47e0438277b45683541" args="" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><b>points</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad45f6677aa77d648a324ecb492a49578"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::lwd" ref="ad45f6677aa77d648a324ecb492a49578" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>lwd</b></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="fragment"><pre class="fragment">Standalone class (doesn't need to be registered within the main app window)
@@ -87,14 +89,14 @@ Public Attributes</h2></td></tr>
     - saveas;
     - close;
     - register (on app object and on the XML tree)</pre></div> 
-<p>Definition at line <a class="el" href="project_8py_source.html#l00021">21</a> of file <a class="el" href="project_8py_source.html">project.py</a>.</p>
+<p>Definition at line <a class="el" href="project_8py_source.html#l00020">20</a> of file <a class="el" href="project_8py_source.html">project.py</a>.</p>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a6fa9ca94b1d641816de77579cd21ad51"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::register" ref="a6fa9ca94b1d641816de77579cd21ad51" args="" -->
+<a class="anchor" id="ad25b9d282b04f7e47fb34d5080e64ffb"></a><!-- doxytag: member="GUI::callbacks::project::projectIO::setMenu" ref="ad25b9d282b04f7e47fb34d5080e64ffb" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def GUI::callbacks::project::projectIO::register </td>
+          <td class="memname">def GUI::callbacks::project::projectIO::setMenu </td>
           <td>(</td>
           <td class="paramtype">&nbsp;</td>
           <td class="paramname"> <em>self</em></td>
@@ -104,20 +106,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<div class="fragment"><pre class="fragment">Called when the drawing on canvas must be made. It assumes that:
-- file was already loaded from the disk (resides into self.files);
-- it had been parsed by using __parseXML;
-- the output of parsing resides into proper structures, i.e. self.csys,
-    self.points, etc.</pre></div> 
-<p>Definition at line <a class="el" href="project_8py_source.html#l00053">53</a> of file <a class="el" href="project_8py_source.html">project.py</a>.</p>
+<div class="fragment"><pre class="fragment">Populates the self.app.menuBar.projectsubmenu with callbacks</pre></div> 
+<p>Definition at line <a class="el" href="project_8py_source.html#l00052">52</a> of file <a class="el" href="project_8py_source.html">project.py</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00054"></a>00054                       :
-<a name="l00055"></a>00055         <span class="stringliteral">&quot;&quot;&quot;Called when the drawing on canvas must be made. It assumes that:</span>
-<a name="l00056"></a>00056 <span class="stringliteral">        - file was already loaded from the disk (resides into self.files);</span>
-<a name="l00057"></a>00057 <span class="stringliteral">        - it had been parsed by using __parseXML;</span>
-<a name="l00058"></a>00058 <span class="stringliteral">        - the output of parsing resides into proper structures, i.e. self.csys,</span>
-<a name="l00059"></a>00059 <span class="stringliteral">            self.points, etc.&quot;&quot;&quot;</span>
-        <span class="keywordflow">pass</span>
+<p><div class="fragment"><pre class="fragment"><a name="l00053"></a>00053                      :
+<a name="l00054"></a>00054         <span class="stringliteral">&quot;&quot;&quot;Populates the self.app.menuBar.projectsubmenu with callbacks&quot;&quot;&quot;</span>
+
 </pre></div></p>
 
 </div>
@@ -126,7 +120,7 @@ Public Attributes</h2></td></tr>
 <li>bin/GUI/callbacks/<a class="el" href="project_8py_source.html">project.py</a></li>
 </ul>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 20 2012 21:02:51 for Tkad by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Nov 21 2012 13:08:47 for Tkad by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

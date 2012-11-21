@@ -3,56 +3,56 @@
 <!-- Comment -->
 <MenuBar>
     <Menu name="Project">
-	    <MenuItem name="New Project"         callback="project.newProject" accelerator="Ctrl + N" icon="document-new.png"/> 
-        <MenuItem name="Open Project ..."    callback="project.openProject" accelerator="Ctrl + O" icon="document-open.png"/>
-        <MenuItem name="Save Project ..."    callback="project.saveProject" accelerator="Ctrl + S" icon="document-save.png"/>
-        <MenuItem name="Save As Project ..." callback="project.saveAsProject" accelerator="Ctrl + Shift + S" icon="document-save-as.png"/>
+	    <MenuItem name="New Project"         accelerator="Ctrl + N" icon="document-new.png"/> 
+        <MenuItem name="Open Project ..."    accelerator="Ctrl + O" icon="document-open.png"/>
+        <MenuItem name="Save Project ..."    accelerator="Ctrl + S" icon="document-save.png"/>
+        <MenuItem name="Save As Project ..." accelerator="Ctrl + Shift + S" icon="document-save-as.png"/>
         <MenuItem name="Separator"/>
-        <MenuItem name="Close Project"       callback="project.closeProject" accelerator="Ctrl + X" icon="document-close.png"/>
+        <MenuItem name="Close Project"       accelerator="Ctrl + X" icon="document-close.png"/>
     </Menu>
     <Menu name="Geometry">
         <MenuSubDir name="Coordinate System" accelerator="" icon="csys.png">
-            <MenuItem name="New Coordinate System"    callback="geometry.csys.new" accelerator="" icon="csys-new.png"/>
-            <MenuItem name="Edit Coordinate System"   callback="geometry.csys.edit" accelerator="" icon="csys-edit.png"/>    
-            <MenuItem name="Delete Coordinate System" callback="geometry.csys.delete" accelerator="" icon="csys-delete.png"/> 
+            <MenuItem name="New Coordinate System"    accelerator="" icon="csys-new.png"/>
+            <MenuItem name="Edit Coordinate System"   accelerator="" icon="csys-edit.png"/>    
+            <MenuItem name="Delete Coordinate System" accelerator="" icon="csys-delete.png"/> 
             <MenuItem name="Separator"/>
-            <MenuItem name="List Coordinate Systems"  callback="geometry.csys.lists" accelerator="" icon="csys-list.png"/> 
+            <MenuItem name="List Coordinate Systems"  accelerator="" icon="csys-list.png"/> 
         </MenuSubDir>
         <MenuSubDir name="Point" accelerator="" icon="point.png">
-             <MenuItem name="New Point"    callback="geometry.point.new" accelerator="" icon="point-new.png"/>
-             <MenuItem name="Edit Point"   callback="geometry.point.edit" accelerator="" icon="point-edit.png"/>
-             <MenuItem name="Delete Point" callback="geometry.point.delete" accelerator="" icon="point-delete.png"/>
+             <MenuItem name="New Point"    accelerator="" icon="point-new.png"/>
+             <MenuItem name="Edit Point"   accelerator="" icon="point-edit.png"/>
+             <MenuItem name="Delete Point" accelerator="" icon="point-delete.png"/>
              <MenuItem name="Separator"/>
-             <MenuItem name="List Points"  callback="geometry.point.lists" accelerator="" icon="point-list.png"/>
+             <MenuItem name="List Points"  accelerator="" icon="point-list.png"/>
         </MenuSubDir>   
         <MenuSubDir name="Line" accelerator="" icon="generic.png">          
-             <MenuItem name="New Segment" callback="geometry.line.newSegment" accelerator="" icon="generic.png"/>
-             <MenuItem name="New Arc"     callback="geometry.line.newArc" accelerator="" icon="generic.png"/>
-             <MenuItem name="Edit Line"   callback="geometry.line.edit" accelerator="" icon="generic.png"/>
-             <MenuItem name="Delete Line" callback="geometry.line.delete" accelerator="" icon="generic.png"/>
+             <MenuItem name="New Segment" accelerator="" icon="generic.png"/>
+             <MenuItem name="New Arc"     accelerator="" icon="generic.png"/>
+             <MenuItem name="Edit Line"   accelerator="" icon="generic.png"/>
+             <MenuItem name="Delete Line" accelerator="" icon="generic.png"/>
              <MenuItem name="Separator"/>
              <MenuItem name="Lists Lines" callback="geometry.line.lists" accelerator="" icon="invisible.png"/>
         </MenuSubDir>       
         <MenuSubDir name="Surface" accelerator="" icon="generic.png">
-             <MenuItem name="Detect Surfaces" callback="geometry.surface.detect" accelerator="" icon="generic.png"/>
-             <MenuItem name="Delete Surfaces" callback="geometry.surface.delete" accelerator="" icon="generic.png"/>
+             <MenuItem name="Detect Surfaces" accelerator="" icon="generic.png"/>
+             <MenuItem name="Delete Surfaces" accelerator="" icon="generic.png"/>
              <MenuItem name="Separator"/>
-             <MenuItem name="List Surfaces" callback="geometry.surface.lists" accelerator="" icon="invisible.png"/>
+             <MenuItem name="List Surfaces" accelerator="" icon="invisible.png"/>
         </MenuSubDir>
         <MenuItem name="Separator"/>
-        <MenuItem name="List Hierarchy" callback="geometry.hierarchy" accelerator="" icon="hierarchy.png"/>
+        <MenuItem name="List Hierarchy" accelerator="" icon="hierarchy.png"/>
     </Menu>
 <!--    <Menu name="Library">
-        <MenuItem name="Full Models" callback="fullModels"/>
-        <MenuItem name="Geometries" callback="geometries"/>
-        <MenuItem name="Shapes" callback="shapes"/>
-        <MenuItem name="Materials" callback="materials"/>
-        <MenuItem name="Circuits" callback="circuits"/>
+        <MenuItem name="Full Models"/>
+        <MenuItem name="Geometries"/>
+        <MenuItem name="Shapes"/>
+        <MenuItem name="Materials"/>
+        <MenuItem name="Circuits"/>
     </Menu> -->
     <Menu name="Settings">
-        <MenuItem name="Canvas Settings ..." callback="settings.canvasSettings" accelerator="" icon="generic.png"/>
+        <MenuItem name="Canvas Settings ..." accelerator="" icon="generic.png"/>
     </Menu>
     <Menu name="Help">
-        <MenuItem name="About" callback="help.about" accelerator="" icon="generic.png"/>
+        <MenuItem name="About" accelerator="" icon="generic.png"/>
     </Menu>
 </MenuBar>
