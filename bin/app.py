@@ -1,4 +1,4 @@
-# Copyright (C) 2012 Petrica Taras
+# Copyright (C) 2011-2012 Petrica Taras
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,14 +20,13 @@
 #  The main application instance require the settings, model and state objects.   
 
 import os 
-import tkinter
-import tkinter.tix
+import wx
 
 from bin.common import settings
 from bin.common import model
 from bin.common import state  
      
-#from bin.widgets.menu import menu
+from bin.widgets.menu import menu
 from bin.widgets.uptoolbox import uppertoolbox
 from bin.widgets.middleframe import middleframe
 
@@ -37,13 +36,13 @@ from bin.widgets.XMLeditor import XMLeditor
 ## Application() class
 #  
 #  Instances of this class generates the application window
-class Application(tkinter.tix.Tk):
+class Application(wx.Frame):
     """Main app window. Everything starts here.
        Keeps the main widgets (menu, upper and left toolbar, console, canvas, XML editor, etc.
        Initialises or uses the (common) settings object, the state object and the model object."""
     ## The constructor. 
     def __init__(self):
-        tkinter.tix.Tk.__init__(self)
+        wx.Frame.__init__(self)
         # load registered settings and default empty state (menu & co)
 
         ## @var settings 

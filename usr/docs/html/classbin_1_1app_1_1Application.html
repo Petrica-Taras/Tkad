@@ -103,7 +103,7 @@ Public Attributes</h2></td></tr>
 <div class="fragment"><pre class="fragment">Main app window. Everything starts here.
    Keeps the main widgets (menu, upper and left toolbar, console, canvas, XML editor, etc.
    Initialises or uses the (common) settings object, the state object and the model object.</pre></div> 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00040">40</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00039">39</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a6922acf179a695faaad3204b651efc53"></a><!-- doxytag: member="bin::app::Application::__init__" ref="a6922acf179a695faaad3204b651efc53" args="" -->
 <div class="memitem">
@@ -123,71 +123,71 @@ Public Attributes</h2></td></tr>
 
 <p>The constructor. </p>
 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00045">45</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00044">44</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00046"></a>00046                       :
-<a name="l00047"></a>00047         tkinter.tix.Tk.__init__(self)
-<a name="l00048"></a>00048         <span class="comment"># load registered settings and default empty state (menu &amp; co)</span>
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="comment">## @var settings </span>
-<a name="l00051"></a><a class="code" href="classbin_1_1app_1_1Application.html#af96d24b2d35082ee46d986d0faceb4c8">00051</a>         <span class="comment">#  A dictionary which holds the settings/options for various widgets</span>
-<a name="l00052"></a>00052         self.<a class="code" href="classbin_1_1app_1_1Application.html#af96d24b2d35082ee46d986d0faceb4c8" title="A dictionary which holds the settings/options for various widgets.">settings</a> = settings(self)
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054         <span class="comment">## @var model </span>
-<a name="l00055"></a><a class="code" href="classbin_1_1app_1_1Application.html#a74bfda36f435e35547cdb73a7b6eae6c">00055</a>         <span class="comment">#  A dictionary which holds the model tree structure and the associated files</span>
-<a name="l00056"></a>00056         self.<a class="code" href="classbin_1_1app_1_1Application.html#a74bfda36f435e35547cdb73a7b6eae6c" title="A dictionary which holds the model tree structure and the associated files.">model</a>    = model()
-<a name="l00057"></a>00057         
-<a name="l00058"></a>00058         <span class="comment">## @var state </span>
-<a name="l00059"></a><a class="code" href="classbin_1_1app_1_1Application.html#a2feee60fb6e1784e13c26d7388d8b810">00059</a>         <span class="comment">#  A dictionary which accounts for disabled         </span>
-<a name="l00060"></a>00060         self.<a class="code" href="classbin_1_1app_1_1Application.html#a2feee60fb6e1784e13c26d7388d8b810" title="A dictionary which accounts for disabled.">state</a>    = state()
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062         <span class="comment">## @var menuBar </span>
-<a name="l00063"></a>00063         <span class="comment">#</span>
-<a name="l00064"></a>00064         <span class="comment">#  A menu widget with resources specified in a XML file. The callbacks to </span>
-<a name="l00065"></a>00065         <span class="comment">#  various menu entries are added when the *Callbacks series of object are </span>
-<a name="l00066"></a><a class="code" href="classbin_1_1app_1_1Application.html#ad1263d24cab83ce295dc970fbcb6fbcb">00066</a>         <span class="comment">#  instantiated. </span>
-<a name="l00067"></a>00067         self.<a class="code" href="classbin_1_1app_1_1Application.html#ad1263d24cab83ce295dc970fbcb6fbcb" title="A menu widget with resources specified in a XML file.">menuBar</a>      = <span class="keywordtype">None</span>  <span class="comment"># children - submenus</span>
-<a name="l00068"></a>00068         
-<a name="l00069"></a>00069         <span class="comment">## @var upperToolbox </span>
-<a name="l00070"></a>00070         <span class="comment">#</span>
-<a name="l00071"></a>00071         <span class="comment">#  A frame widget, grouping several buttons/widgets with resources specified in a XML file. The callbacks </span>
-<a name="l00072"></a><a class="code" href="classbin_1_1app_1_1Application.html#ab286e02cee676f26b3d4d4c1ab5ed880">00072</a>         <span class="comment">#  associated to various buttons are binded when the *Callbacks series of object are instantiated.         </span>
-<a name="l00073"></a>00073         self.<a class="code" href="classbin_1_1app_1_1Application.html#ab286e02cee676f26b3d4d4c1ab5ed880" title="A frame widget, grouping several buttons/widgets with resources specified in a XML file...">upperToolbox</a> = <span class="keywordtype">None</span>  <span class="comment"># children - its buttons</span>
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075         <span class="comment">## @var middleFrame </span>
-<a name="l00076"></a>00076         <span class="comment">#</span>
-<a name="l00077"></a><a class="code" href="classbin_1_1app_1_1Application.html#afd8abb6ee1824c51b9e785f2671f1aac">00077</a>         <span class="comment">#  A frame widget, serving no other purposes than to group the left toolbox and notebook widgets conveniently     </span>
-<a name="l00078"></a>00078         self.<a class="code" href="classbin_1_1app_1_1Application.html#afd8abb6ee1824c51b9e785f2671f1aac" title="A frame widget, serving no other purposes than to group the left toolbox and notebook widgets conveni...">middleFrame</a>  = <span class="keywordtype">None</span>  <span class="comment"># children - leftToolbox, notebook</span>
-<a name="l00079"></a>00079         
-<a name="l00080"></a>00080         <span class="comment">## @var leftToolbox </span>
-<a name="l00081"></a>00081         <span class="comment">#</span>
-<a name="l00082"></a>00082         <span class="comment">#  A frame widget, grouping several buttons which are commonly used. The callbacks associated </span>
-<a name="l00083"></a><a class="code" href="classbin_1_1app_1_1Application.html#ab9947a64ca1b32d706190a777c5fb016">00083</a>         <span class="comment">#  to various buttons are binded when the *Callbacks series of object are instantiated.            </span>
-<a name="l00084"></a>00084         self.<a class="code" href="classbin_1_1app_1_1Application.html#ab9947a64ca1b32d706190a777c5fb016" title="A frame widget, grouping several buttons which are commonly used.">leftToolbox</a>  = <span class="keywordtype">None</span>  <span class="comment"># children - its buttons</span>
-<a name="l00085"></a>00085         
-<a name="l00086"></a>00086         <span class="comment">## @var notebook </span>
-<a name="l00087"></a>00087         <span class="comment">#</span>
-<a name="l00088"></a>00088         <span class="comment">#  A tkinter.tix widget which offers the possibility of tabbing several opened documents. Its children are </span>
-<a name="l00089"></a><a class="code" href="classbin_1_1app_1_1Application.html#a09c7b88a685e2975db1708003f608f45">00089</a>         <span class="comment">#  the canvas and the XMLEditor widgets</span>
-<a name="l00090"></a>00090         self.<a class="code" href="classbin_1_1app_1_1Application.html#a09c7b88a685e2975db1708003f608f45" title="A tkinter.tix widget which offers the possibility of tabbing several opened documents.">notebook</a>     = <span class="keywordtype">None</span>  <span class="comment"># children - canvas and XMLEditor</span>
-<a name="l00091"></a>00091         
-<a name="l00092"></a>00092         <span class="comment">## @var canvas </span>
-<a name="l00093"></a>00093         <span class="comment">#</span>
-<a name="l00094"></a><a class="code" href="classbin_1_1app_1_1Application.html#af71bc915252768916a4c6ec9ff8789d5">00094</a>         <span class="comment">#  An enhanced canvas widget       </span>
-<a name="l00095"></a>00095         self.<a class="code" href="classbin_1_1app_1_1Application.html#af71bc915252768916a4c6ec9ff8789d5" title="An enhanced canvas widget.">canvas</a>       = <span class="keywordtype">None</span>
-<a name="l00096"></a>00096         
-<a name="l00097"></a>00097         <span class="comment">## @var XMLEditor</span>
-<a name="l00098"></a>00098         <span class="comment">#</span>
-<a name="l00099"></a><a class="code" href="classbin_1_1app_1_1Application.html#a3309d7bcbbec6ec60f305820df060659">00099</a>         <span class="comment">#  An enhanced text widget with syntax highlighting, search/replace, etc.          </span>
-<a name="l00100"></a>00100         self.<a class="code" href="classbin_1_1app_1_1Application.html#a3309d7bcbbec6ec60f305820df060659" title="An enhanced text widget with syntax highlighting, search/replace, etc.">XMLEditor</a>    = <span class="keywordtype">None</span>
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102         <span class="comment">## @var statusBar </span>
-<a name="l00103"></a>00103         <span class="comment">#</span>
-<a name="l00104"></a>00104         <span class="comment">#  A frame widget, grouping several label widgets which show various information</span>
-<a name="l00105"></a><a class="code" href="classbin_1_1app_1_1Application.html#a46b1340c5ff4128b232264bbeea7d571">00105</a>         <span class="comment"># about the project and its current state        </span>
-<a name="l00106"></a>00106         self.<a class="code" href="classbin_1_1app_1_1Application.html#a46b1340c5ff4128b232264bbeea7d571" title="A frame widget, grouping several label widgets which show various information about the project and i...">statusBar</a>    = <span class="keywordtype">None</span>  <span class="comment"># several label type widgets holding information</span>
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108         self.<a class="code" href="classbin_1_1app_1_1Application.html#a2ffd31581aaccaafa93167188b7e3932">__createApp</a>()
+<p><div class="fragment"><pre class="fragment"><a name="l00045"></a>00045                       :
+<a name="l00046"></a>00046         wx.Frame.__init__(self)
+<a name="l00047"></a>00047         <span class="comment"># load registered settings and default empty state (menu &amp; co)</span>
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         <span class="comment">## @var settings </span>
+<a name="l00050"></a><a class="code" href="classbin_1_1app_1_1Application.html#af96d24b2d35082ee46d986d0faceb4c8">00050</a>         <span class="comment">#  A dictionary which holds the settings/options for various widgets</span>
+<a name="l00051"></a>00051         self.<a class="code" href="classbin_1_1app_1_1Application.html#af96d24b2d35082ee46d986d0faceb4c8" title="A dictionary which holds the settings/options for various widgets.">settings</a> = settings(self)
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         <span class="comment">## @var model </span>
+<a name="l00054"></a><a class="code" href="classbin_1_1app_1_1Application.html#a74bfda36f435e35547cdb73a7b6eae6c">00054</a>         <span class="comment">#  A dictionary which holds the model tree structure and the associated files</span>
+<a name="l00055"></a>00055         self.<a class="code" href="classbin_1_1app_1_1Application.html#a74bfda36f435e35547cdb73a7b6eae6c" title="A dictionary which holds the model tree structure and the associated files.">model</a>    = model()
+<a name="l00056"></a>00056         
+<a name="l00057"></a>00057         <span class="comment">## @var state </span>
+<a name="l00058"></a><a class="code" href="classbin_1_1app_1_1Application.html#a2feee60fb6e1784e13c26d7388d8b810">00058</a>         <span class="comment">#  A dictionary which accounts for disabled         </span>
+<a name="l00059"></a>00059         self.<a class="code" href="classbin_1_1app_1_1Application.html#a2feee60fb6e1784e13c26d7388d8b810" title="A dictionary which accounts for disabled.">state</a>    = state()
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         <span class="comment">## @var menuBar </span>
+<a name="l00062"></a>00062         <span class="comment">#</span>
+<a name="l00063"></a>00063         <span class="comment">#  A menu widget with resources specified in a XML file. The callbacks to </span>
+<a name="l00064"></a>00064         <span class="comment">#  various menu entries are added when the *Callbacks series of object are </span>
+<a name="l00065"></a><a class="code" href="classbin_1_1app_1_1Application.html#ad1263d24cab83ce295dc970fbcb6fbcb">00065</a>         <span class="comment">#  instantiated. </span>
+<a name="l00066"></a>00066         self.<a class="code" href="classbin_1_1app_1_1Application.html#ad1263d24cab83ce295dc970fbcb6fbcb" title="A menu widget with resources specified in a XML file.">menuBar</a>      = <span class="keywordtype">None</span>  <span class="comment"># children - submenus</span>
+<a name="l00067"></a>00067         
+<a name="l00068"></a>00068         <span class="comment">## @var upperToolbox </span>
+<a name="l00069"></a>00069         <span class="comment">#</span>
+<a name="l00070"></a>00070         <span class="comment">#  A frame widget, grouping several buttons/widgets with resources specified in a XML file. The callbacks </span>
+<a name="l00071"></a><a class="code" href="classbin_1_1app_1_1Application.html#ab286e02cee676f26b3d4d4c1ab5ed880">00071</a>         <span class="comment">#  associated to various buttons are binded when the *Callbacks series of object are instantiated.         </span>
+<a name="l00072"></a>00072         self.<a class="code" href="classbin_1_1app_1_1Application.html#ab286e02cee676f26b3d4d4c1ab5ed880" title="A frame widget, grouping several buttons/widgets with resources specified in a XML file...">upperToolbox</a> = <span class="keywordtype">None</span>  <span class="comment"># children - its buttons</span>
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="comment">## @var middleFrame </span>
+<a name="l00075"></a>00075         <span class="comment">#</span>
+<a name="l00076"></a><a class="code" href="classbin_1_1app_1_1Application.html#afd8abb6ee1824c51b9e785f2671f1aac">00076</a>         <span class="comment">#  A frame widget, serving no other purposes than to group the left toolbox and notebook widgets conveniently     </span>
+<a name="l00077"></a>00077         self.<a class="code" href="classbin_1_1app_1_1Application.html#afd8abb6ee1824c51b9e785f2671f1aac" title="A frame widget, serving no other purposes than to group the left toolbox and notebook widgets conveni...">middleFrame</a>  = <span class="keywordtype">None</span>  <span class="comment"># children - leftToolbox, notebook</span>
+<a name="l00078"></a>00078         
+<a name="l00079"></a>00079         <span class="comment">## @var leftToolbox </span>
+<a name="l00080"></a>00080         <span class="comment">#</span>
+<a name="l00081"></a>00081         <span class="comment">#  A frame widget, grouping several buttons which are commonly used. The callbacks associated </span>
+<a name="l00082"></a><a class="code" href="classbin_1_1app_1_1Application.html#ab9947a64ca1b32d706190a777c5fb016">00082</a>         <span class="comment">#  to various buttons are binded when the *Callbacks series of object are instantiated.            </span>
+<a name="l00083"></a>00083         self.<a class="code" href="classbin_1_1app_1_1Application.html#ab9947a64ca1b32d706190a777c5fb016" title="A frame widget, grouping several buttons which are commonly used.">leftToolbox</a>  = <span class="keywordtype">None</span>  <span class="comment"># children - its buttons</span>
+<a name="l00084"></a>00084         
+<a name="l00085"></a>00085         <span class="comment">## @var notebook </span>
+<a name="l00086"></a>00086         <span class="comment">#</span>
+<a name="l00087"></a>00087         <span class="comment">#  A tkinter.tix widget which offers the possibility of tabbing several opened documents. Its children are </span>
+<a name="l00088"></a><a class="code" href="classbin_1_1app_1_1Application.html#a09c7b88a685e2975db1708003f608f45">00088</a>         <span class="comment">#  the canvas and the XMLEditor widgets</span>
+<a name="l00089"></a>00089         self.<a class="code" href="classbin_1_1app_1_1Application.html#a09c7b88a685e2975db1708003f608f45" title="A tkinter.tix widget which offers the possibility of tabbing several opened documents.">notebook</a>     = <span class="keywordtype">None</span>  <span class="comment"># children - canvas and XMLEditor</span>
+<a name="l00090"></a>00090         
+<a name="l00091"></a>00091         <span class="comment">## @var canvas </span>
+<a name="l00092"></a>00092         <span class="comment">#</span>
+<a name="l00093"></a><a class="code" href="classbin_1_1app_1_1Application.html#af71bc915252768916a4c6ec9ff8789d5">00093</a>         <span class="comment">#  An enhanced canvas widget       </span>
+<a name="l00094"></a>00094         self.<a class="code" href="classbin_1_1app_1_1Application.html#af71bc915252768916a4c6ec9ff8789d5" title="An enhanced canvas widget.">canvas</a>       = <span class="keywordtype">None</span>
+<a name="l00095"></a>00095         
+<a name="l00096"></a>00096         <span class="comment">## @var XMLEditor</span>
+<a name="l00097"></a>00097         <span class="comment">#</span>
+<a name="l00098"></a><a class="code" href="classbin_1_1app_1_1Application.html#a3309d7bcbbec6ec60f305820df060659">00098</a>         <span class="comment">#  An enhanced text widget with syntax highlighting, search/replace, etc.          </span>
+<a name="l00099"></a>00099         self.<a class="code" href="classbin_1_1app_1_1Application.html#a3309d7bcbbec6ec60f305820df060659" title="An enhanced text widget with syntax highlighting, search/replace, etc.">XMLEditor</a>    = <span class="keywordtype">None</span>
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101         <span class="comment">## @var statusBar </span>
+<a name="l00102"></a>00102         <span class="comment">#</span>
+<a name="l00103"></a>00103         <span class="comment">#  A frame widget, grouping several label widgets which show various information</span>
+<a name="l00104"></a><a class="code" href="classbin_1_1app_1_1Application.html#a46b1340c5ff4128b232264bbeea7d571">00104</a>         <span class="comment"># about the project and its current state        </span>
+<a name="l00105"></a>00105         self.<a class="code" href="classbin_1_1app_1_1Application.html#a46b1340c5ff4128b232264bbeea7d571" title="A frame widget, grouping several label widgets which show various information about the project and i...">statusBar</a>    = <span class="keywordtype">None</span>  <span class="comment"># several label type widgets holding information</span>
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107         self.<a class="code" href="classbin_1_1app_1_1Application.html#a2ffd31581aaccaafa93167188b7e3932">__createApp</a>()
 
 </pre></div></p>
 
@@ -208,7 +208,7 @@ Public Attributes</h2></td></tr>
 <p>A frame widget, grouping several buttons which are commonly used. </p>
 <p>The callbacks associated to various buttons are binded when the *Callbacks series of object are instantiated. </p>
 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00083">83</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00082">82</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 
 </div>
 </div>
@@ -226,7 +226,7 @@ Public Attributes</h2></td></tr>
 <p>A menu widget with resources specified in a XML file. </p>
 <p>The callbacks to various menu entries are added when the *Callbacks series of object are instantiated. </p>
 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00066">66</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00065">65</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 
 </div>
 </div>
@@ -244,7 +244,7 @@ Public Attributes</h2></td></tr>
 <p>A tkinter.tix widget which offers the possibility of tabbing several opened documents. </p>
 <p>Its children are the canvas and the XMLEditor widgets </p>
 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00089">89</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00088">88</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 
 </div>
 </div>
@@ -262,7 +262,7 @@ Public Attributes</h2></td></tr>
 <p>A frame widget, grouping several buttons/widgets with resources specified in a XML file. </p>
 <p>The callbacks associated to various buttons are binded when the *Callbacks series of object are instantiated. </p>
 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00072">72</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00071">71</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 
 </div>
 </div>
@@ -279,7 +279,7 @@ Public Attributes</h2></td></tr>
 
 <p>An enhanced text widget with syntax highlighting, search/replace, etc. </p>
 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00099">99</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00098">98</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 
 </div>
 </div>
@@ -287,7 +287,7 @@ Public Attributes</h2></td></tr>
 <li>bin/<a class="el" href="app_8py_source.html">app.py</a></li>
 </ul>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Nov 21 2012 19:02:29 for Tkad by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Nov 24 2012 00:42:49 for Tkad by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

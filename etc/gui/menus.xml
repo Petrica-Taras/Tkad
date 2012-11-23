@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
-<!-- Comment -->
 <MenuBar>
     <Menu name="Project">
 	    <MenuItem name="New Project"         accelerator="Ctrl + N" icon="document-new.png"/> 
@@ -31,7 +29,7 @@
              <MenuItem name="Edit Line"   accelerator="" icon="generic.png"/>
              <MenuItem name="Delete Line" accelerator="" icon="generic.png"/>
              <MenuItem name="Separator"/>
-             <MenuItem name="Lists Lines" callback="geometry.line.lists" accelerator="" icon="invisible.png"/>
+             <MenuItem name="Lists Lines" accelerator="" icon="invisible.png"/>
         </MenuSubDir>       
         <MenuSubDir name="Surface" accelerator="" icon="generic.png">
              <MenuItem name="Detect Surfaces" accelerator="" icon="generic.png"/>

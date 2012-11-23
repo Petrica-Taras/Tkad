@@ -19,6 +19,7 @@
 def main():
     import os
     import sys
+    import wx
     # Find out the location of exaile's working directory, and insert it to sys.path
     basedir = os.path.dirname(os.path.realpath(__file__))
     if not os.path.exists(os.path.join(basedir, "tkad.py")):
@@ -27,8 +28,9 @@ def main():
             basedir = cwd
     sys.path.insert(0, basedir)
     
-    from bin.app import Application 
-    root = Application()
+    app = wx.App()
+    bin.app.Application(None, title='')
+    app.MainLoop()
 
 
 if __name__ == "__main__":

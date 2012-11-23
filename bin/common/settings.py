@@ -62,11 +62,11 @@ class settings(dict):
         # ----------------------------- widgets settings ----------------------------- 
 
         # Menu
-        self["menuIconsPath"] = os.path.join("resources/icons16x16/menu") # add possibilities for multiple resolutions        
-        self["menuXMLPath"]   = os.path.join("etc/gui/menus.xml") 
+        self["menuIconsPath"] = os.path.join(self["basedir"], "resources/icons16x16/menu") # add possibilities for multiple resolutions        
+        self["menuXMLPath"]   = os.path.join(self["basedir"], "etc/gui/menus.xml") 
         self["menu"]          = {"icons":{}}
         
-        # Upper toolbox
+        # Upper toolbox ???
         self["upperToolBoxIconsPath"] = "resources/icons22x22/uptoolbox"
         self["upperToolBoxXMLPath"]   = "etc/gui/uppertoolbox.xml"
         self["upperToolBox"]          = {"icons":{}} # ????
