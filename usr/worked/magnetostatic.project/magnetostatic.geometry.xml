@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE ComputationDomain SYSTEM "../../etc/dtd/geometry/geometry.dtd">
-<ComputationDomain dimension="2D">
+<!--<!DOCTYPE ComputationDomain SYSTEM "../../etc/dtd/geometry/geometry.dtd">-->
+<domain dimension="2D" type="plane">
     <CoorSys>
          <Csys id="global" parent="none" type="cartesian">0.0 0.0 0.0</Csys>
          <Csys id="xy1" parent="global" type="cartesian">3.0 1.0 45.0</Csys>
     </CoorSys>
 	<Points>
-	     <Point id="1" csys="global">0.0 0.5</Point>
-         <Point id="2" csys="global">0.5 0.0</Point>
-         <Point id="3" csys="global">0.5 0.5</Point>
-         <Point id="4" csys="global">0.0 0.0</Point>
-         <Point id="5" csys="global">1.0 0.5</Point>
-         <Point id="6" csys="global">1.5 0.5</Point>
-         <Point id="7" csys="global">1.5 0.0</Point>
-         <Point id="8" csys="global">1.0 1.0</Point>
-         <Point id="9" csys="global">1.5 1.0</Point>
-         <Point id="10" csys="global">0.0 1.0</Point>
-         <Point id="11" csys="global">0.5 1.0</Point>
-         <Point id="12" csys="global">0.0 2.0</Point>
-         <Point id="13" csys="global">0.5 2.0</Point>
-         <Point id="14" csys="global">0.5 1.5</Point>
-         <Point id="15" csys="global">1.0 1.5</Point>
-         <Point id="16" csys="global">1.0 2.0</Point>
+	     <Point id="P1"  csys="global" transformation="null" parent="null">0.0 0.5</Point>
+         <Point id="P2"  csys="global" transformation="null" parent="null">0.5 0.0</Point>
+         <Point id="P3"  csys="global" transformation="null" parent="null">0.5 0.5</Point>
+         <Point id="P4"  csys="global" transformation="null" parent="null">0.0 0.0</Point>
+         <Point id="P5"  csys="global" transformation="null" parent="null">1.0 0.5</Point>
+         <Point id="P6"  csys="global" transformation="null" parent="null">1.5 0.5</Point>
+         <Point id="P7"  csys="global" transformation="null" parent="null">1.5 0.0</Point>
+         <Point id="P8"  csys="global" transformation="null" parent="null">1.0 1.0</Point>
+         <Point id="P9"  csys="global" transformation="null" parent="null">1.5 1.0</Point>
+         <Point id="P10" csys="global" transformation="null" parent="null">0.0 1.0</Point>
+         <Point id="P11" csys="global" transformation="null" parent="null">0.5 1.0</Point>
+         <Point id="P12" csys="global" transformation="null" parent="null">0.0 2.0</Point>
+         <Point id="P13" csys="global" transformation="null" parent="null">0.5 2.0</Point>
+         <Point id="P14" csys="global" transformation="null" parent="null">0.5 1.5</Point>
+         <Point id="P15" csys="global" transformation="null" parent="null">1.0 1.5</Point>
+         <Point id="P16" csys="global" transformation="null" parent="null">1.0 2.0</Point>
 	</Points>
 	<Lines>
 	     <Line id="1" type="segment">2 4</Line>
@@ -55,4 +55,4 @@
 	     <Surface id="6" points="4" lines="4">14 15 16 13 19 18 17 20</Surface>
 	</Surfaces>
 	<Boundary>1 5 6 9 14 10 8 11 15 17 18 20 21 16 12 2</Boundary>
-</ComputationDomain>
+</domain>

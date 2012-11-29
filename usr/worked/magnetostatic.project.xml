@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
-<Project name="magnetostatic.project">
+<! -- sample project -->
+<project>
     <model>
-         <Geometry dim="2D" type="plane">magnetostatic.geometry.xml</Geometry>
-         <Mesh status="nomesh">magnetostatic.mesh.xml</Mesh>
-         <Assembler custom="no">etc/applications/magnetic/magnetostatic.xml</Assembler>
-         <Physics status="nophysics">magnetostatic.physics.xml</Physics>
-         <Postprocess status="noresults">magnetostatic.results.xml</Postprocess>
+         <geometry location="magnetostatic.project/magnetostatic.geometry.xml"/>
+         <mesh status="nomesh" location="magnetostatic.project/magnetostatic.mesh.xml" />
+         <assembler custom="no" location="etc/applications/magnetic/magnetostatic.xml"/>
+         <physics status="nophysics" location="magnetostatic.project/magnetostatic.physics.xml"/>
+         <postprocess status="noresults" location="magnetostatic.project/magnetostatic.results.xml"/>
     </model>
     
     <settings>
         <canvas>
-            <globalsettings>
-                <colors>
-                
-                </colors>
-            </globalsettings>
-            <customsettings>
+            <global>
+                <scheme>default</scheme>
+            </global>
+            <custom>
                 <points>
                     
                 </points>
                 <lines>
                 
                 </lines>
-            </customsettings>
+            </custom>
         </canvas>
         <XMLeditor>
-            <colors>
+            <colorScheme>
             
-            </colors>        
+            </colorScheme>        
         </XMLeditor>
         <console>
-            <colors>
+            <colorScheme>
             
-            </colors>        
+            </colorScheme>        
         </console>
     </settings>
-</Project>
+</project>

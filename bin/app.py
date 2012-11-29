@@ -28,7 +28,7 @@ from bin.common import state
      
 from bin.widgets.menu import menu
 from bin.widgets.uptoolbox import uppertoolbox
-from bin.widgets.middleframe import middleframe
+from bin.widgets.mainpanel import mainPanel
 
 from bin.widgets.canvas import canvas
 from bin.widgets.XMLeditor import XMLeditor
@@ -73,20 +73,14 @@ class Application(wx.Frame):
         ## @var middleFrame 
         #
         #  A frame widget, serving no other purposes than to group the left toolbox and notebook widgets conveniently     
-        self.middleFrame  = None  # children - leftToolbox, notebook
+        self.mainpanel  = None  # children - leftToolbox, notebook
         
         ## @var leftToolbox 
         #
         #  A frame widget, grouping several buttons which are commonly used. The callbacks associated 
         #  to various buttons are binded when the *Callbacks series of object are instantiated.            
         self.leftToolbox  = None  # children - its buttons
-        
-        ## @var notebook 
-        #
-        #  A tkinter.tix widget which offers the possibility of tabbing several opened documents. Its children are 
-        #  the canvas and the XMLEditor widgets
-        self.notebook     = None  # children - canvas and XMLEditor
-        
+               
         ## @var canvas 
         #
         #  An enhanced canvas widget       
@@ -113,9 +107,6 @@ class Application(wx.Frame):
         self.upperToolbox = uppertoolbox(self, self.settings("uppertoolbox"))
 
         self.middleFrame = None # TODO - start from here
-
-        self.notebook=tkinter.tix.NoteBook(self)
-        self.notebook.pack(side="top", fill="both", expand="yes")
         
         # create these, after the menu, and toolboxes where created (in order for the callbacks to be binded to the appropriate entries)
         self.projectCallbacks     = projectCallbacks(self, master)
@@ -124,18 +115,8 @@ class Application(wx.Frame):
         self.HelpCallbacks        = HelpCallbacks(self, master)
         
         # more like testing purpose
-        self.statusBar=tkinter.Frame(self, borderwidth=0)
-        self.lowerLabelFrame.pack(side="top", fill="x")
-        self.lowerlabelstr.append(tkinter.StringVar())
-        self.lowerLabel=tkinter.Label(self.lowerLabelFrame, textvariable=self.lowerlabelstr[0], relief="sunken")
-        self.lowerLabel.pack(side="bottom", fill="x")
 
         # bindings
-
-        self.geometry('%sx%s+0+0' % self.maxsize())
-
-        self.update_idletasks()
-        self.mainloop()
 
     def initDrawingArea(self): # should be called after the other widgets are initialiazed.
 

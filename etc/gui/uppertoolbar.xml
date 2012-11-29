@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<toolbar>
+    <button name="new" icon="document-new.png"/>
+    <button name="open" icon="document-open.png"/>
+    <button name="save" icon="document-save.png"/>
+    <button name="saveas" icon="document-save-as.png"/>  
+    <button name="close" icon="edit-delete.png"/>
+    <button name="Separator"/>
+    <button name="undo" icon="edit-undo.png"/>
+    <button name="redo" icon="edit-redo.png"/>
+</toolbar>

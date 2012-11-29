@@ -1,4 +1,4 @@
-# Copyright (C) 2012 Petrica Taras
+# Copyright (C) 2011-2012 Petrica Taras
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,22 +14,21 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-import tkinter, math
-from xml.dom import minidom # functionality that should be moved to other objects
+import math
+
 from ..cad import fkernel   # functionality that should be moved to other objects
 
 # should be associated with some options (callbacks) from Settings menu
 
 class DrawingArea(tkinter.Canvas):
     """Enhanced Canvas widget for CAD drawings."""
-    def __init__(self, master, xmlfile):
+    def __init__(self, master, resources):
         tkinter.Canvas.__init__(self, master)
 
         self.master=master
         self.focus_force()
 
-        self.xmlfile=xmlfile
-        self.options=self.__parseXml()    # must be passed to the Canvas somehow - must be moved from here ;)
+        self.__XMLfile = resources
         self.psize=self.__pointSz()       # compute once/stay the same for the whole session
 
         self["background"] = "black"
@@ -72,10 +71,6 @@ class DrawingArea(tkinter.Canvas):
         else: a=(a+1)/2
 
         return a
-
-    def __parseXml(self):
-        """Parse the canvas settings and if it is necessary the settings associated with the model."""
-        pass
 
     def translate(self, event):
         self.move("translate", event.x-self.currentDir[0].get(), event.y-self.currentDir[1].get())

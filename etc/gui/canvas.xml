@@ -1,57 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <canvas>
-    <defaults>
-        <inuse>yes</inuse>
-        <defaultColorScheme>
-            <name>default</name>
-            <backgroundColor>
-                <type>name</type>
-                <value>black</value>
-            </backgroundColor>
-            <foregroundColor>
-                <type>name</type>
-                <value>white</value>
-            </foregroundColor>
-            <selectionColor>
-                <type>name</type>
-                <value>white</value>        
-            </selectionColor>
-        </defaultColorScheme>    
-        <point>
-            <shape>square</shape>
-            <size>0.5</size>
-        </point>
-        <cursor>
-            <normal>normal</normal>
-            <selection>cross</selection>
-        </cursor>
-    </defaults>
+    <scheme name="default" inuse="yes">
+        <colors>
+            <background type="name" value="black"/>
+            <foreground type="name" value="white"/>
+            <selection  type="name" value="white"/>
+        </colors>    
+        <point shape="square" size="0.5"/>
+        <cursor normal="normal" selection="cross" color="white"/>
+    </scheme>
     
-    <userSchemes>
-        <inuse>no</inuse>
-        <userColorsScheme>
-            <name>UserColorScheme 1</name>
-            <backgroundColor>
-                <type>name</type>
-                <value>black</value>
-            </backgroundColor>
-            <foregroundColor>
-                <type>name</type>
-                <value>white</value>
-            </foregroundColor>
-            <selectionColor>
-                <type>name</type>
-                <value>white</value>        
-            </selectionColor>
-        </userColorsScheme>
-        <point>
-            <shape>square</shape>
-            <size>0.5</size>
-        </point>
-        <cursor>
-            <normal>normal</normal>
-            <selection>cross</selection>
-        </cursor>        
-    </userSchemes>
+    <scheme name="UserColorScheme 1" inuse="no">
+        <colors>
+            <background type="name" value="black"/>
+            <foreground type="name" value="white"/>
+            <selection  type="name" value="white"/>
+        </colors>
+        <point shape="square" size="0.5"/>
+        <cursor normal="normal" selection="cross" color="white"/>      
+    </scheme>
 </canvas>

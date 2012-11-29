@@ -21,7 +21,7 @@ import xml.etree.ElementTree as ET
 ## menu() class
 #
 #  Custom menu which loads an application menu from a XML file
-class menubar(MenuBar):
+class menuBar(MenuBar):
     """A custom Menu object which will generate the application menu based on a configuration XML file."""	
     def __init__(self, master, resources): # resources - (file, icons)
         MenuBar.__init__(self)
@@ -47,7 +47,7 @@ class menubar(MenuBar):
         """Extracts the layout information from the XML configuration file and creates
         the menubar in a recursive manner."""	
 
-        if node == None:                       # base case
+        if node == None:
             tree = ET.parse(self.__XMLfile)
             root = tree.getroot()
             for i in root:
@@ -94,7 +94,7 @@ if __name__ == "__main__": # test - to be deleted after adding callbacks!
     import wx
     app = wx.App(False)
     x = wx.Frame(None)
-    m = menubar(x, ("../../etc/gui/menus.xml", "../../resources/icons16x16/menu"))
+    m = menuBar(x, ("../../etc/gui/menus.xml", "../../resources/icons16x16/menu"))
     x.SetSize((800, 600))
     x.SetTitle('Test icons and shortcuts')
     x.Centre()

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<toolbar>
+    <button name="new" icon="generic.png"/>
+    <button name="open" icon="generic.png"/>
+    <button name="save" icon="generic.png"/>
+    <button name="saveas" icon="generic.png"/>  
+    <button name="close" icon="generic.png"/>
+    <button name="Separator"/>
+    <button name="undo" icon="generic.png"/>
+    <button name="redo" icon="generic.png"/>
+</toolbar>

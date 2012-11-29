@@ -1,4 +1,4 @@
-# Copyright (C) 2011 Petrica Taras
+# Copyright (C) 2011-2012 Petrica Taras
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 
 # geometric precision
 
-class csys():
+class csys(dict):
     """2D coordonate system data structure:
 
 Parameters:
@@ -36,21 +36,16 @@ Parameters:
                  label="global", 
                  type_="cartesian"):
     
-        self.origin   = origin
-        self.parent   = parent	
-        self.rotation = rotation
-        self.type_    = type_
-        self.label    = label
-
-        self.metadata={}
-        # metadata: color, layer, visibility, integer coordinates on canvas, associated xml id/name/label?
+        self["origin"]   = origin
+        self["parent"]   = parent	
+        self["rotation"] = rotation
+        self["type"]     = type_
+        self["label"]    = label
 
     def isglobal(self):
-        return self.label == "global"
+        return self["label"] == "global"
 
-
-
-class point():
+class point(dict):
     """2D point data structure:
 
 Parameters:
@@ -67,14 +62,13 @@ Parameters:
                  transformation=None, 
                  label=None):
     
-        self.coords         = coords
-        self.parent         = parent	
-        self.csys           = csys
-        self.transformation = transformation
-        self.label          = label
+        self["coords"]         = coords
+        self["parent"]         = parent	
+        self["csys"]           = csys
+        self["transformation"] = transformation
+        self["label"]          = label
 
-        self.metadata={}
-
+# These are to be done
 class segment():
     """2D segment data structure:
 
@@ -91,8 +85,6 @@ Parameters:
         self.transformation=transformation
         self.label=label
 
-        self.metadata={}
-
     def __len__(self):
         return "not implemented yet!"
 
@@ -105,6 +97,24 @@ class surface():
 class transformation():
     pass	
 
-class geometry():
+class geometry(dict):
     """Holder for the geometry internal representation and associated methods"""
-    pass
+    def __init__(self, csys=None, transformations=None, points=None, lines=None, surfaces=None): 
+        dict.__init__(self)
+    
+        self["csys"]            = csys # list or dict ????
+        self["transformations"] = transformations
+        self["points"]          = points
+        self["lines"]           = lines
+        self["surfaces"]        = surfaces
+        
+        self.tree = {}
+        
+        self.__populateTree()
+        
+    def addCsys(self, coordSys):
+        self.csys.append(coordSys)
+    
+    def __populateTree(self):
+        """populates tree, based on relations described between geometrical entities"""
+        pass
