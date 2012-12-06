@@ -9,4 +9,5 @@
     <button name="Separator"/>
     <button name="undo" icon="edit-undo.png"/>
     <button name="redo" icon="edit-redo.png"/>
+    <button name="Separator"/>
 </toolbar>

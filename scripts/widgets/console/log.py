@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # Copyright (C) 2012 Petrica Taras
 #
 # This program is free software; you can redistribute it and/or modify
@@ -16,30 +14,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-def main():
-    import os
-    import sys
-    import wx
-    # Find out the location of tkad's working directory, and insert it to sys.path
-    # the next 6 lines are taken from exaile 
-    basedir = os.path.dirname(os.path.realpath(__file__))
-    if not os.path.exists(os.path.join(basedir, "tkad.py")):
-        cwd = os.getcwd()
-        if os.path.exists(os.path.join(cwd, "tkad.py")):
-            basedir = cwd
-    sys.path.insert(0, basedir)
-    
-    import scripts
+from wx import TextCtrl, TE_MULTILINE
 
-    app = wx.App()
-    
-    #from scripts.app import Application
-    scripts.app.Application(None, -1, '')
-    
-    app.MainLoop()
-
-
-if __name__ == "__main__":
-    main()
-
-
+class consoleLog(TextCtrl):
+    def __init__(self, master):
+        TextCtrl.__init__(self, master, style = TE_MULTILINE)
+        self.master = master    
