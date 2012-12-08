@@ -18,7 +18,9 @@ from wx import TextCtrl, TE_MULTILINE
 
 class XMLEditor(TextCtrl):
     """Widget for XML editor with suport for syntax highlighting, right click pop menu, find/replace, etc."""
-    def __init__(self, master):
+    def __init__(self, master, resources): # resources - XML file
         TextCtrl.__init__(self, master, style = TE_MULTILINE)
         self.master = master
+        
+        self.__XMLfile = resources
         

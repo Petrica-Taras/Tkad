@@ -50,30 +50,31 @@
 <a name="l00021"></a>00021     <span class="keyword">import</span> sys
 <a name="l00022"></a>00022     <span class="keyword">import</span> wx
 <a name="l00023"></a>00023     <span class="comment"># Find out the location of tkad&#39;s working directory, and insert it to sys.path</span>
-<a name="l00024"></a>00024     basedir = os.path.dirname(os.path.realpath(__file__))
-<a name="l00025"></a>00025     <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(os.path.join(basedir, <span class="stringliteral">&quot;tkad.py&quot;</span>)):
-<a name="l00026"></a>00026         cwd = os.getcwd()
-<a name="l00027"></a>00027         <span class="keywordflow">if</span> os.path.exists(os.path.join(cwd, <span class="stringliteral">&quot;tkad.py&quot;</span>)):
-<a name="l00028"></a>00028             basedir = cwd
-<a name="l00029"></a>00029     sys.path.insert(0, basedir)
-<a name="l00030"></a>00030     
-<a name="l00031"></a>00031     <span class="keyword">import</span> scripts
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033     app = wx.App()
-<a name="l00034"></a>00034     
-<a name="l00035"></a>00035     <span class="comment">#from scripts.app import Application</span>
-<a name="l00036"></a>00036     scripts.app.Application(<span class="keywordtype">None</span>, -1, <span class="stringliteral">&#39;&#39;</span>)
-<a name="l00037"></a>00037     
-<a name="l00038"></a>00038     app.MainLoop()
-<a name="l00039"></a>00039 
+<a name="l00024"></a>00024     <span class="comment"># the next 6 lines are taken from exaile </span>
+<a name="l00025"></a>00025     basedir = os.path.dirname(os.path.realpath(__file__))
+<a name="l00026"></a>00026     <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(os.path.join(basedir, <span class="stringliteral">&quot;tkad.py&quot;</span>)):
+<a name="l00027"></a>00027         cwd = os.getcwd()
+<a name="l00028"></a>00028         <span class="keywordflow">if</span> os.path.exists(os.path.join(cwd, <span class="stringliteral">&quot;tkad.py&quot;</span>)):
+<a name="l00029"></a>00029             basedir = cwd
+<a name="l00030"></a>00030     sys.path.insert(0, basedir)
+<a name="l00031"></a>00031     
+<a name="l00032"></a>00032     <span class="keyword">import</span> scripts
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034     app = wx.App()
+<a name="l00035"></a>00035     
+<a name="l00036"></a>00036     <span class="comment">#from scripts.app import Application</span>
+<a name="l00037"></a>00037     scripts.app.Application(<span class="keywordtype">None</span>, -1, <span class="stringliteral">&#39;&#39;</span>)
+<a name="l00038"></a>00038     
+<a name="l00039"></a>00039     app.MainLoop()
 <a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:
-<a name="l00042"></a>00042     main()
-<a name="l00043"></a>00043 
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:
+<a name="l00043"></a>00043     main()
 <a name="l00044"></a>00044 
+<a name="l00045"></a>00045 
 </pre></div></div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Dec 5 2012 18:49:46 for Tkad by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Dec 7 2012 00:03:25 for Tkad by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

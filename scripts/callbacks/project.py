@@ -1,4 +1,4 @@
-# Copyright (C) 2011 Petrica Taras
+# Copyright (C) 2011-2012 Petrica Taras
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,7 +14,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-import os, re, tkinter.filedialog
+import os
+import re
+
 from ..cad import fkernel
 
 class projectIO():

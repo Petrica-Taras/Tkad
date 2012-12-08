@@ -6,21 +6,22 @@ Content
 * State of development
 * Overview
 * Dependencies
+* Usage
 
 State of development
 =======================
 
-Please note that for now the software is a mess and - it hasn't the slightest functionality added. 
+Most of the widgets are in position. Most of the logic behind is missing since the Tkinter based UI was dumped and wxPython was adopted (along with a better structuring of the code).
 
 Overview
 =======================
 
-This project is intended to be a 2D physical framework used to prototype ideas.
+This project is intended to be a framework used to prototype ideas.
 
 Dependencies
 =======================
 
-Tkinter + Tix - these, as far as I know is delivered with Python for major OSes. 
+wxPython (used to be Tkinter and Tix) - for GUI - this limits the python version to 2.x
 
 NetworkX - this isn't included for now in the software but it will be added later when the surface support is added
 

@@ -54,15 +54,25 @@ Public Member Functions</h2></td></tr>
 def&nbsp;</td><td class="memItemRight" valign="bottom"><b>initDrawingArea</b></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aebb3f0aa9ba0261840464d0016bd2d57"></a><!-- doxytag: member="scripts::app::Application::settings" ref="aebb3f0aa9ba0261840464d0016bd2d57" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscripts_1_1app_1_1Application.html#aebb3f0aa9ba0261840464d0016bd2d57">settings</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A dictionary which holds the settings/options for various widgets. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscripts_1_1app_1_1Application.html#a5d9d13bc34b3e88859683d5f52baf3ca">menuBar</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A menu widget with resources specified in a XML file.  <a href="#a5d9d13bc34b3e88859683d5f52baf3ca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscripts_1_1app_1_1Application.html#ad343add8085bdced9545f649258a117c">upperToolbar</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A frame widget, grouping several buttons/widgets with resources specified in a XML file.  <a href="#ad343add8085bdced9545f649258a117c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee5942640cc85d01b1c84c822630508c"></a><!-- doxytag: member="scripts::app::Application::panel" ref="aee5942640cc85d01b1c84c822630508c" args="" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscripts_1_1app_1_1Application.html#aee5942640cc85d01b1c84c822630508c">panel</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A frame widget, serving no other purposes than to group the left toolbox and notebook widgets conveniently. <br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A ToolBar widget, grouping several buttons/widgets with resources specified in a XML file.  <a href="#ad343add8085bdced9545f649258a117c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscripts_1_1app_1_1Application.html#a4c028d10e2b174ae0ac7d2d5003c65b0">leftToolbar</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A frame widget, grouping several buttons which are commonly used.  <a href="#a4c028d10e2b174ae0ac7d2d5003c65b0"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A ToolBar widget, grouping several buttons/widgets with resources specified in a XML file.  <a href="#a4c028d10e2b174ae0ac7d2d5003c65b0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscripts_1_1app_1_1Application.html#a0ad1aba47db8476f5e77ab916e035d08">XMLEditor</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">An enhanced text widget with syntax highlighting, search/replace, etc.  <a href="#a0ad1aba47db8476f5e77ab916e035d08"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e936b40c872edd6c71202933598686f"></a><!-- doxytag: member="scripts::app::Application::mainPanel" ref="a2e936b40c872edd6c71202933598686f" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>mainPanel</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1bb9b40f823cd3c4f986e2638d1ac5d3"></a><!-- doxytag: member="scripts::app::Application::consoleLog" ref="a1bb9b40f823cd3c4f986e2638d1ac5d3" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscripts_1_1app_1_1Application.html#a1bb9b40f823cd3c4f986e2638d1ac5d3">consoleLog</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A TextCtrl widget which records log entries. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59d45552be2f15e9937a24495c817615"></a><!-- doxytag: member="scripts::app::Application::statusBar" ref="a59d45552be2f15e9937a24495c817615" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscripts_1_1app_1_1Application.html#a59d45552be2f15e9937a24495c817615">statusBar</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The statusBar. <br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Application() class. </p>
@@ -70,7 +80,7 @@ Public Attributes</h2></td></tr>
 <div class="fragment"><pre class="fragment">Main app window. Everything starts here.
    Keeps the main widgets (menu, upper and left toolbar, console, canvas, XML editor, etc.
    Initialises or uses the (common) settings object, the state object and the model object.</pre></div> 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00039">39</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00041">41</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ab3b1dd3f5cd00b6a1fe4dd1549211be5"></a><!-- doxytag: member="scripts::app::Application::__init__" ref="ab3b1dd3f5cd00b6a1fe4dd1549211be5" args="" -->
 <div class="memitem">
@@ -111,65 +121,69 @@ Public Attributes</h2></td></tr>
 
 <p>The constructor. </p>
 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00044">44</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00046">46</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00045"></a>00045                                          :
-<a name="l00046"></a>00046         wx.Frame.__init__(self, parent, id, title)
-<a name="l00047"></a>00047         <span class="comment"># load registered settings and default empty state (menu &amp; co)</span>
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049         <span class="comment">## @var settings </span>
-<a name="l00050"></a>00050         <span class="comment">#  A dictionary which holds the settings/options for various widgets</span>
-<a name="l00051"></a>00051         <span class="comment">#self.settings = settings(self)</span>
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053         <span class="comment">## @var model </span>
-<a name="l00054"></a>00054         <span class="comment">#  A dictionary which holds the model tree structure and the associated files</span>
-<a name="l00055"></a>00055         <span class="comment">#self.model    = model()</span>
-<a name="l00056"></a>00056         
-<a name="l00057"></a>00057         <span class="comment">## @var state </span>
-<a name="l00058"></a>00058         <span class="comment">#  A dictionary which accounts for disabled         </span>
-<a name="l00059"></a>00059         <span class="comment">#self.state    = state()</span>
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <span class="comment">## @var menuBar </span>
-<a name="l00062"></a>00062         <span class="comment">#</span>
-<a name="l00063"></a>00063         <span class="comment">#  A menu widget with resources specified in a XML file. The callbacks to </span>
-<a name="l00064"></a>00064         <span class="comment">#  various menu entries are added when the *Callbacks series of object are </span>
-<a name="l00065"></a><a class="code" href="classscripts_1_1app_1_1Application.html#a5d9d13bc34b3e88859683d5f52baf3ca">00065</a>         <span class="comment">#  instantiated. </span>
-<a name="l00066"></a>00066         self.<a class="code" href="classscripts_1_1app_1_1Application.html#a5d9d13bc34b3e88859683d5f52baf3ca" title="A menu widget with resources specified in a XML file.">menuBar</a>      = <span class="keywordtype">None</span>  <span class="comment"># children - submenus</span>
-<a name="l00067"></a>00067         
-<a name="l00068"></a>00068         <span class="comment">## @var upperToolbar </span>
-<a name="l00069"></a>00069         <span class="comment">#</span>
-<a name="l00070"></a>00070         <span class="comment">#  A frame widget, grouping several buttons/widgets with resources specified in a XML file. The callbacks </span>
-<a name="l00071"></a><a class="code" href="classscripts_1_1app_1_1Application.html#ad343add8085bdced9545f649258a117c">00071</a>         <span class="comment">#  associated to various buttons are binded when the *Callbacks series of object are instantiated.         </span>
-<a name="l00072"></a>00072         self.<a class="code" href="classscripts_1_1app_1_1Application.html#ad343add8085bdced9545f649258a117c" title="A frame widget, grouping several buttons/widgets with resources specified in a XML file...">upperToolbar</a> = <span class="keywordtype">None</span>  <span class="comment"># children - its buttons</span>
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074         <span class="comment">## @var panel </span>
-<a name="l00075"></a>00075         <span class="comment">#</span>
-<a name="l00076"></a><a class="code" href="classscripts_1_1app_1_1Application.html#aee5942640cc85d01b1c84c822630508c">00076</a>         <span class="comment">#  A frame widget, serving no other purposes than to group the left toolbox and notebook widgets conveniently     </span>
-<a name="l00077"></a>00077         self.<a class="code" href="classscripts_1_1app_1_1Application.html#aee5942640cc85d01b1c84c822630508c" title="A frame widget, serving no other purposes than to group the left toolbox and notebook widgets conveni...">panel</a>  = <span class="keywordtype">None</span>  <span class="comment"># children - leftToolbox, notebook</span>
-<a name="l00078"></a>00078         
-<a name="l00079"></a>00079         <span class="comment">## @var leftToolbar </span>
-<a name="l00080"></a>00080         <span class="comment">#</span>
-<a name="l00081"></a>00081         <span class="comment">#  A frame widget, grouping several buttons which are commonly used. The callbacks associated </span>
-<a name="l00082"></a><a class="code" href="classscripts_1_1app_1_1Application.html#a4c028d10e2b174ae0ac7d2d5003c65b0">00082</a>         <span class="comment">#  to various buttons are binded when the *Callbacks series of object are instantiated.            </span>
-<a name="l00083"></a>00083         self.<a class="code" href="classscripts_1_1app_1_1Application.html#a4c028d10e2b174ae0ac7d2d5003c65b0" title="A frame widget, grouping several buttons which are commonly used.">leftToolbar</a>  = <span class="keywordtype">None</span>  <span class="comment"># children - its buttons</span>
-<a name="l00084"></a>00084                
-<a name="l00085"></a>00085         <span class="comment">## @var canvas </span>
-<a name="l00086"></a>00086         <span class="comment">#</span>
-<a name="l00087"></a>00087         <span class="comment">#  An enhanced canvas widget       </span>
-<a name="l00088"></a>00088         <span class="comment">#self.canvas       = None</span>
-<a name="l00089"></a>00089         
-<a name="l00090"></a>00090         <span class="comment">## @var XMLEditor</span>
-<a name="l00091"></a>00091         <span class="comment">#</span>
-<a name="l00092"></a>00092         <span class="comment">#  An enhanced text widget with syntax highlighting, search/replace, etc.          </span>
-<a name="l00093"></a>00093         <span class="comment">#self.XMLEditor    = None</span>
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095         <span class="comment">## @var statusBar </span>
-<a name="l00096"></a>00096         <span class="comment">#</span>
-<a name="l00097"></a>00097         <span class="comment">#  A frame widget, grouping several label widgets which show various information</span>
-<a name="l00098"></a>00098         <span class="comment"># about the project and its current state        </span>
-<a name="l00099"></a>00099         <span class="comment">#self.statusBar    = None  # several label type widgets holding information</span>
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101         self.<a class="code" href="classscripts_1_1app_1_1Application.html#a0c3d38c71b1e955e889ac0987e012275">__createApp</a>()
+<p><div class="fragment"><pre class="fragment"><a name="l00047"></a>00047                                          :
+<a name="l00048"></a>00048         wx.Frame.__init__(self, parent, id, title)
+<a name="l00049"></a>00049         <span class="comment"># load registered settings and default empty state (menu &amp; co)</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051         <span class="comment">## @var settings </span>
+<a name="l00052"></a><a class="code" href="classscripts_1_1app_1_1Application.html#aebb3f0aa9ba0261840464d0016bd2d57">00052</a>         <span class="comment">#  A dictionary which holds the settings/options for various widgets</span>
+<a name="l00053"></a>00053         self.<a class="code" href="classscripts_1_1app_1_1Application.html#aebb3f0aa9ba0261840464d0016bd2d57" title="A dictionary which holds the settings/options for various widgets.">settings</a> = settings(self)
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055         <span class="comment">## @var model </span>
+<a name="l00056"></a>00056         <span class="comment">#  A dictionary which holds the model tree structure and the associated files</span>
+<a name="l00057"></a>00057         <span class="comment">#self.model    = model()</span>
+<a name="l00058"></a>00058         
+<a name="l00059"></a>00059         <span class="comment">## @var state </span>
+<a name="l00060"></a>00060         <span class="comment">#  A dictionary which accounts for disabled         </span>
+<a name="l00061"></a>00061         <span class="comment">#self.state    = state()</span>
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="comment">## @var menuBar </span>
+<a name="l00064"></a>00064         <span class="comment">#</span>
+<a name="l00065"></a>00065         <span class="comment">#  A menu widget with resources specified in a XML file. The callbacks to </span>
+<a name="l00066"></a>00066         <span class="comment">#  various menu entries are added when the *Callbacks series of object are </span>
+<a name="l00067"></a><a class="code" href="classscripts_1_1app_1_1Application.html#a5d9d13bc34b3e88859683d5f52baf3ca">00067</a>         <span class="comment">#  instantiated. </span>
+<a name="l00068"></a>00068         self.<a class="code" href="classscripts_1_1app_1_1Application.html#a5d9d13bc34b3e88859683d5f52baf3ca" title="A menu widget with resources specified in a XML file.">menuBar</a>      = <span class="keywordtype">None</span>  <span class="comment"># children - submenus</span>
+<a name="l00069"></a>00069         
+<a name="l00070"></a>00070         <span class="comment">## @var upperToolbar </span>
+<a name="l00071"></a>00071         <span class="comment">#</span>
+<a name="l00072"></a>00072         <span class="comment">#  A ToolBar widget, grouping several buttons/widgets with resources specified in a XML file. The callbacks </span>
+<a name="l00073"></a><a class="code" href="classscripts_1_1app_1_1Application.html#ad343add8085bdced9545f649258a117c">00073</a>         <span class="comment">#  associated to various buttons are binded when the *Callbacks series of object are instantiated.         </span>
+<a name="l00074"></a>00074         self.<a class="code" href="classscripts_1_1app_1_1Application.html#ad343add8085bdced9545f649258a117c" title="A ToolBar widget, grouping several buttons/widgets with resources specified in a XML file...">upperToolbar</a> = <span class="keywordtype">None</span>  <span class="comment"># children - its buttons</span>
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076         <span class="comment">## @var leftToolbar </span>
+<a name="l00077"></a>00077         <span class="comment">#</span>
+<a name="l00078"></a>00078         <span class="comment">#  A ToolBar widget, grouping several buttons/widgets with resources specified in a XML file. The callbacks </span>
+<a name="l00079"></a><a class="code" href="classscripts_1_1app_1_1Application.html#a4c028d10e2b174ae0ac7d2d5003c65b0">00079</a>         <span class="comment">#  associated to various buttons are binded when the *Callbacks series of object are instantiated.         </span>
+<a name="l00080"></a>00080         self.<a class="code" href="classscripts_1_1app_1_1Application.html#a4c028d10e2b174ae0ac7d2d5003c65b0" title="A ToolBar widget, grouping several buttons/widgets with resources specified in a XML file...">leftToolbar</a> = <span class="keywordtype">None</span>  <span class="comment"># children - its buttons</span>
+<a name="l00081"></a>00081                
+<a name="l00082"></a>00082         <span class="comment">## @var canvas </span>
+<a name="l00083"></a>00083         <span class="comment">#</span>
+<a name="l00084"></a>00084         <span class="comment">#  An enhanced canvas widget       </span>
+<a name="l00085"></a>00085         <span class="comment">#self.canvas       = None</span>
+<a name="l00086"></a>00086         
+<a name="l00087"></a>00087         <span class="comment">## @var XMLEditor</span>
+<a name="l00088"></a>00088         <span class="comment">#</span>
+<a name="l00089"></a><a class="code" href="classscripts_1_1app_1_1Application.html#a0ad1aba47db8476f5e77ab916e035d08">00089</a>         <span class="comment">#  An enhanced text widget with syntax highlighting, search/replace, etc.          </span>
+<a name="l00090"></a>00090         self.<a class="code" href="classscripts_1_1app_1_1Application.html#a0ad1aba47db8476f5e77ab916e035d08" title="An enhanced text widget with syntax highlighting, search/replace, etc.">XMLEditor</a>    = <span class="keywordtype">None</span>
+<a name="l00091"></a>00091         
+<a name="l00092"></a>00092         <span class="comment">## @var panel </span>
+<a name="l00093"></a>00093         <span class="comment">#</span>
+<a name="l00094"></a>00094         <span class="comment">#  A panel widget which groups all the widgets previously created     </span>
+<a name="l00095"></a>00095         self.<a class="code" href="classscripts_1_1app_1_1Application.html#a2e936b40c872edd6c71202933598686f">mainPanel</a>  = <span class="keywordtype">None</span>  <span class="comment"># children - all the widgets besides the menu and status bar</span>
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097         <span class="comment">## @var consoleLog </span>
+<a name="l00098"></a>00098         <span class="comment">#</span>
+<a name="l00099"></a><a class="code" href="classscripts_1_1app_1_1Application.html#a1bb9b40f823cd3c4f986e2638d1ac5d3">00099</a>         <span class="comment">#  A TextCtrl widget which records log entries     </span>
+<a name="l00100"></a>00100         self.<a class="code" href="classscripts_1_1app_1_1Application.html#a1bb9b40f823cd3c4f986e2638d1ac5d3" title="A TextCtrl widget which records log entries.">consoleLog</a>  = <span class="keywordtype">None</span>  <span class="comment"># children - none</span>
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102         <span class="comment">## @var statusBar </span>
+<a name="l00103"></a>00103         <span class="comment">#</span>
+<a name="l00104"></a><a class="code" href="classscripts_1_1app_1_1Application.html#a59d45552be2f15e9937a24495c817615">00104</a>         <span class="comment">#  The statusBar        </span>
+<a name="l00105"></a>00105         self.<a class="code" href="classscripts_1_1app_1_1Application.html#a59d45552be2f15e9937a24495c817615" title="The statusBar.">statusBar</a>    = <span class="keywordtype">None</span> <span class="comment"># to be expanded to an external class</span>
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107         self.<a class="code" href="classscripts_1_1app_1_1Application.html#a0c3d38c71b1e955e889ac0987e012275">__createApp</a>()
 
 </pre></div></p>
 
@@ -187,10 +201,10 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>A frame widget, grouping several buttons which are commonly used. </p>
+<p>A ToolBar widget, grouping several buttons/widgets with resources specified in a XML file. </p>
 <p>The callbacks associated to various buttons are binded when the *Callbacks series of object are instantiated. </p>
 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00082">82</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00079">79</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 
 </div>
 </div>
@@ -208,7 +222,7 @@ Public Attributes</h2></td></tr>
 <p>A menu widget with resources specified in a XML file. </p>
 <p>The callbacks to various menu entries are added when the *Callbacks series of object are instantiated. </p>
 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00065">65</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00067">67</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 
 </div>
 </div>
@@ -223,10 +237,27 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>A frame widget, grouping several buttons/widgets with resources specified in a XML file. </p>
+<p>A ToolBar widget, grouping several buttons/widgets with resources specified in a XML file. </p>
 <p>The callbacks associated to various buttons are binded when the *Callbacks series of object are instantiated. </p>
 
-<p>Definition at line <a class="el" href="app_8py_source.html#l00071">71</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+<p>Definition at line <a class="el" href="app_8py_source.html#l00073">73</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ad1aba47db8476f5e77ab916e035d08"></a><!-- doxytag: member="scripts::app::Application::XMLEditor" ref="a0ad1aba47db8476f5e77ab916e035d08" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classscripts_1_1app_1_1Application.html#a0ad1aba47db8476f5e77ab916e035d08">scripts::app::Application::XMLEditor</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>An enhanced text widget with syntax highlighting, search/replace, etc. </p>
+
+<p>Definition at line <a class="el" href="app_8py_source.html#l00089">89</a> of file <a class="el" href="app_8py_source.html">app.py</a>.</p>
 
 </div>
 </div>
@@ -234,7 +265,7 @@ Public Attributes</h2></td></tr>
 <li>scripts/<a class="el" href="app_8py_source.html">app.py</a></li>
 </ul>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Dec 5 2012 18:49:46 for Tkad by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Dec 7 2012 00:03:25 for Tkad by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

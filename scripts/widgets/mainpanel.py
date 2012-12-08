@@ -14,6 +14,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
+## @namespace mainPanel
+#  Contains a class which helps positioning the widgets on the main application window
+#
+#  Allows creating notebooks in two positions if the a widget is positioned on top of 
+#  another
+
 from wx import Panel, GridBagSizer, Notebook, EXPAND, ALL
 
 class mainPanel(Panel):
@@ -30,7 +36,7 @@ class mainPanel(Panel):
         
         self.SetSizerAndFit(self.sizer)
         
-    def addtoPanel(self, widget, position):
+    def addtoPanel(self, widget, position): # __call__ ???
         if (position == (1, 1, 1) or position == (2, 0, 2)) and position in self.widgets.keys():
             self.__addNotebook(position, widget)
         else:
@@ -47,31 +53,4 @@ class mainPanel(Panel):
             ntbk.AddPage(self.widgets[position], self.widgets[position].title)
             ntbk.AddPage(widget, widget.title)
             self.widgets[position] = ntbk
-
-if __name__ == "__main__": # test - to be deleted after adding callbacks!
-    import wx
-    class cw(wx.Button):
-        def __init__(self, parent):
-            wx.Button.__init__(self, parent, size=(400, 100), label="Ok")
-            self.title = 'Button Title'
             
-    app = wx.App(False)
-    x = wx.Frame(None)
-    m = mainPanel(x)
-    b1 = cw(x)
-    b2 = cw(x)
-    b3 = cw(x)
-    b4 = cw(x)
-    b5 = cw(x)
-    
-    m.addtoPanel(b1, (0, 0, 1))
-    m.addtoPanel(b2, (0, 1, 1))
-    m.addtoPanel(b3, (1, 0, 1))
-    m.addtoPanel(b4, (1, 1, 1))
-    m.addtoPanel(b5, (2, 0, 2))
-    
-    x.SetSize((800, 600))
-    x.SetTitle('Test icons and shortcuts')
-    x.Centre()
-    x.Show(True)    
-    app.MainLoop()                

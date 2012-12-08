@@ -37,7 +37,7 @@ from scripts.widgets.console.log import consoleLog
 
 ## Application() class
 #  
-#  Instances of this class generates the application window
+#  The instance of this class generates the application window
 class Application(wx.Frame):
     """Main app window. Everything starts here.
        Keeps the main widgets (menu, upper and left toolbar, console, canvas, XML editor, etc.
@@ -115,7 +115,7 @@ class Application(wx.Frame):
         
         self.leftToolbar = toolbar(self.mainPanel, self.settings("lefttoolbar"), wx.TB_VERTICAL)
         
-        self.XMLEditor = XMLEditor(self.mainPanel) # add settings later
+        self.XMLEditor = XMLEditor(self.mainPanel, None) # add settings later
         
         self.consoleLog = consoleLog(self.mainPanel) # add settings and functionality later
 
@@ -127,7 +127,7 @@ class Application(wx.Frame):
         self.statusBar = self.CreateStatusBar()
         
         # create these, after the menu, and toolboxes where created (in order for the callbacks to be binded to the appropriate entries)
-        #self.projectCallbacks     = projectCallbacks(self, master)
+        self.project     = projectCallbacks(self)
         #self.GeometryCallbacks    = geometryCallbacks(self, master)
         #self.SettingsCallbacks    = settingsCallbacks(self, master)
         #self.HelpCallbacks        = HelpCallbacks(self, master)

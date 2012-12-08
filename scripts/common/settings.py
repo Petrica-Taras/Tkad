@@ -14,6 +14,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
+## @namespace settings
+#  Contains a class which holds the settings required by the root frame and several other widgets.
+#
+#  Centralizes the settings for all the widgets.  
+
 import xml.etree.ElementTree as ET
 import os
 
@@ -49,7 +54,7 @@ class settings(dict):
         self.master = master
         
 		## @var self["basedir"]
-		#  Determines the base directory (Tkad.py directory)
+		#  Determines the base directory (tkad.py directory)
 		#
 		#  Its value assumes that the main script starts from the Tkad.py directory
         self["basedir"] = os.getcwd() 
@@ -66,21 +71,22 @@ class settings(dict):
         # Menu
         self["menuIconsPath"] = os.path.join(self["basedir"], "resources/icons16x16/menu") # add possibilities for multiple resolutions        
         self["menuXMLPath"]   = os.path.join(self["basedir"], "etc/gui/menus.xml") 
-        self["menu"]          = {"icons":{}}
         
         # Upper toolbar
         self["upperToolBarIconsPath"] = "resources/icons22x22/uptoolbar"
         self["upperToolBarXMLPath"]   = "etc/gui/uppertoolbar.xml"
-        self["upperToolBar"]          = {"icons":{}} # ????
         
         # Left toolbar
         self["leftToolBarIconsPath"] = "resources/icons22x22/lefttoolbar"
         self["leftToolBarXMLPath"]   = "etc/gui/lefttoolbar.xml"
-        self["leftToolBar"]          = {"icons":{}} # ????
         
         # Canvas
-        self["canvasXMLPath"] = os.path.join("etc/gui/canvas.xml")
+        self["canvasXMLPath"] = os.path.join(self["basedir"], "etc/gui/canvas.xml")
         self["canvas"]        = {}
+        
+        # XMLEditor
+        self["XMLEditorXMLPath"] = os.path.join(self["basedir"], "etc/gui/XMLeditor.xml")
+        self["XMLEditor"]        = {}
         
         # root Frame
         self.appTitle="Tkad - version 0.0.0a"        
@@ -111,7 +117,7 @@ class settings(dict):
             
         # lwd:
         
-    def addXMLData(self, data, element):
+    def addXMLData(self, data, element):   # ????
         """Adds data to XML file paths.xml"""
         
         tree = ET.parse(self["XMLPath"])
@@ -134,7 +140,7 @@ class settings(dict):
          
             tree.write(self["XMLPath"], encoding = "UTF-8")
          
-    def removeXMLData(self, data, element):
+    def removeXMLData(self, data, element): # ???
         """Removes data to XML file paths.xml"""
         
         tree = ET.parse(self["XMLPath"])
@@ -164,3 +170,5 @@ class settings(dict):
             return (self["upperToolBarXMLPath"], self["upperToolBarIconsPath"])
         if data == "lefttoolbar":
             return (self["leftToolBarXMLPath"], self["leftToolBarIconsPath"])
+        if data == "XMLEditor":
+            return self["XMLEditorXMLPath"]  # ????

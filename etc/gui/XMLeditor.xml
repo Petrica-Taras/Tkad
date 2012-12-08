@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<XMLeditor>
+    <scheme name="default" inuse="yes">
+        <colors>
+            <background type="name" value="black"/>
+            <foreground type="name" value="white"/>
+            <selection  type="name" value="white"/>
+        </colors>    
+        <elements>
+            <csys type = "name" value = "white" />
+            <point type = "name" value = "white"/>
+            <line type = "name" value = "white"/>
+        </elements>
+    </scheme>
+    
+    <scheme name="UserColorScheme 1" inuse="no">
+        <colors>
+            <background type="name" value="black"/>
+            <foreground type="name" value="white"/>
+            <selection  type="name" value="white"/>
+        </colors>
+        <elements>
+            <csys type = "name" value = "white" />
+            <point type = "name" value = "white"/>
+            <line type = "name" value = "white"/>
+        </elements>     
+    </scheme>
+</XMLeditor>

@@ -43,7 +43,7 @@
 <a name="l00014"></a>00014 <span class="comment"># along with this program; if not, write to the Free Software</span>
 <a name="l00015"></a>00015 <span class="comment"># Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</span>
 <a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="keyword">from</span> wx <span class="keyword">import</span> MenuBar, Menu, MenuItem, Bitmap
+<a name="l00017"></a>00017 <span class="keyword">from</span> wx <span class="keyword">import</span> MenuBar, Menu, MenuItem, Bitmap, BITMAP_TYPE_PNG
 <a name="l00018"></a>00018 <span class="keyword">import</span> os
 <a name="l00019"></a>00019 <span class="keyword">import</span> xml.etree.ElementTree <span class="keyword">as</span> ET
 <a name="l00020"></a>00020 
@@ -59,10 +59,10 @@
 <a name="l00030"></a>00030         self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aba49a87380d6ec973670cb87a224d8f8">__XMLfile</a>   = resources[0]
 <a name="l00031"></a>00031         self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aff1ff49c077dd9666613260022aadbb7">__iconspath</a> = resources[1]
 <a name="l00032"></a>00032         
-<a name="l00033"></a>00033         <span class="comment">## @var MenuTree</span>
+<a name="l00033"></a>00033         <span class="comment">## @var menuTree</span>
 <a name="l00034"></a>00034         <span class="comment">#</span>
 <a name="l00035"></a>00035         <span class="comment">#  holds the options for each widget            </span>
-<a name="l00036"></a><a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aff40065296b9214bf694649752c02ae5">00036</a>         self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aff40065296b9214bf694649752c02ae5" title="holds the options for each widget">MenuTree</a> = []
+<a name="l00036"></a><a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#ad4682bc0c1e9cf8339b3e6945222d629">00036</a>         self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#ad4682bc0c1e9cf8339b3e6945222d629" title="holds the options for each widget">menuTree</a> = []
 <a name="l00037"></a>00037 
 <a name="l00038"></a>00038         <span class="comment">## @var menus</span>
 <a name="l00039"></a>00039         <span class="comment">#</span>
@@ -80,12 +80,12 @@
 <a name="l00051"></a>00051             tree = ET.parse(self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aba49a87380d6ec973670cb87a224d8f8">__XMLfile</a>)
 <a name="l00052"></a>00052             root = tree.getroot()
 <a name="l00053"></a>00053             <span class="keywordflow">for</span> i <span class="keywordflow">in</span> root:
-<a name="l00054"></a>00054                 self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aff40065296b9214bf694649752c02ae5" title="holds the options for each widget">MenuTree</a>.append([i.attrib[<span class="stringliteral">&#39;name&#39;</span>], []])
+<a name="l00054"></a>00054                 self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#ad4682bc0c1e9cf8339b3e6945222d629" title="holds the options for each widget">menuTree</a>.append([i.attrib[<span class="stringliteral">&#39;name&#39;</span>], []])
 <a name="l00055"></a>00055                 
 <a name="l00056"></a>00056                 self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aa0fb0f91a90730a9aa2b95f1a680e13b" title="holds the widgets in a treelike fashion">menus</a>.append([i.attrib[<span class="stringliteral">&#39;name&#39;</span>], Menu(), []])
-<a name="l00057"></a>00057                 self.Append(self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aa0fb0f91a90730a9aa2b95f1a680e13b" title="holds the widgets in a treelike fashion">menus</a>[-1][1], self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aff40065296b9214bf694649752c02ae5" title="holds the options for each widget">MenuTree</a>[-1][0])
+<a name="l00057"></a>00057                 self.Append(self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aa0fb0f91a90730a9aa2b95f1a680e13b" title="holds the widgets in a treelike fashion">menus</a>[-1][1], self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#ad4682bc0c1e9cf8339b3e6945222d629" title="holds the options for each widget">menuTree</a>[-1][0])
 <a name="l00058"></a>00058                 
-<a name="l00059"></a>00059                 self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#accd55dec8b344bd600880cfc5676dd95">__createMenu</a>(i, self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aff40065296b9214bf694649752c02ae5" title="holds the options for each widget">MenuTree</a>[-1][-1], self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aa0fb0f91a90730a9aa2b95f1a680e13b" title="holds the widgets in a treelike fashion">menus</a>[-1])
+<a name="l00059"></a>00059                 self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#accd55dec8b344bd600880cfc5676dd95">__createMenu</a>(i, self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#ad4682bc0c1e9cf8339b3e6945222d629" title="holds the options for each widget">menuTree</a>[-1][-1], self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aa0fb0f91a90730a9aa2b95f1a680e13b" title="holds the widgets in a treelike fashion">menus</a>[-1])
 <a name="l00060"></a>00060         <span class="keywordflow">else</span>:
 <a name="l00061"></a>00061             <span class="keywordflow">for</span> i <span class="keywordflow">in</span> node:
 <a name="l00062"></a>00062                 <span class="keywordflow">if</span> len(i) &gt; 0: 
@@ -116,7 +116,7 @@
 <a name="l00087"></a>00087                                                          i.attrib[<span class="stringliteral">&#39;name&#39;</span>]+<span class="stringliteral">&#39;\t&#39;</span>+i.attrib[<span class="stringliteral">&#39;accelerator&#39;</span>])
 <a name="l00088"></a>00088                                               ])
 <a name="l00089"></a>00089                         <span class="comment"># if the icons don&#39;t show up in the menu open gconf-editor - desktop&gt;gnome&gt;interface&gt; menus_have_icons</span>
-<a name="l00090"></a>00090                         widgetsTree[2][-1][1].SetBitmap(Bitmap(os.path.join(self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aff1ff49c077dd9666613260022aadbb7">__iconspath</a>, i.attrib[<span class="stringliteral">&#39;icon&#39;</span>]), wx.BITMAP_TYPE_PNG))
+<a name="l00090"></a>00090                         widgetsTree[2][-1][1].SetBitmap(Bitmap(os.path.join(self.<a class="code" href="classscripts_1_1widgets_1_1menu_1_1menuBar.html#aff1ff49c077dd9666613260022aadbb7">__iconspath</a>, i.attrib[<span class="stringliteral">&#39;icon&#39;</span>]), BITMAP_TYPE_PNG))
 <a name="l00091"></a>00091                         widgetsTree[1].AppendItem(widgetsTree[2][-1][1])
 <a name="l00092"></a>00092              
 <a name="l00093"></a>00093 <span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>: <span class="comment"># test - to be deleted after adding callbacks!</span>
@@ -131,7 +131,7 @@
 <a name="l00102"></a>00102     app.MainLoop()
 </pre></div></div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Dec 5 2012 18:49:46 for Tkad by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Dec 7 2012 00:03:25 for Tkad by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
