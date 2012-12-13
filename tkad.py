@@ -33,13 +33,11 @@ def main():
 
     app = wx.App()
     
-    #from scripts.app import Application
-    scripts.app.Application(None, -1, '')
+    #from scripts.app import application
+    scripts.app.application(None, -1, '')
     
     app.MainLoop()
 
 
 if __name__ == "__main__":
     main()
-
-

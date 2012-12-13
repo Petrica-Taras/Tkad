@@ -115,7 +115,9 @@ class settings(dict):
         for i in root.getiterator('module'):
             self["extraModulesPath"][i[0].text] = i[1].text
             
-        # lwd:
+        # cwd:
+        # quick and dirty solution - TODO - to be improved
+        self["cwd"] = os.getcwd()
         
     def addXMLData(self, data, element):   # ????
         """Adds data to XML file paths.xml"""

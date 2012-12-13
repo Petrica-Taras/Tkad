@@ -35,10 +35,12 @@ from scripts.widgets.XMLeditor import XMLEditor
 
 from scripts.widgets.console.log import consoleLog
 
-## Application() class
+from scripts.callbacks.project import projectIO
+
+## application() class
 #  
 #  The instance of this class generates the application window
-class Application(wx.Frame):
+class application(wx.Frame):
     """Main app window. Everything starts here.
        Keeps the main widgets (menu, upper and left toolbar, console, canvas, XML editor, etc.
        Initialises or uses the (common) settings object, the state object and the model object."""
@@ -127,7 +129,7 @@ class Application(wx.Frame):
         self.statusBar = self.CreateStatusBar()
         
         # create these, after the menu, and toolboxes where created (in order for the callbacks to be binded to the appropriate entries)
-        self.project     = projectCallbacks(self)
+        self.project     = projectIO(self)
         #self.GeometryCallbacks    = geometryCallbacks(self, master)
         #self.SettingsCallbacks    = settingsCallbacks(self, master)
         #self.HelpCallbacks        = HelpCallbacks(self, master)

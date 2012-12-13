@@ -7,6 +7,7 @@
         <MenuItem name="Save As Project ..." accelerator="Ctrl + Shift + S" icon="document-save-as.png"/>
         <MenuItem name="Separator"/>
         <MenuItem name="Close Project"       accelerator="Ctrl + X" icon="document-close.png"/>
+        <MenuItem name="Exit"                accelerator="Ctrl + X" icon="document-close.png"/>
     </Menu>
     <Menu name="Geometry">
         <MenuSubDir name="Coordinate System" accelerator="" icon="csys.png">

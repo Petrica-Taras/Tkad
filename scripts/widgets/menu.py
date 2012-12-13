@@ -89,14 +89,3 @@ class menuBar(MenuBar):
                         # if the icons don't show up in the menu open gconf-editor - desktop>gnome>interface> menus_have_icons
                         widgetsTree[2][-1][1].SetBitmap(Bitmap(os.path.join(self.__iconspath, i.attrib['icon']), BITMAP_TYPE_PNG))
                         widgetsTree[1].AppendItem(widgetsTree[2][-1][1])
-             
-if __name__ == "__main__": # test - to be deleted after adding callbacks!
-    import wx
-    app = wx.App(False)
-    x = wx.Frame(None)
-    m = menuBar(x, ("../../etc/gui/menus.xml", "../../resources/icons16x16/menu"))
-    x.SetSize((800, 600))
-    x.SetTitle('Test icons and shortcuts')
-    x.Centre()
-    x.Show(True)    
-    app.MainLoop()
